@@ -1,4 +1,3 @@
-```css
 /* =========================
    HOME PAGE
    ========================= */
@@ -201,7 +200,7 @@
 
   max-width: 380px;
 
-  height: 100%;
+  height: auto;
 
   max-height: 390px;
 
@@ -253,11 +252,9 @@
   }
 
 }
-```
 
 Your navigation can remain as the text links:
 
-```html
 <nav>
   <a href="#" onclick="showSection('about'); return false;">About Me</a>
   <a href="#" onclick="showSection('experience'); return false;">Experience</a>
@@ -267,11 +264,9 @@ Your navigation can remain as the text links:
   <a href="#" onclick="showSection('contact'); return false;">Contact</a>
   <a href="#" onclick="showSection('resume'); return false;">Resume</a>
 </nav>
-```
 
 The home page will have this structure:
 
-```text
 ┌─────────────────────────────────────────────────────────────────────┐
 │ Rukmini KS || FP&A Associate     About Me  Experience  Projects ... │
 ├─────────────────────────────────────────────────────────────────────┤
@@ -291,12 +286,9 @@ The home page will have this structure:
 │   └─────────────────────────────┘     └─────────────────────────┘   │
 │                                                                     │
 └─────────────────────────────────────────────────────────────────────┘
-```
 
-The **Contact Me** button uses:
+The Contact Me button uses:
 
-```html
 href="mailto:rukminik2skishsun20@gmail.com"
-```
 
-so clicking it opens the visitor's default email application with **`rukminik2skishsun20@gmail.com` already populated in the To field**.
+so clicking it opens the visitor's default email application with rukminik2skishsun20@gmail.com already populated in the To field.
