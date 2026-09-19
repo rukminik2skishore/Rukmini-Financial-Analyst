@@ -294,7 +294,7 @@ nav a.active::after {
   display: block;
   width: 100%;
   max-width: 380px;
-  max-height: 500px;
+  max-height: 400px;
   height: 100%;
   object-fit: cover;
 
