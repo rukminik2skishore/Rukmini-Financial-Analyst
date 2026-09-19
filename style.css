@@ -1,1 +1,72 @@
 
+/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f6f9;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Header */
+h1 {
+  text-align: center;
+  background-color: #004080; /* Deep finance blue */
+  color: white;
+  padding: 20px;
+  margin: 0;
+}
+
+/* Navigation Buttons */
+.nav-btn {
+  display: inline-block;
+  background-color: #0077b5; /* LinkedIn blue */
+  color: white;
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.nav-btn:hover {
+  background-color: #005580;
+}
+
+/* Section Styling */
+.section {
+  display: none; /* hidden by default */
+  margin: 20px auto;
+  max-width: 800px;
+  padding: 20px;
+  background-color: white;
+  border-left: 4px solid #0077b5;
+  border-radius: 5px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.section.active {
+  display: block; /* show when active */
+}
+
+/* Lists */
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+/* Contact Links */
+a {
+  color: #0077b5;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
