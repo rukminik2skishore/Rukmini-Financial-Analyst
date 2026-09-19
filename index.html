@@ -145,63 +145,96 @@
        PROJECTS
        ===================================================== -->
 
-  <section id="projects" class="section">
+  <!-- =====================================================
+     PROJECTS
+     ===================================================== -->
 
-    <h2>Demo Projects</h2>
+<section id="projects" class="section">
 
-    <div class="project-card">
+  <h2>Projects</h2>
 
-      <h3>Power BI Dashboard</h3>
+  <!-- PROJECT 1: POWER BI -->
 
-      <p>
-        Interactive financial dashboard designed to present
-        business performance and key financial insights.
-      </p>
+  <div class="project-card">
 
-      <img
-        src="dashboards/powerbi_dashboard.png"
-        alt="Power BI Dashboard">
+    <h3>Power BI Dashboard</h3>
+
+    <p>
+      Interactive financial dashboard designed to present
+      business performance and key financial insights.
+    </p>
+
+    <img
+      src="dashboards/powerbi_dashboard.png"
+      alt="Power BI Dashboard">
+
+  </div>
+
+
+  <!-- PROJECT 2: SQL -->
+
+  <div class="project-card">
+
+    <h3>SQL Analysis</h3>
+
+    <p>
+      SQL queries demonstrating data extraction,
+      transformation and financial/business analysis.
+    </p>
+
+    <button
+      class="view-btn"
+      onclick="viewFile('SQL for Portfolio.sql', 'SQL Analysis')">
+      View Project →
+    </button>
+
+  </div>
+
+
+  <!-- PROJECT 3: EXCEL MODEL -->
+
+  <div class="project-card">
+
+    <h3>FP&amp;A Excel Model</h3>
+
+    <p>
+      Financial planning and analysis model built in Excel
+      for budgeting, forecasting and financial analysis.
+    </p>
+
+    <button
+      class="view-btn"
+      onclick="viewFile('projects/fpa_model.xlsx', 'FP&A Excel Model')">
+      View Project →
+    </button>
+
+  </div>
+
+
+  <!-- =====================================================
+       FILE VIEWER
+       ===================================================== -->
+
+  <div id="file-viewer" class="file-viewer">
+
+    <div class="viewer-header">
+
+      <h3 id="viewer-title">Project Preview</h3>
+
+      <button
+        class="close-btn"
+        onclick="closeViewer()">
+        ✕ Close
+      </button>
 
     </div>
 
-
-    <div class="project-card">
-
-      <h3>SQL Analysis</h3>
-
-      <p>
-        SQL queries demonstrating data extraction,
-        transformation and financial/business analysis.
-      </p>
-
-      <a
-        href="SQL for Portfolio.sql"
-        target="_blank">
-        View Project →
-      </a>
-
+    <div id="viewer-content" class="viewer-content">
     </div>
 
+  </div>
 
-    <div class="project-card">
-
-      <h3>FP&amp;A Excel Model</h3>
-
-      <p>
-        Financial planning and analysis model built in Excel
-        for budgeting, forecasting and financial analysis.
-      </p>
-
-      <a
-        href="projects/fpa_model.xlsx"
-        download>
-        Download Excel Model →
-      </a>
-
-    </div>
-
-  </section>
-
+</section>
 
   <!-- =====================================================
        EDUCATION
