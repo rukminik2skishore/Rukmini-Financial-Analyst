@@ -7,46 +7,52 @@
 
   <title>Rukmini KS || FP&A Analyst</title>
 
-  <!-- Connect CSS -->
   <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
   <!-- =====================================================
-       HEADER / NAVIGATION
+       HEADER
        ===================================================== -->
 
   <header>
 
-    <h1>Rukmini KS || FP&A Analyst</h1>
+    <h1>Rukmini KS</h1>
 
     <nav>
-      <a href="#" onclick="showSection('home'); return false;">
-        Home
-      </a>
-      
-      <a href="#" onclick="showSection('about'); return false;">
-        About
+      <a href="#" class="active"
+         onclick="showSection('about', this); return false;">
+        About Me
       </a>
 
-      <a href="#" onclick="showSection('experience'); return false;">
+      <a href="#"
+         onclick="showSection('experience', this); return false;">
         Experience
       </a>
 
-      <a href="#" onclick="showSection('projects'); return false;">
-        Projects
+      <a href="#"
+         onclick="showSection('projects', this); return false;">
+        Demo Projects
       </a>
 
-      <a href="#" onclick="showSection('education'); return false;">
-        Education & Awards
+      <a href="#"
+         onclick="showSection('education', this); return false;">
+        Education &amp; Awards
       </a>
 
-      <a href="#" onclick="showSection('contact'); return false;">
+      <a href="#"
+         onclick="showSection('skills', this); return false;">
+        Skills
+      </a>
+
+      <a href="#"
+         onclick="showSection('contact', this); return false;">
         Contact
       </a>
 
-      <a href="#" onclick="showSection('resume'); return false;">
+      <a href="#"
+         onclick="showSection('resume', this); return false;">
         Resume
       </a>
     </nav>
@@ -55,14 +61,15 @@
 
 
   <!-- =====================================================
-       HOME / ABOUT
+       HOME
        ===================================================== -->
 
-  <div id="home" class="section active">
+  <section id="about" class="section active">
 
     <div class="home-container">
 
-      <!-- LEFT SIDE -->
+      <!-- LEFT: INTRODUCTION -->
+
       <div class="intro-box">
 
         <p class="hello-text">
@@ -74,8 +81,10 @@
         </h2>
 
         <h3>
-          a FP&A Analyst
+          a FP&amp;A Analyst
         </h3>
+
+        <div class="cyan-line"></div>
 
         <p class="intro-description">
           Passionate about corporate finance, analytics,
@@ -83,17 +92,18 @@
           actionable business insights.
         </p>
 
-        <!-- Opens email application -->
         <a
           href="mailto:rukminik2skishsun20@gmail.com"
           class="contact-btn">
+          <span class="mail-icon">✉</span>
           Contact Me
         </a>
 
       </div>
 
 
-      <!-- RIGHT SIDE -->
+      <!-- RIGHT: PHOTO -->
+
       <div class="photo-box">
 
         <img
@@ -104,105 +114,101 @@
 
     </div>
 
-  </div>
+  </section>
 
 
   <!-- =====================================================
        EXPERIENCE
        ===================================================== -->
 
-  <div id="experience" class="section">
+  <section id="experience" class="section">
 
     <h2>Experience</h2>
 
-    <h3>FP&A / Finance Experience</h3>
+    <h3>FP&amp;A / Finance Experience</h3>
 
     <ul>
-      <li>
-        Financial planning and analysis
-      </li>
-
-      <li>
-        Budgeting and forecasting
-      </li>
-
-      <li>
-        Management reporting and variance analysis
-      </li>
-
-      <li>
-        Financial modelling and business analysis
-      </li>
-
-      <li>
-        Dashboard development and reporting automation
-      </li>
+      <li>Financial planning and analysis</li>
+      <li>Budgeting and forecasting</li>
+      <li>Management reporting and variance analysis</li>
+      <li>Financial modelling and business analysis</li>
+      <li>Dashboard development and reporting automation</li>
     </ul>
 
-  </div>
+  </section>
 
 
   <!-- =====================================================
        PROJECTS
        ===================================================== -->
 
-  <div id="projects" class="section">
+  <section id="projects" class="section">
 
     <h2>Demo Projects</h2>
 
+    <div class="project-card">
 
-    <h3>Power BI Dashboard</h3>
+      <h3>Power BI Dashboard</h3>
 
-    <p>
-      Interactive financial dashboard designed to present
-      business performance and key financial insights.
-    </p>
+      <p>
+        Interactive financial dashboard designed to present
+        business performance and key financial insights.
+      </p>
 
-    <img
-      src="dashboards/powerbi_dashboard.png"
-      alt="Power BI Dashboard">
+      <img
+        src="dashboards/powerbi_dashboard.png"
+        alt="Power BI Dashboard">
+
+    </div>
 
 
-    <h3>SQL Analysis</h3>
+    <div class="project-card">
 
-    <p>
-      SQL queries demonstrating data extraction,
-      transformation and financial/business analysis.
-    </p>
+      <h3>SQL Analysis</h3>
 
-    <p>
-      <a href="projects/sql_queries.sql" target="_blank">
-        View SQL Queries
+      <p>
+        SQL queries demonstrating data extraction,
+        transformation and financial/business analysis.
+      </p>
+
+      <a
+        href="projects/sql_queries.sql"
+        target="_blank">
+        View SQL Queries →
       </a>
-    </p>
+
+    </div>
 
 
-    <h3>FP&A Excel Model</h3>
+    <div class="project-card">
 
-    <p>
-      Financial planning and analysis model built in Excel
-      for budgeting, forecasting and financial analysis.
-    </p>
+      <h3>FP&amp;A Excel Model</h3>
 
-    <p>
-      <a href="projects/fpa_model.xlsx" download>
-        Download Excel Model
+      <p>
+        Financial planning and analysis model built in Excel
+        for budgeting, forecasting and financial analysis.
+      </p>
+
+      <a
+        href="projects/fpa_model.xlsx"
+        download>
+        Download Excel Model →
       </a>
-    </p>
 
-  </div>
+    </div>
+
+  </section>
 
 
   <!-- =====================================================
-       EDUCATION & AWARDS
+       EDUCATION
        ===================================================== -->
 
-  <div id="education" class="section">
+  <section id="education" class="section">
 
-    <h2>Education & Awards</h2>
+    <h2>Education &amp; Awards</h2>
 
     <ul>
-
       <li>
         <strong>Education</strong>
       </li>
@@ -214,17 +220,71 @@
       <li>
         Professional achievements and awards
       </li>
-
     </ul>
 
-  </div>
+  </section>
+
+
+  <!-- =====================================================
+       SKILLS
+       ===================================================== -->
+
+  <section id="skills" class="section">
+
+    <h2>Skills</h2>
+
+    <div class="skills-grid">
+
+      <div class="skill-item">
+        Financial Planning &amp; Analysis
+      </div>
+
+      <div class="skill-item">
+        Budgeting &amp; Forecasting
+      </div>
+
+      <div class="skill-item">
+        Financial Modelling
+      </div>
+
+      <div class="skill-item">
+        Variance Analysis
+      </div>
+
+      <div class="skill-item">
+        Management Reporting
+      </div>
+
+      <div class="skill-item">
+        Microsoft Excel
+      </div>
+
+      <div class="skill-item">
+        Power BI
+      </div>
+
+      <div class="skill-item">
+        SQL
+      </div>
+
+      <div class="skill-item">
+        Data Analytics
+      </div>
+
+      <div class="skill-item">
+        Reporting Automation
+      </div>
+
+    </div>
+
+  </section>
 
 
   <!-- =====================================================
        CONTACT
        ===================================================== -->
 
-  <div id="contact" class="section">
+  <section id="contact" class="section">
 
     <h2>Contact Me</h2>
 
@@ -251,14 +311,14 @@
       </a>
     </p>
 
-  </div>
+  </section>
 
 
   <!-- =====================================================
        RESUME
        ===================================================== -->
 
-  <div id="resume" class="section">
+  <section id="resume" class="section">
 
     <h2>Resume</h2>
 
@@ -271,11 +331,11 @@
       <a
         href="Rukmini_KS_Resume_v3.pdf"
         target="_blank">
-        Open Resume in New Tab
+        Open Resume in New Tab →
       </a>
     </p>
 
-  </div>
+  </section>
 
 
   <!-- =====================================================
@@ -284,17 +344,16 @@
 
   <script>
 
-    function showSection(id) {
+    function showSection(id, clickedLink) {
 
-      /* Hide all sections */
+      // Hide all sections
       document
         .querySelectorAll('.section')
         .forEach(function(section) {
           section.classList.remove('active');
         });
 
-
-      /* Show selected section */
+      // Show selected section
       const selectedSection =
         document.getElementById(id);
 
@@ -302,29 +361,23 @@
         selectedSection.classList.add('active');
       }
 
-
-      /* Update active navigation item */
+      // Remove active state from navigation
       document
         .querySelectorAll('nav a')
         .forEach(function(link) {
           link.classList.remove('active');
         });
 
+      // Add active state to clicked navigation
+      if (clickedLink) {
+        clickedLink.classList.add('active');
+      }
 
-      /* Find clicked navigation link */
-      const links = document.querySelectorAll('nav a');
-
-      links.forEach(function(link) {
-
-        if (
-          link.getAttribute('onclick') &&
-          link.getAttribute('onclick').includes("'" + id + "'")
-        ) {
-          link.classList.add('active');
-        }
-
+      // Scroll to top
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
       });
-
     }
 
   </script>
@@ -332,4 +385,3 @@
 </body>
 
 </html>
-```
