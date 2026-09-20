@@ -166,13 +166,10 @@
 
     <div class="portfolio-disclaimer">
 
-      <strong>Data Disclaimer:</strong>
-
       The data used in these projects is not real-time or confidential
-      business data. All company names, clients, datasets and financial
-      figures presented are entirely fictional and randomly generated
-      for demonstration purposes only. No actual employer or client
-      information has been used.
+      business data. All names, clients, datasets, and financial figures
+      presented are entirely fictional and randomly generated for illustrative 
+      purposes only. No actual employer or client information has been used
 
     </div>
 
@@ -352,8 +349,6 @@ function showPortfolioProject(project) {
           Budget, Actual &amp; Forecast Analysis
 
         </p>
-
-
 
         <!-- =====================================================
              PROJECT OVERVIEW
@@ -742,107 +737,57 @@ function showPortfolioProject(project) {
 /* =====================================================
    SQL FILE VIEWER
    ===================================================== */
-
 function toggleSQLFile() {
 
-
-  const viewer =
-    document.getElementById("sqlCodeViewer");
-
-
-  const codeContent =
-    document.getElementById("sqlCodeContent");
-
-
-
-  /* Safety check */
+  const viewer = document.getElementById("sqlCodeViewer");
+  const codeContent = document.getElementById("sqlCodeContent");
 
   if (!viewer || !codeContent) {
-
     return;
-
   }
 
-
-
-  /* If viewer is already open, close it */
-
+  /* Close if already open */
   if (viewer.style.display === "block") {
-
     viewer.style.display = "none";
-
     return;
-
   }
-
-
 
   /* Open viewer */
-
   viewer.style.display = "block";
 
+  codeContent.textContent = "Loading SQL code...";
 
-  codeContent.textContent =
-    "Loading SQL file...";
-
-
-
-  /* Load SQL file */
-
-  fetch("projects/SQL for Portfolio.sql")
-
+  /* Load SQL file from projects folder */
+  fetch("./projects/SQL%20for%20Portfolio.sql")
     .then(function(response) {
 
-
       if (!response.ok) {
-
         throw new Error(
-          "SQL file could not be loaded."
+          "File not found. HTTP status: " + response.status
         );
-
       }
-
 
       return response.text();
 
     })
-
-
     .then(function(sqlCode) {
-
-
-      /*
-       textContent is used instead of innerHTML
-       so SQL characters are displayed safely.
-      */
 
       codeContent.textContent = sqlCode;
 
-
     })
-
-
     .catch(function(error) {
 
-
       codeContent.textContent =
+        "Unable to load SQL file.\n\n" +
+        "Please check that the file exists at:\n" +
+        "projects/SQL for Portfolio.sql\n\n" +
+        "Error: " + error.message;
 
-        "Unable to load the SQL file. " +
-
-        "Please make sure 'SQL for Portfolio.sql' " +
-
-        "is inside the projects folder.";
-
-
-      console.error(error);
-
+      console.error("SQL loading error:", error);
 
     });
 
 }
-
-
-
 /* =====================================================
    BACK TO PROJECTS
    ===================================================== */
