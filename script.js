@@ -543,128 +543,238 @@ function showPortfolioProject(project) {
   }
 
 
-  /* =====================================================
-     FP&A FORECASTING & BUDGET MODEL
-     ===================================================== */
+  //* =====================================================
+   FP&A FORECASTING & BUDGET ANALYSIS MODEL
+   ===================================================== */
 
-  else if (project === "forecast-budget") {
+else if (project === "forecast-budget") {
 
-    content.innerHTML = `
+  content.innerHTML = `
 
-      <div class="portfolio-detail-card">
+    <div class="portfolio-detail-card">
 
-        <h2>FP&amp;A Forecasting and Budget Analysis Model</h2>
+      <h2>FP&amp;A Forecasting and Budget Analysis Model</h2>
 
-        <p class="project-subtitle">
-          FP&amp;A Portfolio Project |
-          Forecasting, Budgeting &amp; Scenario Analysis
+      <p class="project-subtitle">
+        FP&amp;A Portfolio Project |
+        Forecasting, Budgeting, Variance &amp; Scenario Analysis
+      </p>
+
+
+      <!-- PROJECT OVERVIEW -->
+
+      <div class="project-info-section">
+
+        <h3>Project Overview</h3>
+
+        <p>
+          This project demonstrates the development of a
+          structured FP&amp;A forecasting and budgeting model
+          built in Excel to support financial planning,
+          performance analysis and management decision-making.
         </p>
 
+        <p>
+          The model combines historical actuals with revenue,
+          headcount and operating expense forecasts to develop
+          a forward-looking Profit &amp; Loss view.
+        </p>
 
-        <div class="project-info-section">
+        <p>
+          A separate 2027 budget is developed and compared
+          against the forecast to identify financial variances,
+          while scenario analysis evaluates the impact of
+          changes in key business assumptions.
+        </p>
 
-          <h3>Project Overview</h3>
-
-          <p>
-            This project demonstrates the development of a
-            driver-based FP&amp;A forecasting and budgeting model
-            designed to support financial planning and
-            management decision-making.
-          </p>
-
-          <p>
-            The model combines revenue forecasting, headcount
-            planning, operating expense forecasting and
-            independent budget assumptions to compare expected
-            business performance against financial targets.
-          </p>
-
-          <p>
-            Base, Upside and Downside scenarios are incorporated
-            to evaluate the potential financial impact of
-            changes in key business assumptions.
-          </p>
-
-        </div>
+      </div>
 
 
-        <div class="project-info-section">
+      <!-- MODEL STRUCTURE -->
 
-          <h3>What the Model Does</h3>
+      <div class="project-info-section">
 
-          <ul class="project-feature-list">
+        <h3>Model Structure</h3>
 
-            <li>
-              Develops driver-based revenue forecasts.
-            </li>
+        <ul class="project-feature-list">
 
-            <li>
-              Builds headcount and personnel cost planning.
-            </li>
+          <li>
+            <strong>Assumptions:</strong>
+            Centralised operating and financial assumptions
+            used throughout the model.
+          </li>
 
-            <li>
-              Forecasts major operating expense categories.
-            </li>
+          <li>
+            <strong>Actuals:</strong>
+            Historical financial performance used as the
+            starting point for forecasting.
+          </li>
 
-            <li>
-              Creates an independent financial budget.
-            </li>
+          <li>
+            <strong>Revenue Forecast:</strong>
+            Driver-based revenue projections based on
+            business assumptions.
+          </li>
 
-            <li>
-              Compares Forecast against Budget.
-            </li>
+          <li>
+            <strong>Headcount Plan:</strong>
+            Workforce planning and personnel cost forecasting.
+          </li>
 
-            <li>
-              Calculates financial variances and
-              variance percentages.
-            </li>
+          <li>
+            <strong>Opex Forecast:</strong>
+            Forecasting of major operating expense categories.
+          </li>
 
-            <li>
-              Supports Base, Upside and Downside scenarios.
-            </li>
+          <li>
+            <strong>P&amp;L:</strong>
+            Consolidated forecast of revenue, operating costs
+            and profitability.
+          </li>
 
-            <li>
-              Highlights areas requiring management attention.
-            </li>
+          <li>
+            <strong>Forecast vs Budget:</strong>
+            Variance analysis comparing expected performance
+            against the financial budget.
+          </li>
 
-            <li>
-              Provides structured financial planning outputs
-              suitable for FP&amp;A reporting.
-            </li>
+          <li>
+            <strong>Scenarios:</strong>
+            Scenario analysis evaluating changes in key
+            planning assumptions.
+          </li>
 
-          </ul>
+          <li>
+            <strong>Budget 2027:</strong>
+            Independent financial budget used as the planning
+            benchmark for forecast comparison.
+          </li>
 
-        </div>
+          <li>
+            <strong>Checks:</strong>
+            Model validation checks designed to improve
+            consistency and reliability.
+          </li>
+
+        </ul>
+
+      </div>
 
 
-        <div class="project-info-section">
+      <!-- WHAT MODEL DOES -->
 
-          <h3>Skills Demonstrated</h3>
+      <div class="project-info-section">
 
-          <div class="sql-skills-grid">
+        <h3>What the Model Does</h3>
 
-            <span>FP&amp;A</span>
-            <span>Budgeting</span>
-            <span>Forecasting</span>
-            <span>Driver-Based Planning</span>
-            <span>Revenue Forecasting</span>
-            <span>Headcount Planning</span>
-            <span>Cost Forecasting</span>
-            <span>Variance Analysis</span>
-            <span>Scenario Analysis</span>
-            <span>Financial Planning</span>
-            <span>Excel</span>
+        <ul class="project-feature-list">
 
-          </div>
+          <li>
+            Develops structured revenue forecasts using
+            business and operating assumptions.
+          </li>
+
+          <li>
+            Builds headcount and personnel cost planning.
+          </li>
+
+          <li>
+            Forecasts major operating expense categories.
+          </li>
+
+          <li>
+            Consolidates forecasts into a projected
+            Profit &amp; Loss statement.
+          </li>
+
+          <li>
+            Develops an independent 2027 financial budget.
+          </li>
+
+          <li>
+            Compares Forecast against Budget and calculates
+            financial variances.
+          </li>
+
+          <li>
+            Provides detailed P&amp;L analysis for management
+            review.
+          </li>
+
+          <li>
+            Evaluates alternative business scenarios and
+            their impact on financial performance.
+          </li>
+
+          <li>
+            Includes validation checks to improve model
+            accuracy and consistency.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- SKILLS -->
+
+      <div class="project-info-section">
+
+        <h3>Skills Demonstrated</h3>
+
+        <div class="sql-skills-grid">
+
+          <span>FP&amp;A</span>
+          <span>Financial Forecasting</span>
+          <span>Budgeting</span>
+          <span>Revenue Forecasting</span>
+          <span>Headcount Planning</span>
+          <span>Opex Forecasting</span>
+          <span>P&amp;L Forecasting</span>
+          <span>Variance Analysis</span>
+          <span>Scenario Analysis</span>
+          <span>Driver-Based Planning</span>
+          <span>Financial Planning</span>
+          <span>Model Validation</span>
+          <span>Excel</span>
 
         </div>
 
       </div>
 
-    `;
-  }
 
+      <!-- DOWNLOAD -->
 
+      <div class="project-info-section">
+
+        <h3>Download Forecasting &amp; Budget Model</h3>
+
+        <p>
+          The complete Excel workbook contains the assumptions,
+          historical actuals, revenue forecast, headcount plan,
+          operating expense forecast, P&amp;L, forecast versus
+          budget analysis, scenarios and 2027 budget.
+        </p>
+
+        <div class="dashboard-action-buttons">
+
+          <a
+            href="./financial-model/FP&A Financial Model - Fct & Bud Analysis.xlsx"
+            download
+            class="portfolio-download-btn">
+
+            ↓ Download Excel Model
+
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  `;
+}
   /* =====================================================
      FINANCIAL MODELLING / 3-STATEMENT / DCF PROJECT
      ===================================================== */
