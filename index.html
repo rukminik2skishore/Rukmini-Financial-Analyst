@@ -1,3 +1,144 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rukmini KS || FP&A Analyst</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
+  <header>
+
+<h1>Rukmini KS</h1>
+
+<nav>
+
+  <a href="#"
+     onclick="showSection('home', this); return false;">
+    Home
+  </a>
+  
+  <a href="#" class="active"
+     onclick="showSection('about', this); return false;">
+    About
+  </a>
+
+  <a href="#"
+     onclick="showSection('experience', this); return false;">
+    Experience
+  </a>
+
+  <a href="#"
+     onclick="showSection('projects', this); return false;">
+    Projects
+  </a>
+
+  <a href="#"
+     onclick="showSection('education', this); return false;">
+    Education &amp; Awards
+  </a>
+  
+  <a href="#"
+     onclick="showSection('resume', this); return false;">
+    Resume
+  </a>
+  
+  <a href="#"
+     onclick="showSection('contact', this); return false;">
+    Contact
+  </a>
+
+  
+</nav>
+
+  </header>
+
+  <!-- =====================================================
+       HOME
+       ===================================================== -->
+
+  <section id="home" class="section active">
+
+<div class="home-container">
+
+  <!-- LEFT: INTRODUCTION -->
+
+  <div class="intro-box">
+
+    <p class="hello-text">
+      Hello, I'm
+    </p>
+
+    <h2>
+      Rukmini KS,
+    </h2>
+
+    <h3>
+      a FP&amp;A Analyst
+    </h3>
+
+    <div class="cyan-line"></div>
+
+    <p class="intro-description">
+      Passionate about corporate finance, analytics,
+      automation, and turning complex data into
+      actionable business insights.
+    </p>
+
+    <a
+      href="mailto:rukminik2skishsun20@gmail.com"
+      class="contact-btn">
+      <span class="mail-icon">✉</span>
+      Contact Me
+    </a>
+
+  </div>
+
+
+  <!-- RIGHT: PHOTO -->
+
+  <div class="photo-box">
+
+    <img
+      src="Profile Photo(1).png"
+      alt="Rukmini KS">
+
+  </div>
+
+</div>
+
+  </section>
+
+  <!-- =====================================================
+       EXPERIENCE
+       ===================================================== -->
+
+  <section id="experience" class="section">
+
+<h2>Experience</h2>
+
+<h3>FP&amp;A / Finance Experience</h3>
+
+<ul>
+  <li>Financial planning and analysis</li>
+  <li>Budgeting and forecasting</li>
+  <li>Management reporting and variance analysis</li>
+  <li>Financial modelling and business analysis</li>
+  <li>Dashboard development and reporting automation</li>
+</ul>
+
+  </section>
+
 <!-- =====================================================
      PROJECTS
      ===================================================== -->
@@ -730,3 +871,185 @@ function backToPortfolioProjects() {
 }
 
 </script>
+     <!-- =====================================================
+
+   EDUCATION
+   ===================================================== -->
+
+  <section id="education" class="section">
+
+<h2>Education &amp; Awards</h2>
+
+<ul>
+  <li>
+    <strong>Education</strong>
+  </li>
+
+  <li>
+    Finance and business-related academic background
+  </li>
+
+  <li>
+    Professional achievements and awards
+  </li>
+</ul>
+
+  </section>
+
+  <!-- =====================================================
+       SKILLS
+       ===================================================== -->
+
+  <section id="skills" class="section">
+
+<h2>Skills</h2>
+
+<div class="skills-grid">
+
+  <div class="skill-item">
+    Financial Planning &amp; Analysis
+  </div>
+
+  <div class="skill-item">
+    Budgeting &amp; Forecasting
+  </div>
+
+  <div class="skill-item">
+    Financial Modelling
+  </div>
+
+  <div class="skill-item">
+    Variance Analysis
+  </div>
+
+  <div class="skill-item">
+    Management Reporting
+  </div>
+
+  <div class="skill-item">
+    Microsoft Excel
+  </div>
+
+  <div class="skill-item">
+    Power BI
+  </div>
+
+  <div class="skill-item">
+    SQL
+  </div>
+
+  <div class="skill-item">
+    Data Analytics
+  </div>
+
+  <div class="skill-item">
+    Reporting Automation
+  </div>
+
+</div>
+
+  </section>
+
+  <!-- =====================================================
+       CONTACT
+       ===================================================== -->
+
+  <section id="contact" class="section">
+
+<h2>Contact Me</h2>
+
+<p>
+  <strong>Email:</strong>
+  <a href="mailto:rukminik2skishsun20@gmail.com">
+    rukminik2skishsun20@gmail.com
+  </a>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <a href="tel:+919148866329">
+    +91-9148866329
+  </a>
+</p>
+
+<p>
+  <strong>LinkedIn:</strong>
+  <a
+    href="https://www.linkedin.com/in/rukmini-ks-98a13725/"
+    target="_blank">
+    LinkedIn Profile
+  </a>
+</p>
+
+  </section>
+
+  <!-- =====================================================
+       RESUME
+       ===================================================== -->
+
+  <section id="resume" class="section">
+
+<h2>Resume</h2>
+
+<iframe
+  src="Rukmini_KS_Resume_v3.pdf"
+  title="Rukmini KS Resume">
+</iframe>
+
+<p>
+  <a
+    href="Rukmini_KS_Resume_v3.pdf"
+    target="_blank">
+    Open Resume in New Tab →
+  </a>
+</p>
+
+  </section>
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script>
+
+    function showSection(id, clickedLink) {
+
+      // Hide all sections
+      document
+        .querySelectorAll('.section')
+        .forEach(function(section) {
+          section.classList.remove('active');
+        });
+
+      // Show selected section
+      const selectedSection =
+        document.getElementById(id);
+
+      if (selectedSection) {
+        selectedSection.classList.add('active');
+      }
+
+      // Remove active state from navigation
+      document
+        .querySelectorAll('nav a')
+        .forEach(function(link) {
+          link.classList.remove('active');
+        });
+
+      // Add active state to clicked navigation
+      if (clickedLink) {
+        clickedLink.classList.add('active');
+      }
+
+      // Scroll to top
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }
+
+  </script>
+
+</body>
+
+</html>
