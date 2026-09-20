@@ -655,7 +655,244 @@ function toggleDashboard() {
   }
 
 }
+/* =====================================================
+   FINANCIAL MODELLING / FORECAST PROJECT
+   ===================================================== */
 
+if (project === "model") {
+
+  content.innerHTML = `
+
+    <div class="portfolio-detail-card">
+
+
+      <!-- =====================================================
+           PROJECT HEADING
+           ===================================================== -->
+
+      <h2>Integrated Financial Forecasting Model</h2>
+
+      <p class="project-subtitle">
+
+        Financial Modelling Portfolio Project |
+        3-Statement Forecast, DCF Valuation &amp; Scenario Analysis
+
+      </p>
+
+
+      <!-- =====================================================
+           PROJECT OVERVIEW
+           ===================================================== -->
+
+      <div class="project-info-section">
+
+        <h3>Project Overview</h3>
+
+        <p>
+
+          This project demonstrates the development of an
+          integrated financial forecasting model built in Excel
+          to analyse historical performance and forecast future
+          financial results.
+
+        </p>
+
+        <p>
+
+          The model integrates the Income Statement, Balance Sheet
+          and Cash Flow Statement while using operating assumptions
+          to forecast revenue, costs, profitability, working capital
+          and cash generation.
+
+        </p>
+
+        <p>
+
+          The project also incorporates DCF valuation and
+          sensitivity analysis to demonstrate how financial
+          forecasts can support business planning and valuation
+          decisions.
+
+        </p>
+
+      </div>
+
+
+      <!-- =====================================================
+           MODEL PREVIEW
+           ===================================================== -->
+
+      <div class="project-info-section">
+
+        <h3>Model Preview</h3>
+
+        <p>
+          Integrated monthly P&amp;L showing historical performance
+          and forecast revenue, operating costs, gross profit,
+          EBITDA and profitability margins.
+        </p>
+
+        <!-- Screenshot is displayed automatically -->
+        <div class="financial-model-preview">
+
+          <img
+            src="./financial-model/forecast-model-preview.png"
+            alt="Integrated Financial Forecasting Model"
+            class="financial-model-image"
+          >
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           WHAT THE MODEL DOES
+           ===================================================== -->
+
+      <div class="project-info-section">
+
+        <h3>What the Model Does</h3>
+
+        <ul class="project-feature-list">
+
+          <li>
+            Forecasts monthly and annual revenue using
+            structured operating assumptions.
+          </li>
+
+          <li>
+            Models personnel, subcontractor, software,
+            facilities and other operating costs.
+          </li>
+
+          <li>
+            Calculates Gross Profit and Gross Margin
+            across historical and forecast periods.
+          </li>
+
+          <li>
+            Forecasts EBITDA and EBITDA Margin to evaluate
+            operating profitability.
+          </li>
+
+          <li>
+            Integrates the Income Statement, Balance Sheet
+            and Cash Flow Statement.
+          </li>
+
+          <li>
+            Models working capital movements including
+            receivables, payables and other operating items.
+          </li>
+
+          <li>
+            Calculates Free Cash Flow used for
+            discounted cash flow valuation.
+          </li>
+
+          <li>
+            Applies WACC and terminal value assumptions
+            to estimate Enterprise Value.
+          </li>
+
+          <li>
+            Includes sensitivity analysis to evaluate
+            valuation changes under different WACC and
+            terminal growth assumptions.
+          </li>
+
+          <li>
+            Demonstrates scenario-based forecasting for
+            financial planning and management decision support.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- =====================================================
+           SKILLS DEMONSTRATED
+           ===================================================== -->
+
+      <div class="project-info-section">
+
+        <h3>Skills Demonstrated</h3>
+
+        <div class="sql-skills-grid">
+
+          <span>Financial Modelling</span>
+
+          <span>FP&amp;A</span>
+
+          <span>Financial Forecasting</span>
+
+          <span>3-Statement Modelling</span>
+
+          <span>Revenue Forecasting</span>
+
+          <span>Cost Forecasting</span>
+
+          <span>Working Capital</span>
+
+          <span>Cash Flow Forecasting</span>
+
+          <span>DCF Valuation</span>
+
+          <span>WACC</span>
+
+          <span>Terminal Value</span>
+
+          <span>Sensitivity Analysis</span>
+
+          <span>Scenario Analysis</span>
+
+          <span>Excel</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           DOWNLOAD MODEL
+           ===================================================== -->
+
+      <div class="project-info-section">
+
+        <h3>Download Financial Model</h3>
+
+        <p>
+
+          The complete Excel workbook contains the integrated
+          financial statements, forecast assumptions, DCF
+          valuation and sensitivity analysis used in this project.
+
+        </p>
+
+        <div class="dashboard-action-buttons">
+
+          <a
+            href="./financial-model/Integrated_Financial_Model.xlsx"
+            download
+            class="portfolio-download-btn">
+
+            ↓ Download Excel Financial Model
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  `;
+
+  return;
+}
 /* =====================================================
    BACK TO PROJECTS
    ===================================================== */
