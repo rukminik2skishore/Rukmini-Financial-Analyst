@@ -1990,12 +1990,12 @@ ul {
    CLICKABLE WEBSITE TITLE
    =============================== */
 
-.site-title a {
-  color: inherit;
+.site-title a,
+.site-title a:link,
+.site-title a:visited,
+.site-title a:hover,
+.site-title a:active {
+  color: #eaf6fb;
   text-decoration: none;
   cursor: pointer;
-}
-
-.site-title a:hover {
-  opacity: 0.85;
 }
