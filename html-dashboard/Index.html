@@ -1,1 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FP&A Performance Dashboard</title>
+
+    <!-- Dashboard CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+    <main class="dashboard">
+
+        <!-- =========================================
+             DASHBOARD HEADER
+        ========================================== -->
+        <header class="dashboard-header">
+            <div>
+                <p class="eyebrow">FINANCIAL PLANNING &amp; ANALYSIS</p>
+                <h1>FP&amp;A Performance Dashboard</h1>
+                <p class="subtitle">
+                    Revenue, Cost &amp; Gross Margin Performance
+                </p>
+            </div>
+        </header>
+
+
+        <!-- =========================================
+             FILTERS
+        ========================================== -->
+        <section class="filter-section">
+
+            <div class="filter-group">
+                <label for="monthFilter">Month</label>
+                <select id="monthFilter">
+                    <option value="All">All Months</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="businessUnitFilter">Business Unit</label>
+                <select id="businessUnitFilter">
+                    <option value="All">All Business Units</option>
+                </select>
+            </div>
+
+            <div class="filter-group">
+                <label for="clientFilter">Client</label>
+                <select id="clientFilter">
+                    <option value="All">All Clients</option>
+                </select>
+            </div>
+
+            <div class="filter-action">
+                <button id="resetFilters">Reset Filters</button>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             KPI CARDS
+        ========================================== -->
+        <section class="kpi-grid">
+
+            <!-- Revenue -->
+            <article class="kpi-card">
+                <p class="kpi-label">Actual Revenue</p>
+
+                <h2 id="revenueKPI">
+                    ₹0
+                </h2>
+
+                <p class="kpi-detail" id="revenueVariance">
+                    vs Budget
+                </p>
+            </article>
+
+
+            <!-- Cost -->
+            <article class="kpi-card">
+                <p class="kpi-label">Actual Cost</p>
+
+                <h2 id="costKPI">
+                    ₹0
+                </h2>
+
+                <p class="kpi-detail" id="costVariance">
+                    vs Budget
+                </p>
+            </article>
+
+
+            <!-- Gross Profit -->
+            <article class="kpi-card">
+                <p class="kpi-label">Gross Profit</p>
+
+                <h2 id="grossProfitKPI">
+                    ₹0
+                </h2>
+
+                <p class="kpi-detail">
+                    Gross Margin:
+                    <span id="grossMarginKPI">0%</span>
+                </p>
+            </article>
+
+        </section>
+
+
+        <!-- =========================================
+             REVENUE CHART
+        ========================================== -->
+        <section class="chart-card">
+
+            <div class="chart-heading">
+                <div>
+                    <p class="chart-kicker">PERFORMANCE</p>
+                    <h2>Revenue</h2>
+                </div>
+
+                <p>
+                    Actual vs Budget vs Forecast
+                </p>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="revenueChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             COST CHART
+        ========================================== -->
+        <section class="chart-card">
+
+            <div class="chart-heading">
+                <div>
+                    <p class="chart-kicker">PERFORMANCE</p>
+                    <h2>Cost</h2>
+                </div>
+
+                <p>
+                    Actual vs Budget vs Forecast
+                </p>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="costChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             GROSS MARGIN CHART
+        ========================================== -->
+        <section class="chart-card">
+
+            <div class="chart-heading">
+                <div>
+                    <p class="chart-kicker">PROFITABILITY</p>
+                    <h2>Gross Margin</h2>
+                </div>
+
+                <p>
+                    Actual vs Budget vs Forecast
+                </p>
+            </div>
+
+            <div class="chart-container">
+                <canvas id="grossMarginChart"></canvas>
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+        <footer class="dashboard-footer">
+            <p>
+                FP&amp;A Portfolio Project • Financial Performance Dashboard
+            </p>
+        </footer>
+
+    </main>
+
+
+    <!-- Financial dataset - we will create this next -->
+    <script src="data/financial_data.js"></script>
+
+    <!-- Dashboard JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+
+</html>
