@@ -220,37 +220,285 @@ function showPortfolioProject(project) {
 
 
   /* =====================================================
-     POWER BI PROJECT
-     ===================================================== */
+   HTML DASHBOARD PROJECT
+   ===================================================== */
 
-  else if (project === "powerbi") {
+if (project === "dashboard") {
 
-    content.innerHTML = `
+  content.innerHTML = `
 
-      <div class="portfolio-detail-card">
+    <div class="portfolio-detail-card">
 
-        <h2>Power BI Financial Dashboard</h2>
+
+      <!-- =====================================================
+           PROJECT HEADING
+           ===================================================== -->
+
+      <h2>Interactive FP&amp;A Performance Dashboard</h2>
+
+      <p class="project-subtitle">
+
+        FP&amp;A Portfolio Project |
+        Revenue, Cost &amp; Gross Margin Analysis
+
+      </p>
+
+
+      <!-- =====================================================
+           PROJECT OVERVIEW
+           ===================================================== -->
+
+      <div class="project-info-section">
+
+        <h3>Project Overview</h3>
 
         <p>
-          Interactive dashboard developed to analyse
-          financial performance and communicate key
-          management insights.
+
+          This project demonstrates the development of an
+          interactive financial performance dashboard using
+          HTML, CSS and JavaScript.
+
         </p>
 
-        <div class="portfolio-preview">
+        <p>
 
-          <img
-            src="dashboards/powerbi_dashboard.png"
-            alt="Power BI Dashboard">
+          The dashboard analyses Budget, Actual and Forecast
+          performance across revenue, cost and profitability
+          using a structured FP&amp;A dataset covering a
+          12-month reporting period.
+
+        </p>
+
+        <p>
+
+          Interactive Business Unit and Client filters allow
+          financial performance to be analysed dynamically,
+          while KPI cards and trend charts provide a
+          management-level view of business performance.
+
+        </p>
+
+      </div>
+
+
+      <!-- =====================================================
+           WHAT THE DASHBOARD DOES
+           ===================================================== -->
+
+      <div class="project-info-section">
+
+        <h3>What the Dashboard Does</h3>
+
+        <ul class="project-feature-list">
+
+          <li>
+            Presents executive-level Actual Revenue,
+            Actual Cost and Gross Profit KPIs.
+          </li>
+
+          <li>
+            Calculates Gross Margin based on aggregated
+            revenue and cost performance.
+          </li>
+
+          <li>
+            Compares Actual Revenue against Budget and
+            Forecast across a 12-month period.
+          </li>
+
+          <li>
+            Analyses monthly Actual Cost against Budget
+            and Forecast.
+          </li>
+
+          <li>
+            Tracks Gross Margin trends across Budget,
+            Actual and Forecast scenarios.
+          </li>
+
+          <li>
+            Provides interactive Business Unit filtering
+            for performance analysis.
+          </li>
+
+          <li>
+            Provides interactive Client filtering to
+            analyse account-level financial performance.
+          </li>
+
+          <li>
+            Dynamically recalculates KPIs and charts
+            whenever dashboard filters are changed.
+          </li>
+
+          <li>
+            Uses structured financial data to replicate
+            practical FP&amp;A performance reporting.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- =====================================================
+           SKILLS DEMONSTRATED
+           ===================================================== -->
+
+      <div class="project-info-section">
+
+        <h3>Skills Demonstrated</h3>
+
+        <div class="sql-skills-grid">
+
+          <span>FP&amp;A Analysis</span>
+
+          <span>Budget vs Actual</span>
+
+          <span>Forecast Analysis</span>
+
+          <span>Revenue Analysis</span>
+
+          <span>Cost Analysis</span>
+
+          <span>Gross Margin Analysis</span>
+
+          <span>Variance Analysis</span>
+
+          <span>HTML</span>
+
+          <span>CSS</span>
+
+          <span>JavaScript</span>
+
+          <span>Chart.js</span>
+
+          <span>CSV Data Processing</span>
+
+          <span>Interactive Filters</span>
+
+          <span>Data Visualization</span>
 
         </div>
 
       </div>
 
-    `;
 
-  }
+      <!-- =====================================================
+           DATASET
+           ===================================================== -->
 
+      <div class="project-info-section">
+
+        <h3>Dashboard Dataset</h3>
+
+        <p>
+
+          The dashboard is powered by a structured financial
+          dataset containing monthly Budget, Actual and
+          Forecast information across multiple business units,
+          clients and financial performance measures.
+
+        </p>
+
+        <p>
+
+          The dataset includes revenue, cost and profitability
+          information used to calculate the dashboard KPIs,
+          variance indicators and monthly performance trends.
+
+        </p>
+
+
+        <div class="dashboard-action-buttons">
+
+          <a
+            href="./html-dashboard/data/financial_data.csv"
+            download="FP&A_Dashboard_Data.csv"
+            class="portfolio-download-btn">
+
+            ↓ Download Dashboard Data
+
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- =====================================================
+           INTERACTIVE DASHBOARD
+           ===================================================== -->
+
+      <div class="project-info-section">
+
+        <h3>Interactive Dashboard</h3>
+
+        <p>
+
+          Select <strong>View Dashboard</strong> to explore
+          the interactive financial dashboard. Use the
+          Business Unit and Client filters to analyse
+          financial performance dynamically.
+
+        </p>
+
+
+        <!-- VIEW DASHBOARD BUTTON -->
+
+        <button
+          class="sql-file-btn"
+          onclick="toggleDashboard()">
+
+          View Dashboard
+
+        </button>
+
+
+        <!-- =================================================
+             DASHBOARD VIEWER
+             ================================================= -->
+
+        <div
+          id="dashboardViewer"
+          class="dashboard-viewer"
+          style="display:none;">
+
+          <div class="dashboard-viewer-header">
+
+            <span>
+              FP&amp;A Performance Dashboard
+            </span>
+
+            <button
+              class="sql-close-btn"
+              onclick="toggleDashboard()">
+
+              ✕
+
+            </button>
+
+          </div>
+
+
+          <iframe
+            src="./html-dashboard/index.html"
+            class="dashboard-frame"
+            title="FP&A Performance Dashboard">
+
+          </iframe>
+
+        </div>
+
+
+      </div>
+
+
+    </div>
+
+  `;
+
+}
 
   /* =====================================================
      FP&A PROJECT
@@ -378,7 +626,35 @@ function toggleSQLFile() {
       console.error("SQL loading error:", error);
     });
 }
+/* =====================================================
+   TOGGLE HTML DASHBOARD
+   ===================================================== */
 
+function toggleDashboard() {
+
+  const viewer =
+    document.getElementById("dashboardViewer");
+
+  if (!viewer) {
+    return;
+  }
+
+  if (viewer.style.display === "none") {
+
+    viewer.style.display = "block";
+
+    viewer.scrollIntoView({
+      behavior: "smooth",
+      block: "start"
+    });
+
+  } else {
+
+    viewer.style.display = "none";
+
+  }
+
+}
 
 /* =====================================================
    BACK TO PROJECTS
