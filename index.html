@@ -147,96 +147,113 @@
 
 <section id="projects" class="section">
 
-  <!-- ================= PROJECTS MAIN SCREEN ================= -->
-  <div id="projects-main">
+  <!-- MAIN PROJECT SCREEN -->
+  <div id="projectsMain">
 
-    <h2>Projects</h2>
+    <h2 class="portfolio-project-title">Projects</h2>
 
-    <p class="projects-intro">
-      This portfolio showcases four practical finance and analytics projects
-      demonstrating my skills in SQL, Power BI &amp; Dashboarding,
-      FP&amp;A / Financial Analytics, and Financial Modelling.
-      These projects focus on transforming financial data into meaningful
-      insights to support budgeting, forecasting, variance analysis,
-      performance monitoring, and management decision-making.
+    <p class="portfolio-project-intro">
+      This portfolio showcases four practical projects demonstrating
+      my skills in SQL, Power BI &amp; Dashboarding, FP&amp;A / Financial
+      Analytics, and Financial Modelling. The projects demonstrate
+      financial analysis, budgeting, forecasting, variance analysis,
+      data visualisation and management reporting.
     </p>
 
-    <!-- DATA DISCLAIMER -->
-    <div class="project-note">
+    <!-- DISCLAIMER -->
+
+    <div class="portfolio-disclaimer">
       <strong>Data Disclaimer:</strong>
-      The data used in these projects is not real-time or confidential business data.
-      All company names, clients, datasets, and financial figures are synthetic
-      and randomly generated for demonstration purposes only — no real employer
-      or client data has been used.
+      The data used in these projects is not real-time or confidential
+      business data. All company names, clients, datasets and financial
+      figures are synthetic and randomly generated for demonstration
+      purposes only — no real employer or client data has been used.
     </div>
 
 
-    <!-- ================= PROJECT CARDS ================= -->
-    <div class="projects-grid">
+    <!-- PROJECT CARDS -->
+
+    <div class="portfolio-project-grid">
 
 
-      <!-- PROJECT 1: SQL -->
-      <div class="project-card">
+      <!-- SQL -->
+
+      <div class="portfolio-project-card">
 
         <h3>SQL</h3>
 
-        <div class="project-description">
-          <!-- Add a short SQL project write-up here -->
-        </div>
+        <p>
+          Financial data analysis using SQL to evaluate budget vs actual
+          performance, variance drivers, cost centre trends, forecast
+          risk and management-level KPIs.
+        </p>
 
-        <button class="view-btn"
-          onclick="openProject('sql-project')">
+        <button
+          class="portfolio-view-btn"
+          onclick="showPortfolioProject('sql')">
           View Project →
         </button>
 
       </div>
 
 
-      <!-- PROJECT 2: POWER BI -->
-      <div class="project-card">
+      <!-- POWER BI -->
+
+      <div class="portfolio-project-card">
 
         <h3>Power BI / Dashboard</h3>
 
-        <div class="project-description">
-          <!-- Add a short Power BI project write-up here -->
-        </div>
+        <p>
+          Interactive financial dashboards presenting KPIs,
+          budget vs actual performance, expense trends and
+          management insights through dynamic visualisations.
+        </p>
 
-        <button class="view-btn"
-          onclick="openProject('powerbi-project')">
+        <button
+          class="portfolio-view-btn"
+          onclick="showPortfolioProject('powerbi')">
           View Project →
         </button>
 
       </div>
 
 
-      <!-- PROJECT 3: FP&A -->
-      <div class="project-card">
+      <!-- FP&A -->
+
+      <div class="portfolio-project-card">
 
         <h3>FP&amp;A / Financial Analytics</h3>
 
-        <div class="project-description">
-          <!-- Add a short FP&A / Financial Analytics write-up here -->
-        </div>
+        <p>
+          FP&amp;A analysis covering budgeting, forecasting,
+          variance analysis, cost centre performance and financial
+          insights designed to support management decision-making.
+        </p>
 
-        <button class="view-btn"
-          onclick="openProject('fpa-project')">
+        <button
+          class="portfolio-view-btn"
+          onclick="showPortfolioProject('fpa')">
           View Project →
         </button>
 
       </div>
 
 
-      <!-- PROJECT 4: FINANCIAL MODELLING -->
-      <div class="project-card">
+      <!-- FINANCIAL MODELLING -->
+
+      <div class="portfolio-project-card">
 
         <h3>Financial Modelling</h3>
 
-        <div class="project-description">
-          <!-- Add a short Financial Modelling project write-up here -->
-        </div>
+        <p>
+          Excel-based financial modelling demonstrating forecasting,
+          scenario analysis, financial planning and structured
+          modelling techniques for business decision support.
+        </p>
 
-        <button class="view-btn"
-          onclick="openProject('financial-model-project')">
+        <button
+          class="portfolio-view-btn"
+          onclick="showPortfolioProject('model')">
           View Project →
         </button>
 
@@ -247,58 +264,71 @@
   </div>
 
 
-
   <!-- =====================================================
        PROJECT DETAIL SCREEN
-       Opens inside the same Projects section
        ===================================================== -->
 
-  <div id="project-detail" style="display:none;">
+  <div id="portfolioProjectDetail" style="display:none;">
 
-    <button class="back-btn" onclick="closeProject()">
+    <button
+      class="portfolio-back-btn"
+      onclick="backToPortfolioProjects()">
       ← Back to Projects
     </button>
 
-    <div id="project-detail-content"></div>
+    <div id="portfolioProjectContent"></div>
 
   </div>
 
 </section>
 
 
+<!-- =====================================================
+     PROJECT JAVASCRIPT
+     ===================================================== -->
+
 <script>
 
-/* =====================================================
-   OPEN PROJECT
-   ===================================================== */
+function showPortfolioProject(project) {
 
-function openProject(projectName) {
+  const main =
+    document.getElementById("projectsMain");
 
-  const projectsMain = document.getElementById('projects-main');
-  const projectDetail = document.getElementById('project-detail');
-  const projectContent = document.getElementById('project-detail-content');
+  const detail =
+    document.getElementById("portfolioProjectDetail");
 
-  projectsMain.style.display = 'none';
-  projectDetail.style.display = 'block';
+  const content =
+    document.getElementById("portfolioProjectContent");
 
 
-  /* ================= SQL PROJECT ================= */
+  main.style.display = "none";
+  detail.style.display = "block";
 
-  if (projectName === 'sql-project') {
 
-    projectContent.innerHTML = `
+  /* SQL */
 
-      <div class="project-detail-page">
+  if (project === "sql") {
+
+    content.innerHTML = `
+
+      <div class="portfolio-detail-card">
 
         <h2>SQL Financial Analysis</h2>
 
         <p>
-          Detailed SQL project content will be displayed here.
+          SQL-based financial analysis demonstrating data
+          extraction, aggregation, variance analysis and
+          financial performance reporting.
         </p>
 
-        <div class="project-file-area">
+        <h3>Project Preview</h3>
 
-          <!-- SQL project / code / screenshots can go here -->
+        <div class="portfolio-preview">
+
+          <p>
+            SQL project content, screenshots and analysis
+            will be displayed here.
+          </p>
 
         </div>
 
@@ -309,27 +339,27 @@ function openProject(projectName) {
   }
 
 
-  /* ================= POWER BI PROJECT ================= */
+  /* POWER BI */
 
-  else if (projectName === 'powerbi-project') {
+  else if (project === "powerbi") {
 
-    projectContent.innerHTML = `
+    content.innerHTML = `
 
-      <div class="project-detail-page">
+      <div class="portfolio-detail-card">
 
-        <h2>Power BI / Dashboard</h2>
+        <h2>Power BI Financial Dashboard</h2>
 
         <p>
-          Detailed Power BI dashboard project content will be displayed here.
+          Interactive dashboard developed to analyse
+          financial performance and communicate key
+          management insights.
         </p>
 
-        <div class="project-file-area">
+        <div class="portfolio-preview">
 
           <img
             src="dashboards/powerbi_dashboard.png"
-            alt="Power BI Dashboard"
-            style="max-width:100%; height:auto;"
-          >
+            alt="Power BI Dashboard">
 
         </div>
 
@@ -340,24 +370,28 @@ function openProject(projectName) {
   }
 
 
-  /* ================= FP&A PROJECT ================= */
+  /* FP&A */
 
-  else if (projectName === 'fpa-project') {
+  else if (project === "fpa") {
 
-    projectContent.innerHTML = `
+    content.innerHTML = `
 
-      <div class="project-detail-page">
+      <div class="portfolio-detail-card">
 
         <h2>FP&amp;A / Financial Analytics</h2>
 
         <p>
-          Detailed FP&amp;A and financial analytics project content
-          will be displayed here.
+          Financial planning and analysis project covering
+          budgeting, forecasting, variance analysis and
+          management reporting.
         </p>
 
-        <div class="project-file-area">
+        <div class="portfolio-preview">
 
-          <!-- Add FP&A project files / screenshots here -->
+          <p>
+            FP&amp;A project analysis and supporting files
+            will be displayed here.
+          </p>
 
         </div>
 
@@ -368,24 +402,28 @@ function openProject(projectName) {
   }
 
 
-  /* ================= FINANCIAL MODEL ================= */
+  /* FINANCIAL MODEL */
 
-  else if (projectName === 'financial-model-project') {
+  else if (project === "model") {
 
-    projectContent.innerHTML = `
+    content.innerHTML = `
 
-      <div class="project-detail-page">
+      <div class="portfolio-detail-card">
 
         <h2>Financial Modelling</h2>
 
         <p>
-          Detailed financial modelling project content
-          will be displayed here.
+          Excel-based financial model demonstrating
+          forecasting, scenario analysis and structured
+          financial planning.
         </p>
 
-        <div class="project-file-area">
+        <div class="portfolio-preview">
 
-          <!-- Add Excel model screenshots / information here -->
+          <p>
+            Financial model screenshots and analysis
+            will be displayed here.
+          </p>
 
         </div>
 
@@ -396,32 +434,28 @@ function openProject(projectName) {
   }
 
 
-  /* Scroll to top of Projects section */
-
-  document.getElementById('projects').scrollIntoView({
-    behavior: 'smooth'
-  });
-
-}
-
-
-/* =====================================================
-   RETURN TO PROJECT LIST
-   ===================================================== */
-
-function closeProject() {
-
-  document.getElementById('project-detail').style.display = 'none';
-  document.getElementById('projects-main').style.display = 'block';
-
-  document.getElementById('projects').scrollIntoView({
-    behavior: 'smooth'
-  });
+  document
+    .getElementById("projects")
+    .scrollIntoView({
+      behavior: "smooth"
+    });
 
 }
 
-</script>
-  <!-- =====================================================
+
+function backToPortfolioProjects() {
+
+  document
+    .getElementById("portfolioProjectDetail")
+    .style.display = "none";
+
+  document
+    .getElementById("projectsMain")
+    .style.display = "block";
+
+}
+
+</script>  <!-- =====================================================
        EDUCATION
        ===================================================== -->
 
