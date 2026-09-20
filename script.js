@@ -1180,42 +1180,6 @@ else if (project === "model") {
 
 
       <!-- =====================================================
-           DASHBOARD
-           ===================================================== -->
-
-      <div class="project-info-section">
-
-        <h3>Financial &amp; Valuation Dashboard</h3>
-
-        <p>
-          The workbook includes a summary dashboard presenting
-          key operating, forecast and valuation metrics.
-        </p>
-
-        <ul class="project-feature-list">
-
-          <li>Historical 2025 Revenue.</li>
-
-          <li>Forecast 2030 Revenue.</li>
-
-          <li>Forecast 2030 EBITDA Margin.</li>
-
-          <li>Enterprise Value.</li>
-
-          <li>Implied Value per Share.</li>
-
-          <li>Five-year Revenue trend.</li>
-
-          <li>Five-year EBITDA trend.</li>
-
-          <li>Five-year FCFF trend.</li>
-
-        </ul>
-
-      </div>
-
-
-      <!-- =====================================================
            SKILLS
            ===================================================== -->
 
