@@ -1580,3 +1580,282 @@ ul {
     }
 
 }
+/* =====================================================
+   SQL PROJECT DETAIL PAGE
+   ===================================================== */
+
+#projects .project-subtitle {
+
+    color: #00cfff !important;
+
+    font-size: 14px;
+
+    margin-top: -10px;
+
+    margin-bottom: 35px;
+
+}
+
+
+/* =====================================================
+   PROJECT INFORMATION SECTIONS
+   ===================================================== */
+
+#projects .project-info-section {
+
+    margin-top: 35px;
+
+    padding-top: 25px;
+
+    border-top: 1px solid #164354;
+
+}
+
+
+#projects .project-info-section h3 {
+
+    color: #ffffff !important;
+
+    font-size: 20px;
+
+    margin-bottom: 15px;
+
+}
+
+
+#projects .project-info-section p {
+
+    color: #c7dce5 !important;
+
+    line-height: 1.8;
+
+}
+
+
+/* =====================================================
+   WHAT THE ANALYSIS DOES
+   ===================================================== */
+
+#projects .project-feature-list {
+
+    color: #c7dce5;
+
+    line-height: 1.8;
+
+    padding-left: 22px;
+
+}
+
+
+#projects .project-feature-list li {
+
+    margin-bottom: 9px;
+
+}
+
+
+/* =====================================================
+   SQL SKILL TAGS
+   ===================================================== */
+
+#projects .sql-skills-grid {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 18px;
+
+}
+
+
+#projects .sql-skills-grid span {
+
+    background: #071d27;
+
+    color: #00cfff;
+
+    border: 1px solid #164354;
+
+    padding: 8px 14px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+}
+
+
+/* =====================================================
+   VIEW SQL BUTTON
+   ===================================================== */
+
+#projects .sql-file-btn {
+
+    margin-top: 10px;
+
+    background: transparent;
+
+    color: #00cfff;
+
+    border: 1px solid #00cfff;
+
+    padding: 11px 20px;
+
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-weight: 600;
+
+}
+
+
+#projects .sql-file-btn:hover {
+
+    background: #00cfff;
+
+    color: #071d27;
+
+}
+
+
+/* =====================================================
+   SQL CODE VIEWER
+   ===================================================== */
+
+#projects .sql-code-viewer {
+
+    margin-top: 25px;
+
+    background: #06171f;
+
+    border: 1px solid #164354;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+
+}
+
+
+/* HEADER */
+
+#projects .sql-code-header {
+
+    background: #0d2632;
+
+    color: #ffffff;
+
+    padding: 13px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    border-bottom: 1px solid #164354;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+}
+
+
+/* CLOSE BUTTON */
+
+#projects .sql-close-btn {
+
+    background: transparent;
+
+    color: #00cfff;
+
+    border: none;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+}
+
+
+/* SQL CODE */
+
+#projects #sqlCodeContent {
+
+    margin: 0;
+
+    padding: 25px;
+
+    max-height: 600px;
+
+    overflow: auto;
+
+    white-space: pre;
+
+    background: #06171f;
+
+    color: #d5e9f1;
+
+    font-family:
+        Consolas,
+        "Courier New",
+        monospace;
+
+    font-size: 13px;
+
+    line-height: 1.6;
+
+}
+
+
+/* =====================================================
+   DOWNLOAD AREA
+   ===================================================== */
+
+#projects .sql-download-area {
+
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #164354;
+
+}
+
+
+#projects .portfolio-download-btn {
+
+    display: inline-block;
+
+    text-decoration: none;
+
+    background: #00cfff;
+
+    color: #071d27 !important;
+
+    padding: 11px 20px;
+
+    border-radius: 6px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: 0.25s ease;
+
+}
+
+
+#projects .portfolio-download-btn:hover {
+
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(0,207,255,0.20);
+
+}
