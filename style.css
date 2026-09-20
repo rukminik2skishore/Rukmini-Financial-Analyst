@@ -468,286 +468,202 @@ nav a.active {
 }
 
 
-<!-- =====================================================
-     PROJECTS
-     ===================================================== -->
-
-<section id="projects" class="section">
-
-  <!-- ================= PROJECTS MAIN SCREEN ================= -->
-  <div id="projects-main">
-
-    <h2>Projects</h2>
-
-    <p class="projects-intro">
-      This portfolio showcases four practical finance and analytics projects
-      demonstrating my skills in SQL, Power BI &amp; Dashboarding,
-      FP&amp;A / Financial Analytics, and Financial Modelling.
-      These projects focus on transforming financial data into meaningful
-      insights to support budgeting, forecasting, variance analysis,
-      performance monitoring, and management decision-making.
-    </p>
-
-    <!-- DATA DISCLAIMER -->
-    <div class="project-note">
-      <strong>Data Disclaimer:</strong>
-      The data used in these projects is not real-time or confidential business data.
-      All company names, clients, datasets, and financial figures are synthetic
-      and randomly generated for demonstration purposes only — no real employer
-      or client data has been used.
-    </div>
-
-
-    <!-- ================= PROJECT CARDS ================= -->
-    <div class="projects-grid">
-
-
-      <!-- PROJECT 1: SQL -->
-      <div class="project-card">
-
-        <h3>SQL</h3>
-
-        <div class="project-description">
-          <!-- Add a short SQL project write-up here -->
-        </div>
-
-        <button class="view-btn"
-          onclick="openProject('sql-project')">
-          View Project →
-        </button>
-
-      </div>
-
-
-      <!-- PROJECT 2: POWER BI -->
-      <div class="project-card">
-
-        <h3>Power BI / Dashboard</h3>
-
-        <div class="project-description">
-          <!-- Add a short Power BI project write-up here -->
-        </div>
-
-        <button class="view-btn"
-          onclick="openProject('powerbi-project')">
-          View Project →
-        </button>
-
-      </div>
-
-
-      <!-- PROJECT 3: FP&A -->
-      <div class="project-card">
-
-        <h3>FP&amp;A / Financial Analytics</h3>
-
-        <div class="project-description">
-          <!-- Add a short FP&A / Financial Analytics write-up here -->
-        </div>
-
-        <button class="view-btn"
-          onclick="openProject('fpa-project')">
-          View Project →
-        </button>
-
-      </div>
-
-
-      <!-- PROJECT 4: FINANCIAL MODELLING -->
-      <div class="project-card">
-
-        <h3>Financial Modelling</h3>
-
-        <div class="project-description">
-          <!-- Add a short Financial Modelling project write-up here -->
-        </div>
-
-        <button class="view-btn"
-          onclick="openProject('financial-model-project')">
-          View Project →
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-
-  <!-- =====================================================
-       PROJECT DETAIL SCREEN
-       Opens inside the same Projects section
-       ===================================================== -->
-
-  <div id="project-detail" style="display:none;">
-
-    <button class="back-btn" onclick="closeProject()">
-      ← Back to Projects
-    </button>
-
-    <div id="project-detail-content"></div>
-
-  </div>
-
-</section>
-
-
-<script>
-
 /* =====================================================
-   OPEN PROJECT
+   PROJECTS SECTION
    ===================================================== */
 
-function openProject(projectName) {
-
-  const projectsMain = document.getElementById('projects-main');
-  const projectDetail = document.getElementById('project-detail');
-  const projectContent = document.getElementById('project-detail-content');
-
-  projectsMain.style.display = 'none';
-  projectDetail.style.display = 'block';
+.projects-intro {
+  max-width: 900px;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
 
 
-  /* ================= SQL PROJECT ================= */
+/* Data disclaimer */
 
-  if (projectName === 'sql-project') {
+.project-note {
+  max-width: 900px;
+  padding: 16px 20px;
+  margin: 20px 0 40px;
 
-    projectContent.innerHTML = `
+  background: #f5f7fa;
+  border-left: 4px solid #333;
 
-      <div class="project-detail-page">
+  border-radius: 6px;
 
-        <h2>SQL Financial Analysis</h2>
-
-        <p>
-          Detailed SQL project content will be displayed here.
-        </p>
-
-        <div class="project-file-area">
-
-          <!-- SQL project / code / screenshots can go here -->
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-  /* ================= POWER BI PROJECT ================= */
-
-  else if (projectName === 'powerbi-project') {
-
-    projectContent.innerHTML = `
-
-      <div class="project-detail-page">
-
-        <h2>Power BI / Dashboard</h2>
-
-        <p>
-          Detailed Power BI dashboard project content will be displayed here.
-        </p>
-
-        <div class="project-file-area">
-
-          <img
-            src="dashboards/powerbi_dashboard.png"
-            alt="Power BI Dashboard"
-            style="max-width:100%; height:auto;"
-          >
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-  /* ================= FP&A PROJECT ================= */
-
-  else if (projectName === 'fpa-project') {
-
-    projectContent.innerHTML = `
-
-      <div class="project-detail-page">
-
-        <h2>FP&amp;A / Financial Analytics</h2>
-
-        <p>
-          Detailed FP&amp;A and financial analytics project content
-          will be displayed here.
-        </p>
-
-        <div class="project-file-area">
-
-          <!-- Add FP&A project files / screenshots here -->
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-  /* ================= FINANCIAL MODEL ================= */
-
-  else if (projectName === 'financial-model-project') {
-
-    projectContent.innerHTML = `
-
-      <div class="project-detail-page">
-
-        <h2>Financial Modelling</h2>
-
-        <p>
-          Detailed financial modelling project content
-          will be displayed here.
-        </p>
-
-        <div class="project-file-area">
-
-          <!-- Add Excel model screenshots / information here -->
-
-        </div>
-
-      </div>
-
-    `;
-
-  }
-
-
-  /* Scroll to top of Projects section */
-
-  document.getElementById('projects').scrollIntoView({
-    behavior: 'smooth'
-  });
-
+  line-height: 1.6;
+  font-size: 14px;
 }
 
 
 /* =====================================================
-   RETURN TO PROJECT LIST
+   PROJECT CARDS GRID
    ===================================================== */
 
-function closeProject() {
+.projects-grid {
+  display: grid;
 
-  document.getElementById('project-detail').style.display = 'none';
-  document.getElementById('projects-main').style.display = 'block';
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
 
-  document.getElementById('projects').scrollIntoView({
-    behavior: 'smooth'
-  });
+  gap: 30px;
 
+  margin-top: 30px;
 }
 
-</script>
+
+/* Individual floating box */
+
+.project-card {
+  background: #ffffff;
+
+  padding: 30px;
+
+  border-radius: 14px;
+
+  border: 1px solid #e6e6e6;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+
+  min-height: 230px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+
+/* Floating hover effect */
+
+.project-card:hover {
+  transform: translateY(-7px);
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.14);
+}
+
+
+/* Project heading */
+
+.project-card h3 {
+  margin-top: 0;
+  margin-bottom: 20px;
+
+  font-size: 22px;
+}
+
+
+/* Space reserved for your project write-up */
+
+.project-description {
+  min-height: 90px;
+
+  line-height: 1.7;
+
+  flex-grow: 1;
+}
+
+
+/* =====================================================
+   VIEW PROJECT BUTTON
+   ===================================================== */
+
+.view-btn {
+  margin-top: 25px;
+
+  padding: 11px 20px;
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-size: 14px;
+  font-weight: 600;
+
+  width: fit-content;
+
+  transition: transform 0.2s ease;
+}
+
+
+.view-btn:hover {
+  transform: translateX(4px);
+}
+
+
+/* =====================================================
+   PROJECT DETAIL PAGE
+   ===================================================== */
+
+#project-detail {
+  width: 100%;
+}
+
+
+.project-detail-page {
+  margin-top: 30px;
+
+  padding: 30px;
+
+  background: #ffffff;
+
+  border-radius: 12px;
+
+  box-shadow:
+    0 8px 25px rgba(0, 0, 0, 0.08);
+}
+
+
+.project-detail-page h2 {
+  margin-top: 0;
+}
+
+
+/* Project files / screenshots */
+
+.project-file-area {
+  margin-top: 30px;
+}
+
+
+/* =====================================================
+   BACK BUTTON
+   ===================================================== */
+
+.back-btn {
+  padding: 10px 18px;
+
+  border: none;
+  border-radius: 6px;
+
+  cursor: pointer;
+
+  font-weight: 600;
+
+  margin-bottom: 15px;
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+   ===================================================== */
+
+@media (max-width: 768px) {
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .project-card {
+    min-height: auto;
+  }
+
+}
 /* =========================================================
    LINKS
    ========================================================= */
