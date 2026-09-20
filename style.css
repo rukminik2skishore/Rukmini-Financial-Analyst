@@ -1995,7 +1995,11 @@ ul {
 .site-title a:visited,
 .site-title a:hover,
 .site-title a:active {
-  color: #eaf6fb;
+  color: #eaf6fb;       /* normal title colour */
   text-decoration: none;
   cursor: pointer;
+}
+
+.site-title a:hover {
+  color: #11b5e4;       /* optional blue hover */
 }
