@@ -141,104 +141,285 @@
   </section>
 
 
-  <!-- =====================================================
-       PROJECTS
-       ===================================================== -->
-
-  <!-- =====================================================
+<!-- =====================================================
      PROJECTS
      ===================================================== -->
 
 <section id="projects" class="section">
 
-  <h2>Projects</h2>
+  <!-- ================= PROJECTS MAIN SCREEN ================= -->
+  <div id="projects-main">
 
-  <!-- PROJECT 1: POWER BI -->
-  <div class="project-card">
-    <h3>Power BI Dashboard</h3>
-    <p>
-      Interactive financial dashboard designed to present
-      business performance and key financial insights.
+    <h2>Projects</h2>
+
+    <p class="projects-intro">
+      This portfolio showcases four practical finance and analytics projects
+      demonstrating my skills in SQL, Power BI &amp; Dashboarding,
+      FP&amp;A / Financial Analytics, and Financial Modelling.
+      These projects focus on transforming financial data into meaningful
+      insights to support budgeting, forecasting, variance analysis,
+      performance monitoring, and management decision-making.
     </p>
-    <img src="dashboards/powerbi_dashboard.png" alt="Power BI Dashboard">
-    <button class="view-btn"
-      onclick="viewFile('dashboards/powerbi_dashboard.png', 'Power BI Dashboard')">
-      View Project →
-    </button>
-  </div>
 
-  <!-- PROJECT 2: SQL -->
-  <div class="project-card">
-    <h3>SQL Analysis</h3>
-    <p>
-      SQL queries demonstrating data extraction,
-      transformation and financial/business analysis.
-    </p>
-    <button class="view-btn"
-      onclick="viewFile('projects/SQL for Portfolio.sql', 'SQL Analysis')">
-      View Project →
-    </button>
-  </div>
-
-  <!-- PROJECT 3: EXCEL MODEL -->
-  <div class="project-card">
-    <h3>FP&amp;A Excel Model</h3>
-    <p>
-      Financial planning and analysis model built in Excel
-      for budgeting, forecasting and financial analysis.
-    </p>
-    <button class="view-btn"
-      onclick="viewFile('projects/fpa_model.xlsx', 'FP&A Excel Model')">
-      View Project →
-    </button>
-  </div>
-
-  <!-- FILE VIEWER -->
-  <div id="file-viewer" class="file-viewer" style="display:none;">
-    <div class="viewer-header">
-      <h3 id="viewer-title">Project Preview</h3>
-      <button class="close-btn" onclick="closeViewer()">✕ Close</button>
+    <!-- DATA DISCLAIMER -->
+    <div class="project-note">
+      <strong>Data Disclaimer:</strong>
+      The data used in these projects is not real-time or confidential business data.
+      All company names, clients, datasets, and financial figures are synthetic
+      and randomly generated for demonstration purposes only — no real employer
+      or client data has been used.
     </div>
-    <div id="viewer-content" class="viewer-content"></div>
-    <div id="download-link" class="download-link"></div>
+
+
+    <!-- ================= PROJECT CARDS ================= -->
+    <div class="projects-grid">
+
+
+      <!-- PROJECT 1: SQL -->
+      <div class="project-card">
+
+        <h3>SQL</h3>
+
+        <div class="project-description">
+          <!-- Add a short SQL project write-up here -->
+        </div>
+
+        <button class="view-btn"
+          onclick="openProject('sql-project')">
+          View Project →
+        </button>
+
+      </div>
+
+
+      <!-- PROJECT 2: POWER BI -->
+      <div class="project-card">
+
+        <h3>Power BI / Dashboard</h3>
+
+        <div class="project-description">
+          <!-- Add a short Power BI project write-up here -->
+        </div>
+
+        <button class="view-btn"
+          onclick="openProject('powerbi-project')">
+          View Project →
+        </button>
+
+      </div>
+
+
+      <!-- PROJECT 3: FP&A -->
+      <div class="project-card">
+
+        <h3>FP&amp;A / Financial Analytics</h3>
+
+        <div class="project-description">
+          <!-- Add a short FP&A / Financial Analytics write-up here -->
+        </div>
+
+        <button class="view-btn"
+          onclick="openProject('fpa-project')">
+          View Project →
+        </button>
+
+      </div>
+
+
+      <!-- PROJECT 4: FINANCIAL MODELLING -->
+      <div class="project-card">
+
+        <h3>Financial Modelling</h3>
+
+        <div class="project-description">
+          <!-- Add a short Financial Modelling project write-up here -->
+        </div>
+
+        <button class="view-btn"
+          onclick="openProject('financial-model-project')">
+          View Project →
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =====================================================
+       PROJECT DETAIL SCREEN
+       Opens inside the same Projects section
+       ===================================================== -->
+
+  <div id="project-detail" style="display:none;">
+
+    <button class="back-btn" onclick="closeProject()">
+      ← Back to Projects
+    </button>
+
+    <div id="project-detail-content"></div>
+
   </div>
 
 </section>
 
+
 <script>
-  function viewFile(filePath, title) {
-    document.getElementById('viewer-title').innerText = title;
 
-    let viewerContent = document.getElementById('viewer-content');
-    let downloadLink = document.getElementById('download-link');
+/* =====================================================
+   OPEN PROJECT
+   ===================================================== */
 
-    // Clear old content
-    viewerContent.innerHTML = '';
-    downloadLink.innerHTML = '';
+function openProject(projectName) {
 
-    // Decide how to preview based on file type
-    if (filePath.endsWith('.png') || filePath.endsWith('.jpg')) {
-      viewerContent.innerHTML = `<img src="${filePath}" style="max-width:100%; height:auto;">`;
-    } else if (filePath.endsWith('.sql') || filePath.endsWith('.txt')) {
-      fetch(filePath)
-        .then(response => response.text())
-        .then(text => {
-          viewerContent.innerHTML = `<pre style="background:#111; color:#0f0; padding:10px; overflow:auto;">${text}</pre>`;
-        });
-    } else if (filePath.endsWith('.xlsx') || filePath.endsWith('.pdf')) {
-      viewerContent.innerHTML = `<iframe src="${filePath}" width="100%" height="500px"></iframe>`;
-    }
+  const projectsMain = document.getElementById('projects-main');
+  const projectDetail = document.getElementById('project-detail');
+  const projectContent = document.getElementById('project-detail-content');
 
-    // Add download option
-    downloadLink.innerHTML = `<a href="${filePath}" download>⬇ Download ${title}</a>`;
+  projectsMain.style.display = 'none';
+  projectDetail.style.display = 'block';
 
-    // Show viewer
-    document.getElementById('file-viewer').style.display = 'block';
+
+  /* ================= SQL PROJECT ================= */
+
+  if (projectName === 'sql-project') {
+
+    projectContent.innerHTML = `
+
+      <div class="project-detail-page">
+
+        <h2>SQL Financial Analysis</h2>
+
+        <p>
+          Detailed SQL project content will be displayed here.
+        </p>
+
+        <div class="project-file-area">
+
+          <!-- SQL project / code / screenshots can go here -->
+
+        </div>
+
+      </div>
+
+    `;
+
   }
 
-  function closeViewer() {
-    document.getElementById('file-viewer').style.display = 'none';
+
+  /* ================= POWER BI PROJECT ================= */
+
+  else if (projectName === 'powerbi-project') {
+
+    projectContent.innerHTML = `
+
+      <div class="project-detail-page">
+
+        <h2>Power BI / Dashboard</h2>
+
+        <p>
+          Detailed Power BI dashboard project content will be displayed here.
+        </p>
+
+        <div class="project-file-area">
+
+          <img
+            src="dashboards/powerbi_dashboard.png"
+            alt="Power BI Dashboard"
+            style="max-width:100%; height:auto;"
+          >
+
+        </div>
+
+      </div>
+
+    `;
+
   }
+
+
+  /* ================= FP&A PROJECT ================= */
+
+  else if (projectName === 'fpa-project') {
+
+    projectContent.innerHTML = `
+
+      <div class="project-detail-page">
+
+        <h2>FP&amp;A / Financial Analytics</h2>
+
+        <p>
+          Detailed FP&amp;A and financial analytics project content
+          will be displayed here.
+        </p>
+
+        <div class="project-file-area">
+
+          <!-- Add FP&A project files / screenshots here -->
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  /* ================= FINANCIAL MODEL ================= */
+
+  else if (projectName === 'financial-model-project') {
+
+    projectContent.innerHTML = `
+
+      <div class="project-detail-page">
+
+        <h2>Financial Modelling</h2>
+
+        <p>
+          Detailed financial modelling project content
+          will be displayed here.
+        </p>
+
+        <div class="project-file-area">
+
+          <!-- Add Excel model screenshots / information here -->
+
+        </div>
+
+      </div>
+
+    `;
+
+  }
+
+
+  /* Scroll to top of Projects section */
+
+  document.getElementById('projects').scrollIntoView({
+    behavior: 'smooth'
+  });
+
+}
+
+
+/* =====================================================
+   RETURN TO PROJECT LIST
+   ===================================================== */
+
+function closeProject() {
+
+  document.getElementById('project-detail').style.display = 'none';
+  document.getElementById('projects-main').style.display = 'block';
+
+  document.getElementById('projects').scrollIntoView({
+    behavior: 'smooth'
+  });
+
+}
+
 </script>
   <!-- =====================================================
        EDUCATION
