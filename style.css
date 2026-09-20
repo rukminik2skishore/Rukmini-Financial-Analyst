@@ -1985,3 +1985,17 @@ ul {
   }
 
 }
+
+/* ===============================
+   CLICKABLE WEBSITE TITLE
+   =============================== */
+
+.site-title a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.site-title a:hover {
+  opacity: 0.85;
+}
