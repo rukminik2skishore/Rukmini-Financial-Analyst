@@ -1238,7 +1238,7 @@ else if (project === "model") {
         <div class="dashboard-action-buttons">
 
           <a
-            href="./financial-model/Integrated%203%20Statement%20%26%20DCF%20Valuation.xlsx"
+            href="./financial-model/Integrated 3 Statement & DCF Valuation.xlsx"
             download
             class="portfolio-download-btn">
 
