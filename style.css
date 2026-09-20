@@ -470,101 +470,161 @@ nav a.active {
 
 /* =====================================================
    PROJECTS SECTION
+   Matches existing dark portfolio theme
+   ===================================================== */
+
+#projects {
+  color: #e8f7ff;
+}
+
+/* Main Projects heading */
+
+#projects > #projects-main > h2 {
+  color: #ffffff;
+  font-size: 32px;
+  margin-bottom: 18px;
+}
+
+
+/* =====================================================
+   INTRODUCTION
    ===================================================== */
 
 .projects-intro {
-  max-width: 900px;
+  max-width: 1000px;
+  color: #c9dce5;
+  font-size: 16px;
   line-height: 1.8;
   margin-bottom: 20px;
 }
 
 
-/* Data disclaimer */
+/* =====================================================
+   DATA DISCLAIMER
+   ===================================================== */
 
 .project-note {
-  max-width: 900px;
+  max-width: 1000px;
+
   padding: 16px 20px;
   margin: 20px 0 40px;
 
-  background: #f5f7fa;
-  border-left: 4px solid #333;
+  background: rgba(0, 207, 255, 0.06);
 
-  border-radius: 6px;
+  border: 1px solid rgba(0, 207, 255, 0.25);
+  border-left: 4px solid #00cfff;
 
-  line-height: 1.6;
+  border-radius: 8px;
+
+  color: #bcd3dd;
+
+  line-height: 1.7;
   font-size: 14px;
+}
+
+.project-note strong {
+  color: #00cfff;
 }
 
 
 /* =====================================================
-   PROJECT CARDS GRID
+   PROJECT GRID
    ===================================================== */
 
 .projects-grid {
   display: grid;
 
-  grid-template-columns:
-    repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 
   gap: 30px;
 
   margin-top: 30px;
+  margin-bottom: 40px;
 }
 
 
-/* Individual floating box */
+/* =====================================================
+   PROJECT CARDS
+   ===================================================== */
 
-.project-card {
-  background: #ffffff;
+#projects .project-card {
 
-  padding: 30px;
+  /* Dark card instead of white */
+  background: #0d2632;
+
+  border: 1px solid rgba(0, 207, 255, 0.20);
 
   border-radius: 14px;
 
-  border: 1px solid #e6e6e6;
+  padding: 32px;
+
+  min-height: 260px;
 
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.08);
-
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-
-  min-height: 230px;
+    0 8px 25px rgba(0, 0, 0, 0.20);
 
   display: flex;
   flex-direction: column;
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
 }
 
 
-/* Floating hover effect */
+/* Floating effect */
 
-.project-card:hover {
-  transform: translateY(-7px);
+#projects .project-card:hover {
+
+  transform: translateY(-6px);
+
+  border-color: #00cfff;
 
   box-shadow:
-    0 15px 35px rgba(0, 0, 0, 0.14);
+    0 15px 35px rgba(0, 207, 255, 0.10);
 }
 
 
-/* Project heading */
+/* =====================================================
+   CARD HEADINGS
+   ===================================================== */
 
-.project-card h3 {
+#projects .project-card h3 {
+
+  color: #00cfff;
+
+  font-size: 23px;
+  font-weight: 700;
+
   margin-top: 0;
-  margin-bottom: 20px;
-
-  font-size: 22px;
+  margin-bottom: 18px;
 }
 
 
-/* Space reserved for your project write-up */
+/* =====================================================
+   PROJECT DESCRIPTION
+   ===================================================== */
 
-.project-description {
-  min-height: 90px;
+#projects .project-description {
+
+  color: #c9dce5;
+
+  font-size: 15px;
 
   line-height: 1.7;
 
+  min-height: 100px;
+
   flex-grow: 1;
+}
+
+
+/* Make paragraphs inside descriptions visible */
+
+#projects .project-description p {
+  color: #c9dce5;
+  margin: 0;
 }
 
 
@@ -572,12 +632,20 @@ nav a.active {
    VIEW PROJECT BUTTON
    ===================================================== */
 
-.view-btn {
+#projects .view-btn {
+
   margin-top: 25px;
 
   padding: 11px 20px;
 
-  border: none;
+  width: fit-content;
+
+  background: transparent;
+
+  color: #00cfff;
+
+  border: 1px solid #00cfff;
+
   border-radius: 6px;
 
   cursor: pointer;
@@ -585,49 +653,94 @@ nav a.active {
   font-size: 14px;
   font-weight: 600;
 
-  width: fit-content;
-
-  transition: transform 0.2s ease;
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
 }
 
 
-.view-btn:hover {
-  transform: translateX(4px);
+#projects .view-btn:hover {
+
+  background: #00cfff;
+
+  color: #071d27;
+
+  transform: translateY(-2px);
 }
 
 
 /* =====================================================
-   PROJECT DETAIL PAGE
+   PROJECT DETAIL SCREEN
    ===================================================== */
 
 #project-detail {
   width: 100%;
+  color: #e8f7ff;
 }
 
 
-.project-detail-page {
-  margin-top: 30px;
+#projects .project-detail-page {
 
-  padding: 30px;
+  margin-top: 20px;
 
-  background: #ffffff;
+  padding: 35px;
 
-  border-radius: 12px;
+  background: #0d2632;
+
+  border: 1px solid rgba(0, 207, 255, 0.20);
+
+  border-radius: 14px;
 
   box-shadow:
-    0 8px 25px rgba(0, 0, 0, 0.08);
+    0 8px 25px rgba(0, 0, 0, 0.20);
 }
 
 
-.project-detail-page h2 {
+#projects .project-detail-page h2 {
+
+  color: #00cfff;
+
   margin-top: 0;
+  margin-bottom: 20px;
 }
 
 
-/* Project files / screenshots */
+#projects .project-detail-page p {
 
-.project-file-area {
+  color: #c9dce5;
+
+  line-height: 1.7;
+}
+
+
+/* =====================================================
+   PROJECT FILE / SCREENSHOT AREA
+   ===================================================== */
+
+#projects .project-file-area {
+
   margin-top: 30px;
+
+  padding: 20px;
+
+  background: #081e28;
+
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  border-radius: 10px;
+}
+
+
+#projects .project-file-area img {
+
+  display: block;
+
+  max-width: 100%;
+
+  height: auto;
+
+  border-radius: 8px;
 }
 
 
@@ -635,58 +748,64 @@ nav a.active {
    BACK BUTTON
    ===================================================== */
 
-.back-btn {
+#projects .back-btn {
+
   padding: 10px 18px;
 
-  border: none;
+  background: transparent;
+
+  color: #00cfff;
+
+  border: 1px solid #00cfff;
+
   border-radius: 6px;
 
   cursor: pointer;
 
+  font-size: 14px;
   font-weight: 600;
 
   margin-bottom: 15px;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease;
+}
+
+
+#projects .back-btn:hover {
+
+  background: #00cfff;
+
+  color: #071d27;
 }
 
 
 /* =====================================================
-   MOBILE RESPONSIVE
+   RESPONSIVE DESIGN
    ===================================================== */
 
 @media (max-width: 768px) {
 
   .projects-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
   }
 
-  .project-card {
+  #projects .project-card {
     min-height: auto;
+    padding: 25px;
+  }
+
+  .projects-intro {
+    font-size: 15px;
+  }
+
+  .project-note {
+    font-size: 13px;
   }
 
 }
-/* =========================================================
-   LINKS
-   ========================================================= */
-
-.section a:not(.contact-btn) {
-
-  color: #00aced;
-
-  font-weight: 600;
-
-  text-decoration: none;
-
-  transition: color 0.25s ease;
-}
-
-.section a:not(.contact-btn):hover {
-
-  color: #66d9ff;
-
-  text-decoration: underline;
-}
-
-
 /* =========================================================
    SKILLS
    ========================================================= */
