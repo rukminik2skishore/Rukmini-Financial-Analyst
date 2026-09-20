@@ -543,7 +543,7 @@ function showPortfolioProject(project) {
   }
 
 
-  //* =====================================================
+  /* =====================================================
    FP&A FORECASTING & BUDGET ANALYSIS MODEL
    ===================================================== */
 
@@ -769,13 +769,15 @@ else if (project === "forecast-budget") {
 
         </div>
 
-      </div>
+            </div>
 
     </div>
 
   `;
 }
-  /* =====================================================
+
+
+/* =====================================================
    3 STATEMENT MODEL & DCF VALUATION
    ===================================================== */
 
@@ -860,8 +862,7 @@ else if (project === "model") {
 
           <li>
             <strong>Revenue Build:</strong>
-            Driver-based revenue forecast covering
-            2026–2030.
+            Driver-based revenue forecast covering 2026–2030.
           </li>
 
           <li>
@@ -922,8 +923,7 @@ else if (project === "model") {
 
         <p>
           The core of the model is the integration of the
-          Income Statement, Balance Sheet and Cash Flow
-          Statement.
+          Income Statement, Balance Sheet and Cash Flow Statement.
         </p>
 
         <ul class="project-feature-list">
@@ -975,34 +975,22 @@ else if (project === "model") {
 
         <ul class="project-feature-list">
 
-          <li>
-            Forecasts revenue using annual growth assumptions.
-          </li>
+          <li>Forecasts revenue using annual growth assumptions.</li>
 
-          <li>
-            Forecasts COGS as a percentage of revenue.
-          </li>
+          <li>Forecasts COGS as a percentage of revenue.</li>
 
-          <li>
-            Forecasts operating expenses based on revenue.
-          </li>
+          <li>Forecasts operating expenses based on revenue.</li>
 
-          <li>
-            Calculates EBITDA and operating profitability.
-          </li>
+          <li>Calculates EBITDA and operating profitability.</li>
 
-          <li>
-            Forecasts depreciation and capital expenditure.
-          </li>
+          <li>Forecasts depreciation and capital expenditure.</li>
 
           <li>
             Models working capital requirements using
             operating assumptions.
           </li>
 
-          <li>
-            Forecasts net income and cash generation.
-          </li>
+          <li>Forecasts net income and cash generation.</li>
 
         </ul>
 
@@ -1025,30 +1013,21 @@ else if (project === "model") {
 
         <ul class="project-feature-list">
 
-          <li>
-            Accounts Receivable forecasting using DSO.
-          </li>
+          <li>Accounts Receivable forecasting using DSO.</li>
 
           <li>
-            Inventory forecasting based on operating
-            assumptions.
+            Inventory forecasting based on operating assumptions.
           </li>
 
           <li>
             Accounts Payable and working capital modelling.
           </li>
 
-          <li>
-            PP&amp;E and depreciation forecasting.
-          </li>
+          <li>PP&amp;E and depreciation forecasting.</li>
 
-          <li>
-            Capital expenditure forecasting.
-          </li>
+          <li>Capital expenditure forecasting.</li>
 
-          <li>
-            Debt and financing schedule integration.
-          </li>
+          <li>Debt and financing schedule integration.</li>
 
         </ul>
 
@@ -1077,26 +1056,17 @@ else if (project === "model") {
 
         <ul class="project-feature-list">
 
-          <li>
-            Calculates EBIT from the operating forecast.
-          </li>
+          <li>Calculates EBIT from the operating forecast.</li>
 
           <li>
-            Calculates NOPAT after applying the forecast
-            tax rate.
+            Calculates NOPAT after applying the forecast tax rate.
           </li>
 
-          <li>
-            Adds back non-cash depreciation expense.
-          </li>
+          <li>Adds back non-cash depreciation expense.</li>
 
-          <li>
-            Incorporates forecast capital expenditure.
-          </li>
+          <li>Incorporates forecast capital expenditure.</li>
 
-          <li>
-            Incorporates changes in net working capital.
-          </li>
+          <li>Incorporates changes in net working capital.</li>
 
           <li>
             Calculates Free Cash Flow to Firm (FCFF)
@@ -1129,7 +1099,7 @@ else if (project === "model") {
 
 
       <!-- =====================================================
-           DCF FORMULA
+           VALUATION FRAMEWORK
            ===================================================== -->
 
       <div class="project-info-section">
@@ -1166,7 +1136,7 @@ else if (project === "model") {
 
 
       <!-- =====================================================
-           SENSITIVITY
+           SENSITIVITY ANALYSIS
            ===================================================== -->
 
       <div class="project-info-section">
@@ -1190,13 +1160,9 @@ else if (project === "model") {
 
         <ul class="project-feature-list">
 
-          <li>
-            Tests multiple WACC assumptions.
-          </li>
+          <li>Tests multiple WACC assumptions.</li>
 
-          <li>
-            Tests multiple terminal growth rates.
-          </li>
+          <li>Tests multiple terminal growth rates.</li>
 
           <li>
             Calculates implied value per share for each
@@ -1228,37 +1194,21 @@ else if (project === "model") {
 
         <ul class="project-feature-list">
 
-          <li>
-            Historical 2025 Revenue.
-          </li>
+          <li>Historical 2025 Revenue.</li>
 
-          <li>
-            Forecast 2030 Revenue.
-          </li>
+          <li>Forecast 2030 Revenue.</li>
 
-          <li>
-            Forecast 2030 EBITDA Margin.
-          </li>
+          <li>Forecast 2030 EBITDA Margin.</li>
 
-          <li>
-            Enterprise Value.
-          </li>
+          <li>Enterprise Value.</li>
 
-          <li>
-            Implied Value per Share.
-          </li>
+          <li>Implied Value per Share.</li>
 
-          <li>
-            Five-year Revenue trend.
-          </li>
+          <li>Five-year Revenue trend.</li>
 
-          <li>
-            Five-year EBITDA trend.
-          </li>
+          <li>Five-year EBITDA trend.</li>
 
-          <li>
-            Five-year FCFF trend.
-          </li>
+          <li>Five-year FCFF trend.</li>
 
         </ul>
 
@@ -1321,11 +1271,10 @@ else if (project === "model") {
           and has been created for portfolio and learning purposes.
         </p>
 
-
         <div class="dashboard-action-buttons">
 
           <a
-            href="./financial-model/Integrated 3 Statement & DCF Valuation.xlsx"
+            href="./financial-model/Integrated%203%20Statement%20%26%20DCF%20Valuation.xlsx"
             download
             class="portfolio-download-btn">
 
@@ -1342,7 +1291,6 @@ else if (project === "model") {
 
   `;
 }
-
   /* =====================================================
      UNKNOWN PROJECT
      ===================================================== */
