@@ -1951,3 +1951,37 @@ ul {
     }
 
 }
+
+/* =====================================================
+   FINANCIAL MODEL PREVIEW
+   ===================================================== */
+
+.financial-model-preview {
+  width: 100%;
+  margin-top: 25px;
+  margin-bottom: 25px;
+  overflow-x: auto;
+  border-radius: 10px;
+}
+
+.financial-model-image {
+  display: block;
+  width: 100%;
+  min-width: 900px;
+  height: auto;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .financial-model-preview {
+    overflow-x: auto;
+  }
+
+  .financial-model-image {
+    min-width: 800px;
+  }
+
+}
