@@ -184,35 +184,11 @@ function uniqueValues(column) {
 
 function populateFilters() {
 
-    const monthFilter =
-        document.getElementById("monthFilter");
-
-    const businessUnitFilter =
+       const businessUnitFilter =
         document.getElementById("businessUnitFilter");
 
     const clientFilter =
         document.getElementById("clientFilter");
-
-
-    /* MONTH */
-
-    const months = uniqueValues("Month")
-        .sort(
-            (a, b) =>
-                monthOrder.indexOf(a) -
-                monthOrder.indexOf(b)
-        );
-
-    months.forEach(month => {
-
-        const option =
-            document.createElement("option");
-
-        option.value = month;
-        option.textContent = month;
-
-        monthFilter.appendChild(option);
-    });
 
 
     /* BUSINESS UNIT */
@@ -256,9 +232,6 @@ function populateFilters() {
 
 function getFilteredData() {
 
-    const selectedMonth =
-        document.getElementById("monthFilter").value;
-
     const selectedBusinessUnit =
         document.getElementById("businessUnitFilter").value;
 
@@ -267,10 +240,6 @@ function getFilteredData() {
 
 
     return financialData.filter(row => {
-
-        const monthMatch =
-            selectedMonth === "All" ||
-            row["Month"] === selectedMonth;
 
         const businessUnitMatch =
             selectedBusinessUnit === "All" ||
@@ -282,9 +251,8 @@ function getFilteredData() {
 
 
         return (
-            monthMatch &&
-            businessUnitMatch &&
-            clientMatch
+    businessUnitMatch &&
+    clientMatch
         );
     });
 }
@@ -718,35 +686,15 @@ function marginChartOptions() {
 
 function updateCharts(data) {
 
-    const monthly =
-        aggregateByMonth(data);
+   const monthly =
+    aggregateByMonth(data);
 
+const chartData = monthly;
 
-    /*
-       If one month is selected, only display
-       that month on the chart.
-    */
-
-    const selectedMonth =
-        document.getElementById(
-            "monthFilter"
-        ).value;
-
-
-    const chartData =
-        selectedMonth === "All"
-            ? monthly
-            : monthly.filter(
-                item =>
-                    item.month === selectedMonth
-            );
-
-
-    const labels =
-        chartData.map(
-            item => item.month
-        );
-
+const labels =
+    chartData.map(
+        item => item.month
+    );
 
     /* Destroy old charts before rebuilding */
 
@@ -1032,13 +980,6 @@ function updateDashboard() {
    FILTER EVENTS
    ========================================================= */
 
-document
-    .getElementById("monthFilter")
-    .addEventListener(
-        "change",
-        updateDashboard
-    );
-
 
 document
     .getElementById("businessUnitFilter")
@@ -1065,11 +1006,7 @@ document
     .addEventListener(
         "click",
         function() {
-
-            document.getElementById(
-                "monthFilter"
-            ).value = "All";
-
+           
             document.getElementById(
                 "businessUnitFilter"
             ).value = "All";
