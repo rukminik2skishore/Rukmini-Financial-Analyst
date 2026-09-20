@@ -759,7 +759,7 @@ else if (project === "forecast-budget") {
         <div class="dashboard-action-buttons">
 
           <a
-            href="./financial-model/FP&A Financial Model - Fct & Bud Analysis.xlsx"
+            href="./financial-model/Integrated_Financial_Model.xlsx"
             download
             class="portfolio-download-btn">
 
