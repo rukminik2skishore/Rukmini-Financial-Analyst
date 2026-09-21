@@ -2003,3 +2003,256 @@ ul {
 .site-title a:hover {
   color: #11b5e4;       /* optional blue hover */
 }
+
+
+/* =====================================================
+   EXPERIENCE SECTION
+   ===================================================== */
+
+.experience-container {
+  width: min(1100px, 92%);
+  margin: 0 auto;
+}
+
+
+/* Section Heading */
+
+.experience-heading {
+  max-width: 750px;
+  margin-bottom: 35px;
+}
+
+.section-label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: #b68d40;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.experience-heading h2 {
+  margin: 0 0 12px;
+  color: #1f2d3d;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+}
+
+.section-intro {
+  margin: 0;
+  color: #5f6b76;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+
+/* Main Experience Card */
+
+.experience-card {
+  overflow: hidden;
+  padding: 35px;
+  border: 1px solid rgba(182, 141, 64, 0.25);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 12px 35px rgba(31, 45, 61, 0.08);
+}
+
+
+/* Experience Header */
+
+.experience-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 25px;
+  padding-bottom: 22px;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.experience-header h3 {
+  margin: 0 0 8px;
+  color: #1f2d3d;
+  font-size: 1.45rem;
+}
+
+.experience-header h4 {
+  margin: 0;
+  color: #b68d40;
+  font-size: 1.05rem;
+}
+
+.experience-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  color: #66717c;
+  font-size: 0.92rem;
+  text-align: right;
+}
+
+
+/* Role Summary */
+
+.experience-summary {
+  margin: 25px 0 30px;
+  padding: 20px 22px;
+  border-left: 4px solid #b68d40;
+  border-radius: 0 10px 10px 0;
+  background: #faf7f0;
+}
+
+.experience-summary p {
+  margin: 0;
+  color: #4d5964;
+  line-height: 1.75;
+}
+
+
+/* Content Blocks */
+
+.experience-block {
+  margin-top: 32px;
+}
+
+.experience-block h4 {
+  position: relative;
+  margin: 0 0 20px;
+  padding-bottom: 10px;
+  color: #1f2d3d;
+  font-size: 1.15rem;
+}
+
+.experience-block h4::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 45px;
+  height: 3px;
+  border-radius: 10px;
+  background: #b68d40;
+  content: "";
+}
+
+
+/* Achievement Cards */
+
+.achievement-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.achievement-card {
+  padding: 24px 20px;
+  border: 1px solid #ece4d3;
+  border-radius: 14px;
+  background: #fcfaf6;
+  text-align: center;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.achievement-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(31, 45, 61, 0.1);
+}
+
+.achievement-number {
+  display: block;
+  margin-bottom: 8px;
+  color: #b68d40;
+  font-size: 1.8rem;
+  font-weight: 700;
+}
+
+.achievement-card p {
+  margin: 0;
+  color: #596570;
+  font-size: 0.92rem;
+  line-height: 1.55;
+}
+
+
+/* Responsibility List */
+
+.experience-list {
+  display: grid;
+  gap: 13px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.experience-list li {
+  position: relative;
+  padding-left: 28px;
+  color: #4f5b66;
+  line-height: 1.7;
+}
+
+.experience-list li::before {
+  position: absolute;
+  top: 2px;
+  left: 0;
+  color: #b68d40;
+  font-size: 1.1rem;
+  font-weight: 700;
+  content: "✓";
+}
+
+
+/* Skills */
+
+.experience-skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.experience-skills span {
+  padding: 8px 14px;
+  border: 1px solid rgba(182, 141, 64, 0.35);
+  border-radius: 50px;
+  background: #faf7f0;
+  color: #3d4852;
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+
+  .experience-card {
+    padding: 25px 20px;
+  }
+
+  .experience-header {
+    flex-direction: column;
+  }
+
+  .experience-meta {
+    text-align: left;
+  }
+
+  .achievement-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+@media (max-width: 480px) {
+
+  .experience-heading h2 {
+    font-size: 2rem;
+  }
+
+  .experience-header h3 {
+    font-size: 1.2rem;
+  }
+
+  .experience-card {
+    border-radius: 12px;
+  }
+
+}
