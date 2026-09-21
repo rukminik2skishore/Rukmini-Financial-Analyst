@@ -67,63 +67,133 @@
   </header>
 
 
-  <!-- =====================================================
-       HOME
-       ===================================================== -->
-
-  <section id="home" class="section active">
-
-    <div class="home-container">
-
-      <!-- LEFT: INTRODUCTION -->
-
-      <div class="intro-box">
-
-        <p class="hello-text">
-          Hello, I'm
-        </p>
-
-        <h2>
-          Rukmini KS,
-        </h2>
-
-        <h3>
-          a FP&amp;A Analyst
-        </h3>
-
-        <div class="cyan-line"></div>
-
-        <p class="intro-description">
-          Passionate about corporate finance, analytics,
-          automation, and turning complex data into
-          actionable business insights.
-        </p>
-
-        <a
-          href="mailto:rukminik2skishsun20@gmail.com"
-          class="contact-btn">
-
-          <span class="mail-icon">✉</span>
-          Hire Me
-
-        </a>
-
+ <!-- Replace the existing <section id="home">...</section> with this entire file.
+Keep the existing script.js include and all other sections.
+Photo and PDF use your existing filenames. -->
+<style>
+#home.rk-home { width:92%; max-width:1500px; padding:0; border:1px solid rgba(226,201,149,.16); border-radius:28px; overflow:hidden; background:radial-gradient(circle at 95% 0,rgba(226,201,149,.16),transparent 42%),linear-gradient(135deg,#17283d,#263d57); box-shadow:none; color:#fff; }
+#home .rk-hero { position:relative; overflow:hidden; padding:clamp(26px,5vw,68px); border-radius:28px; background:transparent; }
+#home .rk-top { display:grid; grid-template-columns:minmax(0,1.5fr) minmax(240px,.8fr); gap:clamp(28px,5vw,70px); align-items:center; }
+#home .rk-eyebrow { margin:0 0 18px; color:#e2c995; font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; }
+#home .rk-name { margin:0; padding:0; color:#fff; font-size:clamp(40px,5vw,74px); line-height:1.08; letter-spacing:-1.5px; }
+#home .rk-name::after { content:none; }
+#home .rk-role { margin:18px 0; color:#e2c995; font-size:clamp(20px,2.4vw,30px); font-weight:500; }
+#home .rk-tagline { max-width:600px; margin:0; color:#e4ebf3; font-size:clamp(20px,2.6vw,34px); line-height:1.45; }
+#home .rk-photo { margin:0; padding:24px; border:1px solid rgba(255,255,255,.20); border-radius:24px; background:rgba(255,255,255,.13); box-shadow:0 18px 40px rgba(0,0,0,.10); }
+#home .rk-photo img { display:block; width:100%; height:clamp(280px,29vw,400px); object-fit:cover; object-position:center top; border-radius:16px; }
+#home .rk-photo figcaption { padding:13px 6px 4px; color:#e2c995; font-size:12px; text-align:center; letter-spacing:.4px; }
+#home .rk-actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:28px; }
+#home .rk-pill { display:inline-flex; align-items:center; justify-content:center; gap:10px; padding:12px 20px; border:1px solid rgba(226,201,149,.45); border-radius:999px; background:rgba(255,255,255,.06); color:#e2c995; text-decoration:none; font:700 15px/1.4 Arial, sans-serif; }
+#home a.rk-pill { transition:background .2s, transform .2s; }
+#home a.rk-pill:hover { background:rgba(226,201,149,.16); transform:translateY(-2px); }
+#home a:focus-visible { outline:3px solid #e2c995; outline-offset:5px; }
+#home .rk-icon { width:19px; height:19px; flex-shrink:0; color:#e2c995; }
+#home .rk-about { margin-top:34px; padding-top:28px; border-top:1px solid rgba(255,255,255,.14); }
+#home .rk-about p { max-width:960px; margin:0; color:#d4dfea; font-size:16px; line-height:1.85; }
+#home .rk-skills { display:flex; flex-wrap:wrap; gap:10px; margin-top:22px; }
+#home .rk-skills .rk-pill { font-size:13px; padding:10px 16px; }
+#home .rk-work { margin:0 clamp(26px,5vw,68px); padding:34px 0 clamp(26px,5vw,68px); border-top:1px solid rgba(226,201,149,.20); }
+#home .rk-work h2 { margin:0 0 10px; color:#fff; font-size:clamp(28px,3.5vw,42px); line-height:1.2; }
+#home .rk-work h2 span { color:#e2c995; }
+#home .rk-work-intro { margin:0 0 25px; color:#c4d3df; font-size:16px; }
+#home .rk-projects { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:20px; }
+#home .rk-project { display:flex; flex-direction:column; gap:16px; padding:30px; border:1px solid rgba(226,201,149,.25); border-radius:18px; background:rgba(255,255,255,.055); color:#fff; text-decoration:none; transition:transform .2s,box-shadow .2s; }
+#home .rk-project:hover { transform:translateY(-4px); box-shadow:0 14px 30px rgba(0,0,0,.15); background:rgba(255,255,255,.09); border-color:rgba(226,201,149,.55); }
+#home .rk-project-top { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+#home .rk-project-icon { display:grid; place-items:center; width:46px; height:46px; border-radius:12px; background:rgba(226,201,149,.12); color:#e2c995; font-size:20px; }
+#home .rk-project-type { color:#c5d2df; font-size:11px; letter-spacing:1px; text-transform:uppercase; }
+#home .rk-project h3 { margin:0; color:#fff; font-size:22px; line-height:1.35; }
+#home .rk-project p { margin:0; color:#cbd7e3; line-height:1.7; font-size:14px; }
+#home .rk-project-link { margin-top:auto; padding-top:8px; color:#e2c995; font-size:14px; font-weight:700; }
+#home .rk-status { color:#e2c995; }
+@media(max-width:760px) { #home .rk-top { grid-template-columns:1fr; } #home .rk-photo { width:100%; max-width:360px; } #home .rk-photo img { height:350px; } #home .rk-projects { grid-template-columns:1fr; } #home .rk-project { padding:24px; } }
+@media(prefers-reduced-motion:reduce) { #home a { transition:none!important; transform:none!important; } }
+</style>
+<section id="home" class="section active rk-home" aria-labelledby="rk-name">
+  <div class="rk-hero">
+    <div class="rk-top">
+      <div>
+        <p class="rk-eyebrow">Finance · Analytics · Business Insight</p>
+        <h2 id="rk-name" class="rk-name">Hello, I’m<br>Rukmini KS.</h2>
+        <p class="rk-role">FP&amp;A Analyst</p>
+        <p class="rk-tagline">Turning financial data into meaningful management insights.</p>
       </div>
-
-
-      <!-- RIGHT: PHOTO -->
-
-      <div class="photo-box">
-
-        <img
-          src="Profile Photo(1).png"
-          alt="Rukmini KS">
-
-      </div>
-
+      <figure class="rk-photo">
+        <img src="Profile Photo(1).png" alt="Rukmini KS" width="400" height="440" fetchpriority="high">
+        <figcaption>Business Finance · UST Global</figcaption>
+      </figure>
     </div>
-
-  </section>
+    <div class="rk-actions">
+      <a class="rk-pill" href="mailto:rukminik2skishsun20@gmail.com?subject=Career%20opportunity">
+        <svg class="rk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></svg>Hire Me
+      </a>
+      <a class="rk-pill" href="Rukmini_KS_Resume_v3.pdf" data-rk-resume>
+        <svg class="rk-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg>View Resume
+      </a>
+    </div>
+    <div class="rk-about">
+      <p>I’m an FP&amp;A professional with 2+ years of experience in business finance at UST Global. I support budgeting, forecasting, P&amp;L analysis and management reporting, helping teams understand performance and make informed decisions. I also use AI-assisted automation to simplify recurring reporting and make more time for analysis.</p>
+      <div class="rk-skills" aria-label="Major skills">
+        <span class="rk-pill">FP&amp;A</span><span class="rk-pill">Budgeting &amp; Forecasting</span><span class="rk-pill">Variance Analysis</span><span class="rk-pill">Financial Modelling</span><span class="rk-pill">Advanced Excel</span><span class="rk-pill">SQL</span><span class="rk-pill">Management Reporting</span><span class="rk-pill">Reporting Automation</span>
+      </div>
+    </div>
+  </div>
+  <div class="rk-work" aria-labelledby="rk-work-title">
+    <p class="rk-eyebrow">Selected Portfolio Projects</p>
+    <h2 id="rk-work-title">Explore my work.<br><span>See the analysis in action.</span></h2>
+    <p class="rk-work-intro">From financial planning to interactive dashboards—explore how I turn numbers into insights.</p>
+    <div class="rk-projects">
+      <a class="rk-project" href="#projects" data-rk-project="forecast-budget">
+        <div class="rk-project-top"><span class="rk-project-icon" aria-hidden="true">↗</span><span class="rk-project-type">Excel · Planning</span></div>
+        <h3>FP&amp;A Forecasting &amp; Budget Analysis</h3><p>Explore revenue forecasts, cost planning, scenario analysis and forecast-versus-budget performance.</p><span class="rk-project-link">View Project →</span>
+      </a>
+      <a class="rk-project" href="#projects" data-rk-project="model">
+        <div class="rk-project-top"><span class="rk-project-icon" aria-hidden="true">ƒ</span><span class="rk-project-type">Excel · Valuation</span></div>
+        <h3>Integrated 3-Statement &amp; DCF Valuation</h3><p>Connect the financial statements and explore cash flow valuation, assumptions and sensitivity analysis.</p><span class="rk-project-link">View Project →</span>
+      </a>
+      <a class="rk-project" href="#projects" data-rk-project="sql">
+        <div class="rk-project-top"><span class="rk-project-icon" aria-hidden="true">⌘</span><span class="rk-project-type">SQL · Financial Analysis</span></div>
+        <h3>Financial Data Analysis Using SQL</h3><p>Investigate budget variances, spending trends, cost centre performance and forecast risk.</p><span class="rk-project-link">View Project →</span>
+      </a>
+      <a class="rk-project" href="#projects" data-rk-project="dashboard">
+        <div class="rk-project-top"><span class="rk-project-icon" aria-hidden="true">▥</span><span class="rk-project-type">HTML · Interactive Dashboard</span></div>
+        <h3>Interactive FP&amp;A Performance Dashboard</h3><p>Explore revenue, cost and gross margin against budget and forecast with interactive filters.</p><span class="rk-project-link">View Project →</span>
+      </a>
+    </div>
+    <p class="rk-status" role="status" hidden></p>
+  </div>
+</section>
+<script>
+(function () {
+  const home = document.getElementById('home');
+  function openSection(id) {
+    if (!document.getElementById(id) || typeof window.showSection !== 'function') return false;
+    const link = Array.from(document.querySelectorAll('header nav a')).find(a =>
+      (a.getAttribute('onclick') || '').match(new RegExp("showSection\\(\\s*['\"]" + id + "['\"]")) || a.getAttribute('href') === '#' + id);
+    window.showSection(id, link);
+    return true;
+  }
+  home.querySelector('[data-rk-resume]').addEventListener('click', function (event) {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    if (openSection('resume')) event.preventDefault();
+  });
+  home.querySelectorAll('[data-rk-project]').forEach(card => {
+    card.addEventListener('click', function (event) {
+      event.preventDefault();
+      if (!document.getElementById('projects') || typeof window.showPortfolioProject !== 'function' || typeof window.showSection !== 'function') {
+        const status = home.querySelector('.rk-status');
+        status.hidden = false;
+        status.textContent = 'Project details are unavailable. Please try again later.';
+        return;
+      }
+      openSection('projects');
+      window.showPortfolioProject(card.dataset.rkProject);
+      const heading = document.querySelector('#portfolioProjectContent h2');
+      if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus({preventScroll:true}); }
+    });
+  });
+})();
+</script>
 
 
   <!-- =====================================================
