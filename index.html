@@ -200,24 +200,104 @@ Photo and PDF use your existing filenames. -->
        ABOUT
        ===================================================== -->
 
-  <section id="about" class="section">
-
-    <h2>About Me</h2>
-
-    <p>
-      I am an FP&amp;A Analyst with experience in financial planning,
-      budgeting, forecasting, variance analysis, management reporting,
-      financial modelling and business performance analysis.
-    </p>
-
-    <p>
-      I am passionate about using financial analytics, automation and
-      data visualisation to transform complex financial information into
-      meaningful insights that support business decision-making.
-    </p>
-
-  </section>
-
+ <!-- Replace your existing <section id="about">...</section> with this entire file.
+     Keep your existing style.css, script.js and Education section. -->
+<style>
+#about.rka-about{box-sizing:border-box;width:92%;max-width:1500px;padding:clamp(24px,5vw,64px);border:1px solid rgba(226,201,149,.2);border-radius:28px;background:radial-gradient(circle at 100% 0,rgba(226,201,149,.12),transparent 42%),linear-gradient(135deg,#17283d,#263d57);color:#fff;box-shadow:none}
+#about.rka-about *{box-sizing:border-box}
+#about .rka-eyebrow{margin:0 0 14px;color:#e2c995;font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase}
+#about .rka-title{margin:0 0 20px;padding:0;font-size:clamp(30px,4vw,48px);line-height:1.18;color:#fff;letter-spacing:-.7px}
+#about .rka-title::after{content:none}
+#about .rka-title span{color:#e2c995}
+#about .rka-intro{max-width:900px}
+#about p{color:#d4dfea;font-size:15px;line-height:1.85}
+#about .rka-lead{font-size:18px}
+#about .rka-meta{display:flex;flex-wrap:wrap;gap:10px;margin:24px 0 30px}
+#about .rka-tag{padding:8px 14px;border:1px solid rgba(226,201,149,.25);border-radius:999px;color:#e2c995;background:rgba(255,255,255,.04);font-size:13px}
+#about .rka-stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:0 0 36px}
+#about .rka-stat,#about .rka-card{padding:24px;border:1px solid rgba(226,201,149,.22);border-radius:18px;background:rgba(255,255,255,.055)}
+#about .rka-stat strong{display:block;font-size:32px;color:#e2c995;line-height:1.2;margin-bottom:10px}
+#about .rka-stat span{font-size:14px;line-height:1.6;color:#d4dfea}
+#about .rka-block{padding-top:30px;margin-top:30px;border-top:1px solid rgba(226,201,149,.18)}
+#about h3{margin:0 0 18px;color:#fff;font-size:25px}
+#about h4{margin:0 0 10px;color:#e2c995;font-size:18px}
+#about .rka-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+#about .rka-card p{margin:0;font-size:14px}
+#about .rka-number{display:block;margin-bottom:18px;font-size:12px;letter-spacing:2px;color:#e2c995}
+#about .rka-list{padding-left:18px;margin:0;color:#d4dfea;font-size:14px;line-height:1.85}
+#about .rka-list li{margin:7px 0}
+#about .rka-learning{margin:20px 0 0;padding:18px 22px;border-left:3px solid #e2c995;background:rgba(226,201,149,.06);border-radius:0 12px 12px 0}
+#about .rka-learning strong{color:#e2c995}
+#about .rka-bottom{display:grid;grid-template-columns:1.3fr 1fr;gap:28px;align-items:center}
+#about .rka-button{display:inline-flex;align-items:center;justify-content:center;gap:12px;margin-top:12px;padding:13px 22px;border:1px solid rgba(226,201,149,.5);border-radius:999px;background:rgba(255,255,255,.05);color:#e2c995;font:700 14px/1.5 Arial,sans-serif;text-decoration:none;transition:background .2s}
+#about .rka-button:hover{background:rgba(226,201,149,.15)}
+#about .rka-button:focus-visible{outline:3px solid #e2c995;outline-offset:5px}
+@media(max-width:800px){#about .rka-grid,#about .rka-bottom{grid-template-columns:1fr}}
+@media(max-width:540px){#about .rka-stats{grid-template-columns:1fr}#about .rka-stat{padding:20px}#about .rka-title{font-size:32px}}
+@media(prefers-reduced-motion:reduce){#about .rka-button{transition:none}}
+</style>
+<section id="about" class="section rka-about" aria-labelledby="rka-heading">
+  <div class="rka-intro">
+    <p class="rka-eyebrow">About Me · Rukmini KS</p>
+    <h2 id="rka-heading" class="rka-title">Turning financial data into<br><span>meaningful management insights.</span></h2>
+    <p class="rka-lead">I’m an FP&amp;A professional with 2+ years of experience in business finance at UST Global, supporting financial planning, performance analysis and management reporting.</p>
+    <p>My work spans budgeting, forecasting, P&amp;L analysis and cost centre reporting. I enjoy understanding what drives the numbers, explaining variances clearly and helping stakeholders make informed decisions. I also use AI-assisted automation to simplify recurring reporting and create more time for analysis.</p>
+  </div>
+  <div class="rka-meta" aria-label="Professional background">
+    <span class="rka-tag">Business Finance · UST Global</span>
+    <span class="rka-tag">M.Com · Finance</span>
+    <span class="rka-tag">Thiruvananthapuram, Kerala</span>
+  </div>
+  <div class="rka-stats" aria-label="Selected work achievements">
+    <div class="rka-stat"><strong>10+</strong><span>Recurring financial reports delivered monthly</span></div>
+    <div class="rka-stat"><strong>10</strong><span>Cost centres covered in headcount and cost tracking</span></div>
+    <div class="rka-stat"><strong>30–50%</strong><span>Reduction in manual report preparation time through AI-assisted automation</span></div>
+  </div>
+  <div class="rka-block">
+    <h3>My approach</h3>
+    <div class="rka-grid">
+      <article class="rka-card"><span class="rka-number">01 / UNDERSTAND</span><h4>Start with the business</h4><p>Understand the reporting need, validate the inputs and connect financial data to the business context.</p></article>
+      <article class="rka-card"><span class="rka-number">02 / ANALYSE</span><h4>Explain the drivers</h4><p>Compare actuals with budgets and forecasts, investigate trends and identify the factors behind performance changes.</p></article>
+      <article class="rka-card"><span class="rka-number">03 / COMMUNICATE</span><h4>Make insights useful</h4><p>Present clear commentary, highlight areas requiring attention and improve recurring processes to support timely decisions.</p></article>
+    </div>
+  </div>
+  <div class="rka-block">
+    <h3>Skills &amp; capabilities</h3>
+    <div class="rka-grid">
+      <article class="rka-card"><h4>Financial planning &amp; analysis</h4><ul class="rka-list"><li>Budgeting, forecasting &amp; AOP support</li><li>P&amp;L and variance analysis</li><li>Cost centre &amp; headcount reporting</li><li>Revenue tracking &amp; budget monitoring</li></ul></article>
+      <article class="rka-card"><h4>Tools &amp; analytics</h4><ul class="rka-list"><li>Advanced Excel: Pivot Tables, XLOOKUP &amp; INDEX-MATCH</li><li>SQL for financial data analysis</li><li>AI-assisted reporting automation</li><li>SAP Concur &amp; MS Office</li></ul></article>
+      <article class="rka-card"><h4>Business collaboration</h4><ul class="rka-list"><li>Management reporting &amp; commentary</li><li>Cross-functional coordination</li><li>Consolidation of planning inputs</li><li>SO &amp; PR review and approvals</li></ul></article>
+    </div>
+    <p class="rka-learning"><strong>Currently developing:</strong> Power BI, DAX and Power Query, alongside portfolio projects in financial modelling, DCF valuation and interactive dashboards.</p>
+  </div>
+  <div class="rka-block rka-bottom">
+    <div>
+      <h3>A strong foundation in finance</h3>
+      <p>I hold a Master of Commerce in Finance from Government College for Women, Thiruvananthapuram, affiliated with Kerala University. My academic journey includes a university rank and the Aspire Research Award (2023).</p>
+      <a class="rka-button" href="#education" data-rka-education>View Education &amp; Awards <span aria-hidden="true">→</span></a>
+    </div>
+    <article class="rka-card"><h4>What motivates me</h4><p>I’m interested in the connection between finance, analytics and better business decisions. Through my work and portfolio projects, I continue to build the tools and analytical skills to make financial information clearer, more accessible and useful.</p></article>
+  </div>
+</section>
+<script>
+(function () {
+  const link = document.querySelector('#about [data-rka-education]');
+  if (!link) return;
+  link.addEventListener('click', function (event) {
+    if (event.ctrlKey || event.metaKey || event.shiftKey || event.altKey) return;
+    const target = document.getElementById('education');
+    if (!target) return;
+    if (typeof window.showSection === 'function') {
+      const navLink = Array.from(document.querySelectorAll('header nav a')).find(a =>
+        a.getAttribute('href') === '#education' || /showSection\(\s*['"]education['"]/.test(a.getAttribute('onclick') || ''));
+      event.preventDefault();
+      window.showSection('education', navLink || undefined);
+      const heading = target.querySelector('h2, h3');
+      if (heading) { heading.setAttribute('tabindex', '-1'); heading.focus(); }
+    }
+  });
+})();
+</script>
 
   <!-- =====================================================
      EXPERIENCE SECTION
