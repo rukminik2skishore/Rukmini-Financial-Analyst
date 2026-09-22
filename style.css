@@ -2749,7 +2749,232 @@ ul {
   }
 
 }
+/* =====================================================
+   PROJECTS — DARK BACKGROUND & GOLD ACCENTS
+   ===================================================== */
 
+#projects {
+  --projects-gold: #d6b56d;
+  --projects-text: #f3f4f6;
+  --projects-muted: #bac3d1;
+  --projects-border: rgba(214, 181, 109, 0.25);
+}
+
+#projects .projects-heading {
+  margin-bottom: 30px;
+}
+
+#projects .projects-eyebrow {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--projects-gold);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+#projects .portfolio-project-title {
+  margin: 0 0 16px;
+  color: var(--projects-gold);
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.2;
+}
+
+#projects .portfolio-project-intro {
+  max-width: 850px;
+  margin: 0;
+  color: var(--projects-muted);
+  font-size: 15px;
+  line-height: 1.85;
+}
+
+/* Two equally sized columns on larger screens */
+
+#projects .portfolio-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+#projects .portfolio-project-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding: 28px;
+  background: linear-gradient(145deg, #172437, #101b2b);
+  border: 1px solid var(--projects-border);
+  border-radius: 18px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.14);
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease;
+}
+
+#projects .portfolio-project-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--projects-gold);
+}
+
+#projects .project-card-top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+#projects .project-number {
+  display: grid;
+  place-items: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  color: var(--projects-gold);
+  background: rgba(214, 181, 109, 0.09);
+  border: 1px solid var(--projects-border);
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+#projects .project-category {
+  color: var(--projects-gold);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  line-height: 1.6;
+}
+
+#projects .portfolio-project-card h3 {
+  margin: 0 0 14px;
+  color: var(--projects-text);
+  font-size: 21px;
+  line-height: 1.45;
+}
+
+#projects .portfolio-project-card > p {
+  margin: 0 0 18px;
+  color: var(--projects-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+#projects .project-highlights {
+  margin: 0 0 22px;
+  padding-left: 19px;
+  color: var(--projects-muted);
+  font-size: 14px;
+  line-height: 1.75;
+}
+
+#projects .project-highlights li + li {
+  margin-top: 7px;
+}
+
+#projects .project-highlights li::marker {
+  color: var(--projects-gold);
+}
+
+#projects .project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+  padding-bottom: 24px;
+}
+
+#projects .project-tags span {
+  padding: 6px 10px;
+  color: var(--projects-gold);
+  background: rgba(214, 181, 109, 0.07);
+  border: 1px solid rgba(214, 181, 109, 0.18);
+  border-radius: 7px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+#projects .portfolio-view-btn,
+#projects .portfolio-back-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  align-self: flex-start;
+  min-height: 44px;
+  padding: 11px 18px;
+  color: var(--projects-gold);
+  background: transparent;
+  border: 1px solid var(--projects-gold);
+  border-radius: 9px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+#projects .portfolio-view-btn:hover,
+#projects .portfolio-back-btn:hover {
+  background: rgba(214, 181, 109, 0.12);
+}
+
+#projects .portfolio-view-btn:focus-visible,
+#projects .portfolio-back-btn:focus-visible {
+  outline: 2px solid var(--projects-gold);
+  outline-offset: 4px;
+}
+
+#projects .portfolio-back-btn {
+  margin-bottom: 24px;
+}
+
+/* Subtle sample-data note */
+
+#projects .portfolio-disclaimer {
+  margin-top: 26px;
+  padding: 18px 22px;
+  background: rgba(214, 181, 109, 0.05);
+  border: 1px solid var(--projects-border);
+  border-left: 3px solid var(--projects-gold);
+  border-radius: 10px;
+}
+
+#projects .portfolio-disclaimer strong {
+  color: var(--projects-gold);
+  font-size: 13px;
+}
+
+#projects .portfolio-disclaimer p {
+  margin: 7px 0 0;
+  color: var(--projects-muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+@media (max-width: 720px) {
+  #projects .portfolio-project-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  #projects .portfolio-project-card {
+    padding: 22px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #projects .portfolio-project-card,
+  #projects .portfolio-view-btn,
+  #projects .portfolio-back-btn {
+    transition: none;
+  }
+
+  #projects .portfolio-project-card:hover {
+    transform: none;
+  }
+}
+
+
+/*<-Education->*/
 
 <!-- Replace your existing <section id="education"> with this section.
      Keep the style block, or move its contents to the end of style.css.
