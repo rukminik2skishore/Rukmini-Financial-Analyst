@@ -1222,33 +1222,56 @@ Photo and PDF use your existing filenames. -->
        RESUME
        ===================================================== -->
 
-  <section id="resume" class="section">
+ <!-- Replace your existing resume section with this entire snippet.
+     Change BOTH PDF href values to the src path of your current PDF viewer.
+     Keep your existing script.js and section navigation. -->
+<style>
+#resume.rk-resume {
+  box-sizing: border-box; width: 92%; max-width: 1500px;
+  margin: 45px auto; padding: clamp(24px, 5vw, 64px);
+  border: 1px solid rgba(226,201,149,.22); border-radius: 28px;
+  background: radial-gradient(circle at 95% 0, rgba(226,201,149,.12), transparent 42%), linear-gradient(135deg,#17283d,#263d57);
+  color: #fff; font-family: Arial, Helvetica, sans-serif;
+}
+#resume .rr-eyebrow { margin: 0 0 14px; color: #e2c995; font-size: 12px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; }
+#resume h2 { margin: 0 0 20px; color: #fff; font-size: clamp(32px,4vw,52px); line-height: 1.15; }
+#resume h2::after { content: none; }
+#resume h2 span { color: #e2c995; }
+#resume .rr-intro { max-width: 760px; margin: 0; color: #d4dfea; font-size: 17px; line-height: 1.8; }
+#resume .rr-card { display: flex; align-items: center; gap: 24px; margin-top: 32px; padding: clamp(22px,3vw,36px); border: 1px solid rgba(226,201,149,.25); border-radius: 20px; background: rgba(255,255,255,.055); }
+#resume .rr-icon { display: grid; place-items: center; flex: 0 0 68px; height: 68px; border-radius: 18px; color: #e2c995; background: rgba(226,201,149,.12); }
+#resume .rr-icon svg { width: 32px; height: 32px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+#resume .rr-info { flex: 1; min-width: 0; }
+#resume .rr-info h3 { margin: 0 0 10px; color: #fff; font-size: 24px; }
+#resume .rr-info p { margin: 0; color: #d4dfea; line-height: 1.7; }
+#resume .rr-info .rr-meta { margin-top: 10px; color: #e2c995; font-size: 13px; }
+#resume .rr-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+#resume .rr-btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 14px 22px; border: 1px solid rgba(226,201,149,.5); border-radius: 30px; background: rgba(255,255,255,.06); color: #e2c995; font-size: 14px; font-weight: 700; text-decoration: none; line-height: 1.4; }
+#resume .rr-btn:hover { background: rgba(226,201,149,.15); }
+#resume .rr-btn:focus-visible { outline: 3px solid #e2c995; outline-offset: 5px; }
+#resume .rr-location { margin: 24px 0 0; color: #bccbda; font-size: 14px; line-height: 1.8; }
+@media (max-width: 1050px) { #resume .rr-card { flex-wrap: wrap; } #resume .rr-actions { flex-basis: 100%; } }
+@media (max-width: 600px) { #resume .rr-card { align-items: flex-start; flex-direction: column; } #resume .rr-actions { width: 100%; flex-direction: column; } }
+</style>
 
-    <h2>
-      Resume
-    </h2>
-
-
-    <iframe
-      src="Rukmini_KS_Resume_v3.pdf"
-      title="Rukmini KS Resume">
-    </iframe>
-
-
-    <p>
-
-      <a
-        href="Rukmini_KS_Resume_v3.pdf"
-        target="_blank"
-        rel="noopener noreferrer">
-
-        Open Resume in New Tab →
-
-      </a>
-
-    </p>
-
-  </section>
+<section id="resume" class="section rk-resume" aria-labelledby="rr-title">
+  <p class="rr-eyebrow">Experience · Skills · Qualifications</p>
+  <h2 id="rr-title">My <span>Resume</span></h2>
+  <p class="rr-intro">Explore my experience in FP&amp;A, business finance and financial reporting, along with the skills and qualifications I bring to my work.</p>
+  <div class="rr-card">
+    <div class="rr-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h6"/></svg></div>
+    <div class="rr-info">
+      <h3>Rukmini KS</h3>
+      <p>FP&amp;A Analyst | Business Finance</p>
+      <p class="rr-meta">Professional Resume · PDF</p>
+    </div>
+    <div class="rr-actions">
+      <a class="rr-btn" href="resume/Rukmini_KS_Resume_v3.pdf" target="_blank" rel="noopener noreferrer" aria-label="View resume PDF in a new tab">View Resume <span aria-hidden="true">↗</span></a>
+      <a class="rr-btn" href="resume/Rukmini_KS_Resume_v3.pdf" download="Rukmini_KS_Resume.pdf">Download Resume <span aria-hidden="true">↓</span></a>
+    </div>
+  </div>
+  <p class="rr-location">Based in Thiruvananthapuram, India · Open to relocation to Bengaluru</p>
+</section>
 
 
   <!-- =====================================================
