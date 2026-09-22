@@ -728,210 +728,215 @@ Photo and PDF use your existing filenames. -->
 
 </section>
 
-  <!-- =====================================================
-       PROJECTS
-       ===================================================== -->
+ <!-- =====================================================
+     PROJECTS
+     ===================================================== -->
 
-  <section id="projects" class="section">
+<section id="projects" class="section">
 
+  <div id="projectsMain">
 
-    <!-- =====================================================
-         MAIN PROJECT SCREEN
-         ===================================================== -->
+    <div class="projects-heading">
+      <span class="projects-eyebrow">PRACTICAL WORK</span>
 
-    <div id="projectsMain">
-
-      <h2 class="portfolio-project-title">
-        Projects
-      </h2>
-
+      <h2 class="portfolio-project-title">Projects</h2>
 
       <p class="portfolio-project-intro">
-
-        This portfolio showcases four practical projects demonstrating
-        my skills in FP&amp;A / Financial Analytics, Financial Modelling,
-        SQL, and Power BI / Dashboarding.
-
-        The projects demonstrate financial analysis, budgeting,
-        forecasting, variance analysis, data visualisation and
-        management reporting.
-
+        Four practical projects showcasing my skills in financial
+        planning and analysis, financial modelling, SQL and interactive
+        dashboard development—turning financial data into clear insights
+        to support management decisions.
       </p>
+    </div>
 
+    <div class="portfolio-project-grid">
 
-      <!-- DATA DISCLAIMER -->
+      <!-- PROJECT 1: FORECASTING, BUDGETING & ANALYSIS -->
 
-      <div class="portfolio-disclaimer">
+      <article class="portfolio-project-card">
 
-        The data used in these projects is not real-time or confidential
-        business data. All names, clients, datasets, and financial figures
-        presented are entirely fictional and randomly generated for
-        illustrative purposes only. No actual employer or client
-        information has been used.
-
-      </div>
-
-
-      <!-- =====================================================
-           PROJECT CARDS
-           ===================================================== -->
-
-      <div class="portfolio-project-grid">
-
-
-        <!-- ================= FP&A ================= -->
-
-        <div class="portfolio-project-card">
-
-          <h3>
-            FP&amp;A / Financial Analytics
-          </h3>
-
-          <p>
-
-            FP&amp;A analysis covering budgeting, forecasting,
-            variance analysis, cost centre performance and financial
-            insights designed to support management decision-making.
-
-          </p>
-
-          <button
-            class="portfolio-view-btn"
-            onclick="showPortfolioProject('fpa')">
-
-            View Project →
-
-          </button>
-
-        </div>
-<!-- ================= FP&A FORECASTING & BUDGET MODEL ================= -->
-
-<div class="portfolio-project-card">
-
-  <h3>
-    FP&amp;A Forecasting and Budget Analysis Model
-  </h3>
-
-  <p>
-    Driver-based Excel financial model covering revenue forecasting,
-    headcount planning, operating costs, independent budgeting,
-    forecast-versus-budget variance analysis and Base, Upside and
-    Downside scenario planning.
-  </p>
-
-  <button
-    class="portfolio-view-btn"
-    onclick="showPortfolioProject('forecast-budget')">
-
-    View Project →
-
-  </button>
-
-</div>
-
-        <!-- ================= FINANCIAL MODELLING ================= -->
-
-        <div class="portfolio-project-card">
-
-          <h3>
-            Financial Modelling
-          </h3>
-
-          <p>
-
-            Excel-based financial modelling demonstrating forecasting,
-            scenario analysis, financial planning and structured
-            modelling techniques for business decision support.
-
-          </p>
-
-          <button
-            class="portfolio-view-btn"
-            onclick="showPortfolioProject('model')">
-
-            View Project →
-
-          </button>
-
+        <div class="project-card-top">
+          <span class="project-number">01</span>
+          <span class="project-category">FINANCIAL PLANNING &amp; ANALYSIS</span>
         </div>
 
+        <h3>FP&amp;A Forecasting and Budget Analysis Model</h3>
 
-        <!-- ================= SQL ================= -->
+        <p>
+          A driver-based Excel model combining revenue forecasting,
+          headcount planning and operating cost budgets with financial
+          analysis to explain performance and support planning decisions.
+        </p>
 
-        <div class="portfolio-project-card">
+        <ul class="project-highlights">
+          <li>Forecast-versus-budget variance analysis</li>
+          <li>Revenue, headcount and operating cost driver analysis</li>
+          <li>Base, Upside and Downside scenario planning</li>
+        </ul>
 
-          <h3>
-            SQL
-          </h3>
-
-          <p>
-
-            Financial data analysis using SQL to evaluate budget vs actual
-            performance, variance drivers, cost centre trends, forecast
-            risk and management-level KPIs.
-
-          </p>
-
-          <button
-            class="portfolio-view-btn"
-            onclick="showPortfolioProject('sql')">
-
-            View Project →
-
-          </button>
-
+        <div class="project-tags" aria-label="Project skills">
+          <span>Excel</span>
+          <span>Budgeting &amp; Forecasting</span>
+          <span>Financial Analysis</span>
         </div>
 
+        <button
+          type="button"
+          class="portfolio-view-btn"
+          onclick="showPortfolioProject('forecast-budget')"
+          aria-label="View FP&A Forecasting and Budget Analysis Model">
+          View Project <span aria-hidden="true">→</span>
+        </button>
 
-        <!-- ================= POWER BI ================= -->
+      </article>
 
-       <div class="portfolio-project-card">
+      <!-- PROJECT 2: INTEGRATED STATEMENTS & DCF -->
 
-  <h3>Interactive FP&amp;A Dashboard</h3>
+      <article class="portfolio-project-card">
 
-  <p>
-    Interactive financial dashboard analysing Revenue,
-    Cost and Gross Margin performance across Budget,
-    Actual and Forecast scenarios with dynamic
-    Business Unit and Client filters.
-  </p>
+        <div class="project-card-top">
+          <span class="project-number">02</span>
+          <span class="project-category">FINANCIAL MODELLING</span>
+        </div>
 
-  <button
-    class="portfolio-view-btn"
-    onclick="showPortfolioProject('dashboard')">
-    View Project →
-  </button>
+        <h3>Integrated 3-Statement Model &amp; DCF Valuation</h3>
 
-</div>
-      </div>
+        <p>
+          An Excel financial model linking the income statement,
+          balance sheet and cash flow statement, with discounted cash
+          flow valuation to assess business value.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Integrated financial statement projections</li>
+          <li>Free cash flow and terminal value calculations</li>
+          <li>Valuation sensitivity to discount and growth rates</li>
+        </ul>
+
+        <div class="project-tags" aria-label="Project skills">
+          <span>Excel</span>
+          <span>3-Statement Model</span>
+          <span>DCF Valuation</span>
+        </div>
+
+        <button
+          type="button"
+          class="portfolio-view-btn"
+          onclick="showPortfolioProject('model')"
+          aria-label="View Integrated 3-Statement Model and DCF Valuation">
+          View Project <span aria-hidden="true">→</span>
+        </button>
+
+      </article>
+
+      <!-- PROJECT 3: SQL -->
+
+      <article class="portfolio-project-card">
+
+        <div class="project-card-top">
+          <span class="project-number">03</span>
+          <span class="project-category">FINANCIAL DATA ANALYSIS</span>
+        </div>
+
+        <h3>SQL Financial Performance Analysis</h3>
+
+        <p>
+          SQL-based analysis of financial data to compare budget,
+          actual and forecast performance, investigate spending trends
+          and identify areas requiring management attention.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Cost centre performance and variance drivers</li>
+          <li>Monthly and quarterly spending trends</li>
+          <li>Forecast risk and financial KPI analysis</li>
+        </ul>
+
+        <div class="project-tags" aria-label="Project skills">
+          <span>MySQL</span>
+          <span>Variance Analysis</span>
+          <span>Financial KPIs</span>
+        </div>
+
+        <button
+          type="button"
+          class="portfolio-view-btn"
+          onclick="showPortfolioProject('sql')"
+          aria-label="View SQL Financial Performance Analysis">
+          View Project <span aria-hidden="true">→</span>
+        </button>
+
+      </article>
+
+      <!-- PROJECT 4: INTERACTIVE DASHBOARD -->
+
+      <article class="portfolio-project-card">
+
+        <div class="project-card-top">
+          <span class="project-number">04</span>
+          <span class="project-category">DASHBOARDS &amp; REPORTING</span>
+        </div>
+
+        <h3>Interactive FP&amp;A Performance Dashboard</h3>
+
+        <p>
+          An interactive dashboard presenting revenue, cost and gross
+          margin performance across Budget, Actual and Forecast
+          scenarios for clear, accessible management reporting.
+        </p>
+
+        <ul class="project-highlights">
+          <li>Revenue, cost and gross margin KPI cards</li>
+          <li>Monthly Budget, Actual and Forecast comparisons</li>
+          <li>Dynamic Month, Business Unit and Client filters</li>
+        </ul>
+
+        <div class="project-tags" aria-label="Project skills">
+          <span>HTML / CSS / JavaScript</span>
+          <span>Data Visualisation</span>
+          <span>Management Reporting</span>
+        </div>
+
+        <button
+          type="button"
+          class="portfolio-view-btn"
+          onclick="showPortfolioProject('dashboard')"
+          aria-label="View Interactive FP&A Performance Dashboard">
+          View Project <span aria-hidden="true">→</span>
+        </button>
+
+      </article>
 
     </div>
 
+    <aside class="portfolio-disclaimer">
+      <strong>About the data</strong>
+      <p>
+        All projects use fictional sample data for demonstration.
+        Names, clients and financial figures do not represent actual
+        businesses. No confidential employer or client information
+        has been used.
+      </p>
+    </aside>
 
-    <!-- =====================================================
-         PROJECT DETAIL SCREEN
-         ===================================================== -->
+  </div>
 
-    <div
-      id="portfolioProjectDetail"
-      style="display:none;">
+  <!-- PROJECT DETAIL SCREEN -->
 
-      <button
-        class="portfolio-back-btn"
-        onclick="backToPortfolioProjects()">
+  <div id="portfolioProjectDetail" style="display: none;">
 
-        ← Back to Projects
+    <button
+      type="button"
+      class="portfolio-back-btn"
+      onclick="backToPortfolioProjects()">
+      ← Back to Projects
+    </button>
 
-      </button>
+    <div id="portfolioProjectContent"></div>
 
+  </div>
 
-      <!-- JavaScript will insert project content here -->
-
-      <div id="portfolioProjectContent"></div>
-
-    </div>
-
-  </section>
+</section>
 
   <!-- =====================================================
        EDUCATION
