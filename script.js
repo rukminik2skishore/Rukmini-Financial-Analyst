@@ -197,36 +197,19 @@ function showPortfolioProject(project) {
         <div class="project-info-section">
           <h3>What the Dashboard Does</h3>
           <ul class="project-feature-list">
-            <li>
-              Presents executive-level Actual Revenue,
-              Actual Cost and Gross Profit KPIs.
-            </li>
-            <li>
-              Calculates Gross Margin based on aggregated
-              revenue and cost performance.
-            </li>
-            <li>
-              Compares Actual Revenue against Budget and
-              Forecast across a 12-month period.
-            </li>
-            <li>Analyses monthly Actual Cost against Budget and Forecast.</li>
-            <li>
-              Tracks Gross Margin trends across Budget,
-              Actual and Forecast scenarios.
-            </li>
-            <li>Provides interactive Business Unit filtering for performance analysis.</li>
-            <li>
-              Provides interactive Client filtering to analyse
-              account-level financial performance.
-            </li>
-            <li>
+
+          <p>Translated monthly actual, budget and forecast data
+          into performance trends, KPI summaries and business unit 
+          scorecards. Integrated country, business unit, client and 
+          period filters, with country-specific currency reporting to 
+          maintain meaningful comparisons.
+          </p>
+         <p>
               Dynamically recalculates KPIs and charts whenever
               dashboard filters are changed.
-            </li>
-            <li>
               Uses structured financial data to replicate practical
               FP&amp;A performance reporting.
-            </li>
+            </p>
           </ul>
         </div>
 
