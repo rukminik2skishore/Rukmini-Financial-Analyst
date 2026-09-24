@@ -476,10 +476,10 @@ function showPortfolioProject(project) {
         <div class="project-info-section">
           <h3>Project Overview</h3>
           <p>
-            This project demonstrates the development of a fully
-            integrated 3-statement financial model and Discounted
-            Cash Flow (DCF) valuation for an illustrative IT
-            services company.
+            Built an integrated Excel financial model for 
+            an illustrative IT services company, using 2023–2025 
+            historical performance to forecast 2026–2030 financial 
+            results and estimate business value.
           </p>
           <p>
             The model combines historical financial performance
@@ -501,219 +501,35 @@ function showPortfolioProject(project) {
         </div>
 
         <div class="project-info-section">
-          <h3>Model Structure</h3>
+          <h3>Key Features</h3>
           <ul class="project-feature-list">
             <li>
-              <strong>Assumptions:</strong>
-              Centralised operating, financial and valuation
-              assumptions used throughout the model.
+              <strong>Integrated Statements:</strong>
+               Links the Income Statement, 
+              Balance Sheet and Cash Flow Statement through revenue, 
+              working capital, CapEx, depreciation and debt schedules.
             </li>
             <li>
-              <strong>Historical Data:</strong>
-              Historical financial information covering
-              2023–2025 provides the foundation for forecasting.
-            </li>
-            <li>
-              <strong>Revenue Build:</strong>
-              Driver-based revenue forecast covering 2026–2030.
-            </li>
-            <li>
-              <strong>Income Statement:</strong>
-              Forecasts revenue, COGS, operating expenses,
-              EBITDA, depreciation, EBIT, interest, tax
-              and net income.
-            </li>
-            <li>
-              <strong>Balance Sheet:</strong>
-              Forecasts cash, working capital, PP&amp;E,
-              debt and other balance sheet accounts.
-            </li>
-            <li>
-              <strong>Cash Flow Statement:</strong>
-              Links operating, investing and financing
-              activities to calculate ending cash.
-            </li>
-            <li>
-              <strong>Supporting Schedules:</strong>
-              Models working capital, PP&amp;E, depreciation,
-              CapEx and debt-related financial drivers.
-            </li>
-            <li>
-              <strong>DCF Valuation:</strong>
-              Converts operating forecasts into FCFF and
-              estimates the value of the business.
+              <strong>DCF Valuation: :</strong>
+              Discounts forecast Free Cash Flow to Firm
+              (FCFF) to estimate enterprise value, equity value and implied value per share..
             </li>
             <li>
               <strong>Sensitivity Analysis:</strong>
-              Evaluates valuation changes across different
-              WACC and terminal growth assumptions.
+               Assesses the impact of WACC and terminal growth assumptions on valuation.
             </li>
             <li>
-              <strong>Dashboard:</strong>
-              Summarises key forecast and valuation outputs
-              for management-level review.
+              <strong>Management Dashboard:</strong>
+               Summarises forecast performance and key valuation outputs.
             </li>
-          </ul>
-        </div>
+            
 
         <div class="project-info-section">
-          <h3>Integrated 3-Statement Model</h3>
+          <h3>Business Value</h3>
           <p>
-            The core of the model is the integration of the
-            Income Statement, Balance Sheet and Cash Flow Statement.
+            Connects operating assumptions with profitability,
+            cash generation and valuation to support financial planning and investment assessment.
           </p>
-          <ul class="project-feature-list">
-            <li>
-              <strong>Income Statement:</strong>
-              Revenue assumptions drive projected revenue,
-              COGS, operating expenses, profitability,
-              interest, tax and net income.
-            </li>
-            <li>
-              <strong>Balance Sheet:</strong>
-              Working capital and operating assumptions drive
-              accounts receivable, inventory, accounts payable,
-              PP&amp;E and other balance sheet accounts.
-            </li>
-            <li>
-              <strong>Cash Flow Statement:</strong>
-              Net income is adjusted for non-cash items,
-              working capital movements, investing activities
-              and financing activities to calculate cash flow.
-            </li>
-          </ul>
-          <p>
-            Linking the three statements ensures that changes
-            in operating assumptions automatically flow through
-            profitability, financial position and cash generation.
-          </p>
-        </div>
-
-        <div class="project-info-section">
-          <h3>5-Year Financial Forecast</h3>
-          <p>
-            The model uses operating assumptions to forecast
-            financial performance from 2026 through 2030.
-          </p>
-          <ul class="project-feature-list">
-            <li>Forecasts revenue using annual growth assumptions.</li>
-            <li>Forecasts COGS as a percentage of revenue.</li>
-            <li>Forecasts operating expenses based on revenue.</li>
-            <li>Calculates EBITDA and operating profitability.</li>
-            <li>Forecasts depreciation and capital expenditure.</li>
-            <li>Models working capital requirements using operating assumptions.</li>
-            <li>Forecasts net income and cash generation.</li>
-          </ul>
-        </div>
-
-        <div class="project-info-section">
-          <h3>Supporting Schedules</h3>
-          <p>
-            Supporting schedules connect the operating assumptions
-            to the three financial statements and improve
-            transparency of the forecast.
-          </p>
-          <ul class="project-feature-list">
-            <li>Accounts Receivable forecasting using DSO.</li>
-            <li>Inventory forecasting based on operating assumptions.</li>
-            <li>Accounts Payable and working capital modelling.</li>
-            <li>PP&amp;E and depreciation forecasting.</li>
-            <li>Capital expenditure forecasting.</li>
-            <li>Debt and financing schedule integration.</li>
-          </ul>
-        </div>
-
-        <div class="project-info-section">
-          <h3>DCF Valuation</h3>
-          <p>
-            The Discounted Cash Flow valuation estimates the
-            intrinsic value of the business using forecast
-            Free Cash Flow to Firm (FCFF).
-          </p>
-          <p>
-            FCFF is calculated using operating profit after tax,
-            depreciation, capital expenditure and changes in
-            net working capital.
-          </p>
-          <ul class="project-feature-list">
-            <li>Calculates EBIT from the operating forecast.</li>
-            <li>Calculates NOPAT after applying the forecast tax rate.</li>
-            <li>Adds back non-cash depreciation expense.</li>
-            <li>Incorporates forecast capital expenditure.</li>
-            <li>Incorporates changes in net working capital.</li>
-            <li>Calculates Free Cash Flow to Firm (FCFF) for 2026–2030.</li>
-            <li>
-              Discounts forecast FCFF using the Weighted
-              Average Cost of Capital (WACC).
-            </li>
-            <li>
-              Calculates Terminal Value using a perpetual
-              growth methodology.
-            </li>
-            <li>
-              Calculates Enterprise Value from the present
-              value of forecast cash flows and Terminal Value.
-            </li>
-            <li>
-              Converts Enterprise Value into implied
-              equity value and value per share.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project-info-section">
-          <h3>Valuation Framework</h3>
-          <p>
-            The model follows a Free Cash Flow to Firm
-            valuation approach:
-          </p>
-
-          <div class="formula-box">
-            <strong>FCFF =</strong>
-            NOPAT + D&amp;A − CapEx − Change in Net Working Capital
-          </div>
-
-          <div class="formula-box">
-            <strong>Terminal Value =</strong>
-            Final Year FCFF × (1 + Terminal Growth Rate)
-            ÷ (WACC − Terminal Growth Rate)
-          </div>
-
-          <p>
-            Forecast FCFF and Terminal Value are discounted
-            to present value using WACC to calculate the
-            Enterprise Value of the business.
-          </p>
-        </div>
-
-        <div class="project-info-section">
-          <h3>DCF Sensitivity Analysis</h3>
-          <p>
-            Because DCF valuation is highly dependent on
-            valuation assumptions, the model includes a
-            sensitivity analysis to evaluate how implied
-            value per share changes under different assumptions.
-          </p>
-          <p>
-            The sensitivity table tests multiple combinations
-            of <strong>WACC</strong> and
-            <strong>Terminal Growth Rate</strong>, providing
-            a range of potential valuation outcomes rather
-            than relying on a single valuation assumption.
-          </p>
-          <ul class="project-feature-list">
-            <li>Tests multiple WACC assumptions.</li>
-            <li>Tests multiple terminal growth rates.</li>
-            <li>
-              Calculates implied value per share for each
-              assumption combination.
-            </li>
-            <li>
-              Demonstrates the sensitivity of DCF valuation
-              to changes in key assumptions.
-            </li>
-          </ul>
-        </div>
 
         <div class="project-info-section">
           <h3>Skills Demonstrated</h3>
@@ -721,22 +537,13 @@ function showPortfolioProject(project) {
             <span>Financial Modelling</span>
             <span>3-Statement Modelling</span>
             <span>Financial Forecasting</span>
-            <span>Income Statement</span>
-            <span>Balance Sheet</span>
-            <span>Cash Flow Statement</span>
             <span>Revenue Forecasting</span>
-            <span>Working Capital</span>
-            <span>Supporting Schedules</span>
-            <span>PP&amp;E Forecasting</span>
-            <span>CapEx Forecasting</span>
             <span>Free Cash Flow</span>
-            <span>FCFF</span>
-            <span>DCF Valuation</span>
-            <span>WACC</span>
+             <span>DCF Valuation</span>
+             <span>WACC</span>
             <span>Terminal Value</span>
             <span>Enterprise Value</span>
             <span>Sensitivity Analysis</span>
-            <span>Excel</span>
           </div>
         </div>
 
