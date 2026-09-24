@@ -95,23 +95,15 @@ function showPortfolioProject(project) {
           </p> </div?
           
         <div class="project-info-section">
-          <h3>What the Analysis Does</h3>
-          <ul class="project-feature-list">
-            <li>Validates the underlying financial dataset before performing analysis.</li>
-            <li>Calculates executive-level Budget, Actual and Forecast KPIs.</li>
-            <li>Identifies cost centres operating over or under budget.</li>
-            <li>Highlights expense categories driving unfavorable budget variance.</li>
-            <li>Analyses month-over-month changes in actual spending.</li>
-            <li>Analyses quarter-over-quarter spending trends.</li>
-            <li>Compares annual forecast against the approved annual budget.</li>
-            <li>Identifies departments with potential forecast risk.</li>
-            <li>Analyses the contribution of major expense groups to total spending.</li>
-            <li>
-              Flags expense categories that may require management
-              attention based on actual and forecast variance.
-            </li>
-          </ul>
-        </div>
+  <h3>What the Analysis Does</h3>
+  <ul class="project-feature-list">
+    <li>Summarises Budget, Actual and Forecast performance.</li>
+    <li>Highlights overspend by cost centre and expense category.</li>
+    <li>Tracks monthly and quarterly spending trends.</li>
+    <li>Assesses annual forecast gaps and departmental risk.</li>
+    <li>Breaks down spending by expense group and flags areas for review.</li>
+  </ul>
+</div>
 
         <div class="project-info-section">
           <h3>SQL Skills Demonstrated</h3>
@@ -125,11 +117,6 @@ function showPortfolioProject(project) {
             <span>LAG()</span>
             <span>Subqueries</span>
             <span>NULLIF()</span>
-            <span>Variance Analysis</span>
-            <span>MoM Analysis</span>
-            <span>QoQ Analysis</span>
-            <span>Forecast Analysis</span>
-            <span>Risk Classification</span>
           </div>
         </div>
 
