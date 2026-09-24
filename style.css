@@ -3427,59 +3427,165 @@ body > header nav {
   #experience .experience-sidebar { grid-template-columns: 1fr; }
   #projects .portfolio-detail-card { padding: 24px 20px; }
 }
-/* FOOTER STYLING */
-.portfolio-footer {
-  margin-top: 60px;
-  padding: 40px 20px;
-  background-color: #f8f9fa;
-  border-top: 2px solid #e0e0e0;
+
+
+/* =====================================================
+   FOOTER / DISCLAIMER SECTION
+   ===================================================== */
+
+#footer.rk-footer {
+  width: 92%;
+  max-width: 1500px;
+  margin: 60px auto 45px;
+  padding: clamp(24px, 5vw, 64px);
+  
+  border: 1px solid rgba(226, 201, 149, .22);
+  border-radius: 28px;
+  
+  background: radial-gradient(circle at 95% 0, rgba(226, 201, 149, .12), transparent 42%),
+              linear-gradient(135deg, #17283d, #263d57);
+  
+  box-shadow: none;
+  color: #d4dfea;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Eyebrow label */
+#footer .rc-eyebrow {
+  margin: 0 0 14px;
+  color: #e2c995;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+/* Main heading */
+#footer h2 {
+  margin: 0 0 32px;
+  color: #fff;
+  font-size: clamp(28px, 4vw, 44px);
+  line-height: 1.15;
+}
+
+#footer h2 span {
+  color: #e2c995;
+}
+
+#footer h2::after {
+  content: none;
+}
+
+/* Grid layout for footer cards */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+/* Footer cards */
+.footer-card {
+  padding: clamp(22px, 3vw, 32px);
+  border: 1px solid rgba(226, 201, 149, .25);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .055);
+}
+
+.footer-card h3 {
+  margin: 0 0 12px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.footer-card p {
+  margin: 0 0 14px;
+  color: #d4dfea;
   font-size: 14px;
+  line-height: 1.7;
+}
+
+.footer-card p:last-child {
+  margin-bottom: 0;
+}
+
+/* Contact links within footer cards */
+.footer-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.footer-link {
+  color: #e2c995;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.25s ease;
+  word-break: break-word;
+}
+
+.footer-link:hover {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+.footer-link:focus-visible {
+  outline: 3px solid #e2c995;
+  outline-offset: 5px;
+  border-radius: 4px;
+}
+
+/* Divider line */
+.footer-divider {
+  height: 1px;
+  background: rgba(226, 201, 149, .22);
+  margin: 28px 0;
+}
+
+/* Copyright notice */
+.footer-copyright {
+  margin: 0;
+  text-align: center;
+  color: #bccbda;
+  font-size: 12px;
   line-height: 1.6;
 }
 
-.footer-content {
-  max-width: 900px;
-  margin: 0 auto;
-  color: #333;
+/* Responsive adjustments */
+@media (max-width: 1100px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
-.portfolio-footer h3 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-size: 16px;
-  font-weight: 600;
-  color: #1a1a1a;
-}
-
-.portfolio-footer ul {
-  list-style: none;
-  padding-left: 0;
-}
-
-.portfolio-footer ul li {
-  margin-bottom: 8px;
-}
-
-.portfolio-footer a {
-  color: #0066cc;
-  text-decoration: none;
-}
-
-.portfolio-footer a:hover {
-  text-decoration: underline;
-}
-
-.copyright {
-  margin-top: 30px;
-  padding-top: 20px;
-  border-top: 1px solid #ddd;
-  text-align: center;
-  font-size: 12px;
-  color: #666;
-}
-
-.portfolio-footer hr {
-  border: none;
-  border-top: 1px solid #ddd;
-  margin: 20px 0;
+@media (max-width: 600px) {
+  #footer.rk-footer {
+    width: 92%;
+    padding: clamp(20px, 4vw, 36px);
+    margin: 40px auto 30px;
+  }
+  
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  
+  #footer h2 {
+    font-size: clamp(24px, 3.5vw, 36px);
+  }
+  
+  .footer-card {
+    padding: 20px;
+  }
+  
+  .footer-card h3 {
+    font-size: 16px;
+  }
+  
+  .footer-card p {
+    font-size: 13px;
+  }
 }
