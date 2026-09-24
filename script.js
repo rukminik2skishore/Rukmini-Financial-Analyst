@@ -319,10 +319,10 @@ function showPortfolioProject(project) {
         <div class="project-info-section">
           <h3>Project Overview</h3>
           <p>
-            This project demonstrates the development of a
-            structured FP&amp;A forecasting and budgeting model
-            built in Excel to support financial planning,
-            performance analysis and management decision-making.
+            An Excel-based FP&A model integrating revenue, 
+            workforce and operating expense forecasts into a 
+            projected P&L. Supports financial planning through a 
+            separate 2027 budget, variance analysis and scenario evaluation.
           </p>
           <p>
             The model combines historical actuals with revenue,
