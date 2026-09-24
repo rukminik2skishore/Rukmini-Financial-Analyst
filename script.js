@@ -89,10 +89,10 @@ function showPortfolioProject(project) {
 
          <div class="project-info-section">
           <h3>Business Value</h3>
-          <p>Provides repeatable queries that prioritise 
+          <ul> <p>Provides repeatable queries that prioritise 
           cost exceptions, highlight expenditure concentration 
           and support targeted budget reviews.
-          </p> </div?
+         </ul> </p> </div?
           
         <div class="project-info-section">
   <h3>What the Analysis Does</h3>
@@ -119,6 +119,7 @@ function showPortfolioProject(project) {
             <span>NULLIF()</span>
           </div>
         </div>
+        
 <!-- SQL QUERY SNAPSHOT -->
 <div class="project-info-section">
   <h3>SQL in Action</h3>
