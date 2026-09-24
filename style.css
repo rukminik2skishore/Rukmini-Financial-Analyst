@@ -3427,3 +3427,59 @@ body > header nav {
   #experience .experience-sidebar { grid-template-columns: 1fr; }
   #projects .portfolio-detail-card { padding: 24px 20px; }
 }
+/* FOOTER STYLING */
+.portfolio-footer {
+  margin-top: 60px;
+  padding: 40px 20px;
+  background-color: #f8f9fa;
+  border-top: 2px solid #e0e0e0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.footer-content {
+  max-width: 900px;
+  margin: 0 auto;
+  color: #333;
+}
+
+.portfolio-footer h3 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.portfolio-footer ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.portfolio-footer ul li {
+  margin-bottom: 8px;
+}
+
+.portfolio-footer a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+.portfolio-footer a:hover {
+  text-decoration: underline;
+}
+
+.copyright {
+  margin-top: 30px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+}
+
+.portfolio-footer hr {
+  border: none;
+  border-top: 1px solid #ddd;
+  margin: 20px 0;
+}
