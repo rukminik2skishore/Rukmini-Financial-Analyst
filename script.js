@@ -186,11 +186,12 @@ function showPortfolioProject(project) {
           <h3>What the Dashboard Does</h3>
           <ul class="project-feature-list">
 
-          <p>Translated monthly actual, budget and forecast data
-          into performance trends, KPI summaries and business unit 
-          scorecards. Integrated country, business unit, client and 
-          period filters, with country-specific currency reporting to 
-          maintain meaningful comparisons.
+          <p>
+             Translated monthly actual, budget and forecast data
+             into performance trends, KPI summaries and business unit 
+             scorecards. Integrated country, business unit, client and 
+             period filters, with country-specific currency reporting to 
+             maintain meaningful comparisons.
           </p>
          <p>
               Dynamically recalculates KPIs and charts whenever
