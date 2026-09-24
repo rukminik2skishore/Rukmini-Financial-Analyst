@@ -119,7 +119,41 @@ function showPortfolioProject(project) {
             <span>NULLIF()</span>
           </div>
         </div>
+<!-- SQL QUERY SNAPSHOT -->
+<div class="project-info-section">
+  <h3>SQL in Action</h3>
 
+  <p>
+    Monthly spend analysis using CTEs and window functions
+    to highlight changes across reporting periods.
+  </p>
+
+  <a
+    href="./projects/sql-mom-snapshot.png"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open SQL analysis screenshot in full size"
+    style="display: block; margin-top: 16px;"
+  >
+    <img
+      src="./projects/sql-mom-snapshot.png"
+      alt="MySQL query and results showing monthly spending,
+           previous month spending and month-over-month variance."
+      loading="lazy"
+      style="
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 12px;
+        border: 1px solid rgba(212, 175, 55, 0.3);
+      "
+    >
+  </a>
+
+  <p style="font-size: 0.85rem; opacity: 0.75; margin-top: 10px;">
+    Click the image to view full size.
+  </p>
+</div>
         <div class="project-info-section">
           <h3>SQL Analysis File</h3>
           <p>
