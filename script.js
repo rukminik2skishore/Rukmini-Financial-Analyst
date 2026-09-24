@@ -180,18 +180,6 @@ function showPortfolioProject(project) {
             interactive financial performance dashboard using
             HTML, CSS and JavaScript.
           </p>
-          <p>
-            The dashboard analyses Budget, Actual and Forecast
-            performance across revenue, cost and profitability
-            using a structured FP&amp;A dataset covering a
-            12-month reporting period.
-          </p>
-          <p>
-            Interactive Business Unit and Client filters allow
-            financial performance to be analysed dynamically,
-            while KPI cards and trend charts provide a
-            management-level view of business performance.
-          </p>
         </div>
 
         <div class="project-info-section">
@@ -216,19 +204,12 @@ function showPortfolioProject(project) {
         <div class="project-info-section">
           <h3>Skills Demonstrated</h3>
           <div class="sql-skills-grid">
-            <span>FP&amp;A Analysis</span>
-            <span>Budget vs Actual</span>
-            <span>Forecast Analysis</span>
-            <span>Revenue Analysis</span>
-            <span>Cost Analysis</span>
-            <span>Gross Margin Analysis</span>
-            <span>Variance Analysis</span>
+            <span>FP&amp;A reporting</span>
+            <span>Forecast and Budget Analysis</span>
             <span>HTML</span>
             <span>CSS</span>
             <span>JavaScript</span>
-            <span>Chart.js</span>
-            <span>CSV Data Processing</span>
-            <span>Interactive Filters</span>
+            <span>CSV Financial storytelling</span>
             <span>Data Visualization</span>
           </div>
         </div>
