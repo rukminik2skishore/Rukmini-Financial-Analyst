@@ -67,10 +67,11 @@ function showPortfolioProject(project) {
         <div class="project-info-section">
           <h3>Project Overview</h3>
           <p>
-            This project demonstrates the application of SQL
-            within Financial Planning &amp; Analysis (FP&amp;A)
-            using a structured financial dataset containing
-            Budget, Actual and Forecast information.
+            Developed MySQL queries to analyse budget, 
+            actual and forecast expenditure across cost 
+            centres, departments and expense categories, 
+            identifying overspend, spending patterns and areas 
+            requiring management review.
           </p>
           <p>
             Financial performance is analysed across cost centres,
@@ -86,6 +87,13 @@ function showPortfolioProject(project) {
           </p>
         </div>
 
+         <div class="project-info-section">
+          <h3>Business Value</h3>
+          <p>Provides repeatable queries that prioritise 
+          cost exceptions, highlight expenditure concentration 
+          and support targeted budget reviews.
+          </p> </div?
+          
         <div class="project-info-section">
           <h3>What the Analysis Does</h3>
           <ul class="project-feature-list">
