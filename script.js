@@ -461,7 +461,37 @@ function showPortfolioProject(project) {
             </li>
           </ul>
         </div>
+<!-- FORECAST MODEL SCREENSHOT -->
+<div class="project-info-section">
+  <h3>Forecast Model Preview</h3>
 
+  <p>
+    A snapshot of the Excel forecasting and budget analysis model.
+    Click the image to view it in full size.
+  </p>
+
+  <a
+    href="financial-model/forecast-model-preview.png"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Open forecast model screenshot in a new tab"
+  >
+    <img
+      src="financial-model/forecast-model-preview.png"
+      alt="Excel forecasting and budget analysis model preview"
+      loading="lazy"
+      style="
+        display: block;
+        width: 100%;
+        height: auto;
+        margin-top: 18px;
+        border: 1px solid rgba(201, 169, 97, 0.35);
+        border-radius: 12px;
+        cursor: zoom-in;
+      "
+    >
+  </a>
+</div>
         <div class="project-info-section">
           <h3>Skills Demonstrated</h3>
 
