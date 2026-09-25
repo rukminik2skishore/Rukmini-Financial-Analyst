@@ -461,12 +461,13 @@ function showPortfolioProject(project) {
             </li>
           </ul>
         </div>
+        
 <!-- FORECAST MODEL SCREENSHOT -->
 <div class="project-info-section">
   <h3>Forecast Model Preview</h3>
 
   <p>
-    A snapshot of the Excel forecasting and budget analysis model.
+    A snapshot of the Excel forecasting and budget analysis model - Scenario selected- Base.
     Click the image to view it in full size.
   </p>
 
