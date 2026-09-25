@@ -3805,3 +3805,31 @@ body main > :is(#home,#about,#experience,#projects,#education,#skills,#resume,#c
     justify-self: center;
   }
 }
+/* DCF valuation screenshot */
+.dcf-preview-link {
+  display: block;
+  margin-top: 20px;
+  border: 1px solid rgba(201, 168, 106, 0.4);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.dcf-preview-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.dcf-preview-link:hover,
+.dcf-preview-link:focus-visible {
+  outline: 2px solid #c9a86a;
+  outline-offset: 4px;
+}
+
+.dcf-preview-caption {
+  margin-top: 10px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: inherit;
+  opacity: 0.75;
+}
