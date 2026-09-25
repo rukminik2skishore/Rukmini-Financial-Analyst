@@ -52,11 +52,14 @@ function showPortfolioProject(project) {
   main.hidden = true;
   detail.hidden = false;
 
-  /* SQL PROJECT */
+  /* =====================================================
+     SQL PROJECT
+     ===================================================== */
 
   if (project === "sql") {
     content.innerHTML = `
       <div class="portfolio-detail-card">
+
         <h2>Financial Data Analysis Using SQL</h2>
 
         <p class="project-subtitle">
@@ -66,40 +69,46 @@ function showPortfolioProject(project) {
 
         <div class="project-info-section">
           <h3>Project Overview</h3>
+
           <p>
-            Developed MySQL queries to analyse budget, 
-            actual and forecast expenditure across cost 
-            centres, departments and expense categories, 
-            identifying overspend, spending patterns and areas 
-            requiring management review.
+            Developed MySQL queries to analyse budget, actual
+            and forecast expenditure across cost centres,
+            departments and expense categories.
           </p>
+
           <p>
-            Financial performance is analysed across cost centres,
-            departments, expense categories and reporting periods
-            to transform transactional financial data into
-            management-focused insights.
-          </p>
-          <p>
-            The project replicates practical FP&amp;A reporting
-            requirements including variance analysis, spending
-            trends, forecast monitoring and management-level
-            performance reporting.
+            The analysis identifies overspend, spending patterns
+            and forecast gaps, translating financial data into
+            structured insights for management review.
           </p>
         </div>
-          
+
         <div class="project-info-section">
-  <h3>What the Analysis Does</h3>
-  <ul class="project-feature-list">
-    <li>Summarises Budget, Actual and Forecast performance.</li>
-    <li>Highlights overspend by cost centre and expense category.</li>
-    <li>Tracks monthly and quarterly spending trends.</li>
-    <li>Assesses annual forecast gaps and departmental risk.</li>
-    <li>Breaks down spending by expense group and flags areas for review.</li>
-  </ul>
-</div>
+          <h3>What the Analysis Does</h3>
+
+          <ul class="project-feature-list">
+            <li>
+              Summarises Budget, Actual and Forecast performance.
+            </li>
+            <li>
+              Highlights overspend by cost centre and expense category.
+            </li>
+            <li>
+              Tracks monthly and quarterly spending trends.
+            </li>
+            <li>
+              Assesses annual forecast gaps and departmental risk.
+            </li>
+            <li>
+              Breaks down spending by expense group and flags
+              areas for review.
+            </li>
+          </ul>
+        </div>
 
         <div class="project-info-section">
           <h3>SQL Skills Demonstrated</h3>
+
           <div class="sql-skills-grid">
             <span>SUM() Aggregations</span>
             <span>GROUP BY</span>
@@ -112,27 +121,39 @@ function showPortfolioProject(project) {
             <span>NULLIF()</span>
           </div>
         </div>
-        
+
         <div class="project-info-section">
           <h3>SQL Analysis File</h3>
+
           <p>
-            The complete SQL script used for this financial analysis
-            is available below. Select <strong>View SQL Code</strong>
-            to review the queries directly on this page or download
-            the SQL file for further review.
+            Review the queries directly on this page or download
+            the complete SQL file.
           </p>
 
-          <button class="sql-file-btn" data-action="toggle-sql">
+          <button
+            type="button"
+            class="sql-file-btn"
+            data-action="toggle-sql">
             View SQL Code
           </button>
 
-          <div id="sqlCodeViewer" class="sql-code-viewer" hidden>
+          <div
+            id="sqlCodeViewer"
+            class="sql-code-viewer"
+            hidden>
+
             <div class="sql-code-header">
               <span>SQL for Portfolio.sql</span>
-              <button class="sql-close-btn" data-action="toggle-sql">
+
+              <button
+                type="button"
+                class="sql-close-btn"
+                data-action="toggle-sql"
+                aria-label="Close SQL viewer">
                 ✕
               </button>
             </div>
+
             <pre id="sqlCodeContent">Loading SQL file...</pre>
           </div>
 
@@ -145,15 +166,19 @@ function showPortfolioProject(project) {
             </a>
           </div>
         </div>
+
       </div>
     `;
   }
 
-  /* HTML DASHBOARD PROJECT */
+  /* =====================================================
+     HTML DASHBOARD PROJECT
+     ===================================================== */
 
   else if (project === "dashboard") {
     content.innerHTML = `
       <div class="portfolio-detail-card">
+
         <h2>Interactive FP&amp;A Performance Dashboard</h2>
 
         <p class="project-subtitle">
@@ -163,64 +188,70 @@ function showPortfolioProject(project) {
 
         <div class="project-info-section">
           <h3>Project Overview</h3>
+
           <p>
-            This project demonstrates the development of an
-            interactive financial performance dashboard using
-            HTML, CSS and JavaScript.
+            An interactive dashboard built with HTML, CSS and
+            JavaScript to present financial performance through
+            KPI summaries, monthly trends and business unit
+            scorecards.
           </p>
         </div>
 
         <div class="project-info-section">
           <h3>What the Dashboard Does</h3>
-          <ul class="project-feature-list">
 
-          <p>
-             Translated monthly actual, budget and forecast data
-             into performance trends, KPI summaries and business unit 
-             scorecards. Integrated country, business unit, client and 
-             period filters, with country-specific currency reporting to 
-             maintain meaningful comparisons.
-          </p>
-         <p>
-              Dynamically recalculates KPIs and charts whenever
-              dashboard filters are changed.
-              Uses structured financial data to replicate practical
-              FP&amp;A performance reporting.
-            </p>
+          <ul class="project-feature-list">
+            <li>
+              Compares monthly Actual, Budget and Forecast
+              performance.
+            </li>
+            <li>
+              Summarises revenue, cost and gross margin.
+            </li>
+            <li>
+              Supports country, business unit, client and
+              period filters.
+            </li>
+            <li>
+              Uses country-specific currency reporting to
+              maintain meaningful comparisons.
+            </li>
+            <li>
+              Recalculates KPIs and charts as filters change.
+            </li>
           </ul>
         </div>
 
         <div class="project-info-section">
           <h3>Skills Demonstrated</h3>
+
           <div class="sql-skills-grid">
-            <span>FP&amp;A reporting</span>
-            <span>Forecast and Budget Analysis</span>
+            <span>FP&amp;A Reporting</span>
+            <span>Forecast &amp; Budget Analysis</span>
             <span>HTML</span>
             <span>CSS</span>
             <span>JavaScript</span>
-            <span>CSV Financial storytelling</span>
-            <span>Data Visualization</span>
+            <span>CSV Data Handling</span>
+            <span>Financial Storytelling</span>
+            <span>Data Visualisation</span>
           </div>
         </div>
 
         <div class="project-info-section">
           <h3>Dashboard Dataset</h3>
+
           <p>
-            The dashboard is powered by a structured financial
-            dataset containing monthly Budget, Actual and Forecast
-            information across multiple business units, clients
-            and financial performance measures.
-          </p>
-          <p>
-            The dataset includes revenue, cost and profitability
-            information used to calculate the dashboard KPIs,
-            variance indicators and monthly performance trends.
+            A structured financial dataset provides monthly
+            Budget, Actual and Forecast information across
+            business units and clients. Revenue and cost data
+            support profitability calculations, variance
+            indicators and performance trends.
           </p>
 
           <div class="dashboard-action-buttons">
             <a
               href="./html-dashboard/data/financial_data.csv"
-              download="FP&A_Dashboard_Data.csv"
+              download="FPA_Dashboard_Data.csv"
               class="portfolio-download-btn">
               ↓ Download Dashboard Data
             </a>
@@ -229,23 +260,33 @@ function showPortfolioProject(project) {
 
         <div class="project-info-section">
           <h3>Interactive Dashboard</h3>
+
           <p>
             Select <strong>View Dashboard</strong> to explore
-            the interactive financial dashboard. Use the Business
-            Unit and Client filters to analyse financial
-            performance dynamically.
+            the analysis and use the filters to review
+            financial performance.
           </p>
 
-          <button class="sql-file-btn" data-action="toggle-dashboard">
+          <button
+            type="button"
+            class="sql-file-btn"
+            data-action="toggle-dashboard">
             View Dashboard
           </button>
 
-          <div id="dashboardViewer" class="dashboard-viewer" hidden>
+          <div
+            id="dashboardViewer"
+            class="dashboard-viewer"
+            hidden>
+
             <div class="dashboard-viewer-header">
               <span>FP&amp;A Performance Dashboard</span>
+
               <button
+                type="button"
                 class="sql-close-btn"
-                data-action="toggle-dashboard">
+                data-action="toggle-dashboard"
+                aria-label="Close dashboard viewer">
                 ✕
               </button>
             </div>
@@ -257,15 +298,19 @@ function showPortfolioProject(project) {
             </iframe>
           </div>
         </div>
+
       </div>
     `;
   }
 
-  /* FP&A PROJECT */
+  /* =====================================================
+     FP&A PROJECT
+     ===================================================== */
 
   else if (project === "fpa") {
     content.innerHTML = `
       <div class="portfolio-detail-card">
+
         <h2>FP&amp;A / Financial Analytics</h2>
 
         <p class="project-subtitle">
@@ -274,21 +319,19 @@ function showPortfolioProject(project) {
 
         <div class="project-info-section">
           <h3>Project Overview</h3>
+
           <p>
-            Financial planning and analysis project covering
-            budgeting, forecasting, variance analysis and
-            management reporting.
-          </p>
-          <p>
+            Financial analysis covering budgeting, forecasting,
+            variance analysis and management reporting.
             The project demonstrates how financial information
-            can be transformed into structured management
-            insights to support planning and business
-            decision-making.
+            supports planning, performance reviews and
+            business decisions.
           </p>
         </div>
 
         <div class="project-info-section">
           <h3>FP&amp;A Skills Demonstrated</h3>
+
           <div class="sql-skills-grid">
             <span>Budgeting</span>
             <span>Forecasting</span>
@@ -300,15 +343,19 @@ function showPortfolioProject(project) {
             <span>Excel</span>
           </div>
         </div>
+
       </div>
     `;
   }
 
-  /* FORECASTING & BUDGET ANALYSIS */
+  /* =====================================================
+     FORECASTING & BUDGET ANALYSIS
+     ===================================================== */
 
   else if (project === "forecast-budget") {
     content.innerHTML = `
       <div class="portfolio-detail-card">
+
         <h2>FP&amp;A Forecasting and Budget Analysis Model</h2>
 
         <p class="project-subtitle">
@@ -318,111 +365,106 @@ function showPortfolioProject(project) {
 
         <div class="project-info-section">
           <h3>Project Overview</h3>
+
           <p>
-            An Excel-based FP&A model integrating revenue, 
-            workforce and operating expense forecasts into a 
-            projected P&L. Supports financial planning through a 
-            separate 2027 budget, variance analysis and scenario evaluation.
+            An Excel-based FP&amp;A model integrating revenue,
+            workforce and operating expense forecasts into a
+            projected Profit &amp; Loss statement.
           </p>
+
           <p>
-            The model combines historical actuals with revenue,
-            headcount and operating expense forecasts to develop
-            a forward-looking Profit &amp; Loss view.
-          </p>
-          <p>
-            A separate 2027 budget is developed and compared
-            against the forecast to identify financial variances,
-            while scenario analysis evaluates the impact of
-            changes in key business assumptions.
+            Historical actuals provide the forecasting baseline.
+            A separate 2027 budget supports variance analysis,
+            while alternative scenarios evaluate the effect
+            of changes in key business assumptions.
           </p>
         </div>
 
         <div class="project-info-section">
           <h3>Model Structure</h3>
+
           <ul class="project-feature-list">
             <li>
               <strong>Assumptions:</strong>
-              Centralised operating and financial assumptions
-              used throughout the model.
+              Centralised operating and financial inputs.
             </li>
+
             <li>
               <strong>Actuals:</strong>
-              Historical financial performance used as the
-              starting point for forecasting.
+              Historical performance used as the forecasting baseline.
             </li>
+
             <li>
               <strong>Revenue Forecast:</strong>
-              Driver-based revenue projections based on
-              business assumptions.
+              Driver-based revenue projections.
             </li>
+
             <li>
               <strong>Headcount Plan:</strong>
-              Workforce planning and personnel cost forecasting.
+              Workforce and personnel cost planning.
             </li>
+
             <li>
               <strong>Opex Forecast:</strong>
-              Forecasting of major operating expense categories.
+              Projections for major operating expense categories.
             </li>
+
             <li>
               <strong>P&amp;L:</strong>
-              Consolidated forecast of revenue, operating costs
-              and profitability.
+              Consolidated revenue, cost and profitability forecasts.
             </li>
+
             <li>
               <strong>Forecast vs Budget:</strong>
-              Variance analysis comparing expected performance
-              against the financial budget.
+              Comparison of expected performance with the budget.
             </li>
+
             <li>
               <strong>Scenarios:</strong>
-              Scenario analysis evaluating changes in key
-              planning assumptions.
+              Evaluation of alternative planning assumptions.
             </li>
+
             <li>
               <strong>Budget 2027:</strong>
-              Independent financial budget used as the planning
-              benchmark for forecast comparison.
+              Independent financial budget used as the planning benchmark.
             </li>
+
             <li>
               <strong>Checks:</strong>
-              Model validation checks designed to improve
-              consistency and reliability.
+              Validation checks for model consistency.
             </li>
           </ul>
         </div>
 
         <div class="project-info-section">
           <h3>What the Model Does</h3>
+
           <ul class="project-feature-list">
             <li>
-              Develops structured revenue forecasts using
-              business and operating assumptions.
-            </li>
-            <li>Builds headcount and personnel cost planning.</li>
-            <li>Forecasts major operating expense categories.</li>
-            <li>
-              Consolidates forecasts into a projected
-              Profit &amp; Loss statement.
-            </li>
-            <li>Develops an independent 2027 financial budget.</li>
-            <li>
-              Compares Forecast against Budget and calculates
-              financial variances.
-            </li>
-            <li>Provides detailed P&amp;L analysis for management review.</li>
-            <li>
-              Evaluates alternative business scenarios and
-              their impact on financial performance.
+              Connects revenue, headcount and operating cost
+              drivers to financial outcomes.
             </li>
             <li>
-              Includes validation checks to improve model
-              accuracy and consistency.
+              Consolidates forecasts into a projected P&amp;L.
+            </li>
+            <li>
+              Compares the forecast with the independent
+              2027 budget and calculates variances.
+            </li>
+            <li>
+              Evaluates alternative scenarios and their
+              impact on profitability.
+            </li>
+            <li>
+              Supports management review through structured
+              analysis and validation checks.
             </li>
           </ul>
         </div>
 
         <div class="project-info-section">
           <h3>Skills Demonstrated</h3>
+
           <div class="sql-skills-grid">
             <span>FP&amp;A</span>
             <span>Financial Forecasting</span>
@@ -434,7 +476,6 @@ function showPortfolioProject(project) {
             <span>Variance Analysis</span>
             <span>Scenario Analysis</span>
             <span>Driver-Based Planning</span>
-            <span>Financial Planning</span>
             <span>Model Validation</span>
             <span>Excel</span>
           </div>
@@ -442,12 +483,14 @@ function showPortfolioProject(project) {
 
         <div class="project-info-section">
           <h3>Download Forecasting &amp; Budget Model</h3>
+
           <p>
-            The complete Excel workbook contains the assumptions,
-            historical actuals, revenue forecast, headcount plan,
-            operating expense forecast, P&amp;L, forecast versus
-            budget analysis, scenarios and 2027 budget.
+            Explore the assumptions, historical actuals,
+            supporting forecasts, projected P&amp;L, budget
+            comparisons and scenario analysis in the
+            complete Excel workbook.
           </p>
+
           <div class="dashboard-action-buttons">
             <a
               href="./financial-model/Integrated_Financial_Model.xlsx"
@@ -457,16 +500,20 @@ function showPortfolioProject(project) {
             </a>
           </div>
         </div>
+
       </div>
     `;
   }
 
-  /* 3-STATEMENT MODEL & DCF VALUATION */
+  /* =====================================================
+     3-STATEMENT MODEL & DCF VALUATION
+     ===================================================== */
 
   else if (project === "model") {
     content.innerHTML = `
       <div class="portfolio-detail-card">
-        <h2>3 Statement Model &amp; DCF Valuation</h2>
+
+        <h2>3-Statement Model &amp; DCF Valuation</h2>
 
         <p class="project-subtitle">
           Financial Modelling Portfolio Project |
@@ -475,72 +522,76 @@ function showPortfolioProject(project) {
 
         <div class="project-info-section">
           <h3>Project Overview</h3>
+
           <p>
-            Built an integrated Excel financial model for 
-            an illustrative IT services company, using 2023–2025 
-            historical performance to forecast 2026–2030 financial 
-            results and estimate business value.
+            An integrated Excel financial model for an
+            illustrative IT services company, using
+            2023–2025 historical performance to forecast
+            financial results for 2026–2030.
           </p>
+
           <p>
-            The model combines historical financial performance
-            from 2023–2025 with a driver-based five-year forecast
-            covering 2026–2030.
-          </p>
-          <p>
-            The Income Statement, Balance Sheet and Cash Flow
-            Statement are dynamically linked through supporting
-            schedules, allowing operating assumptions to flow
-            through the complete financial model.
-          </p>
-          <p>
-            Forecast Free Cash Flow to Firm (FCFF) is then used
-            in a DCF valuation to estimate Enterprise Value and
-            implied value per share, supported by WACC and
-            terminal growth sensitivity analysis.
+            Linked financial statements and supporting
+            schedules connect operating assumptions with
+            profitability and cash generation. A DCF valuation
+            estimates enterprise value and implied value per
+            share, supported by sensitivity analysis.
           </p>
         </div>
 
         <div class="project-info-section">
           <h3>Key Features</h3>
+
           <ul class="project-feature-list">
             <li>
               <strong>Integrated Statements:</strong>
-               Links the Income Statement, 
-              Balance Sheet and Cash Flow Statement through revenue, 
-              working capital, CapEx, depreciation and debt schedules.
+              Links the Income Statement, Balance Sheet and
+              Cash Flow Statement through revenue, working
+              capital, CapEx, depreciation and debt schedules.
             </li>
+
             <li>
-              <strong>DCF Valuation: :</strong>
+              <strong>DCF Valuation:</strong>
               Discounts forecast Free Cash Flow to Firm
-              (FCFF) to estimate enterprise value, equity value and implied value per share..
+              to estimate enterprise value, equity value
+              and implied value per share.
             </li>
+
             <li>
               <strong>Sensitivity Analysis:</strong>
-               Assesses the impact of WACC and terminal growth assumptions on valuation.
+              Assesses the impact of WACC and terminal
+              growth assumptions on valuation.
             </li>
+
             <li>
               <strong>Management Dashboard:</strong>
-               Summarises forecast performance and key valuation outputs.
+              Summarises forecast performance and
+              key valuation outputs.
             </li>
-            
+          </ul>
+        </div>
 
         <div class="project-info-section">
           <h3>Business Value</h3>
+
           <p>
             Connects operating assumptions with profitability,
-            cash generation and valuation to support financial planning and investment assessment.
+            cash generation and valuation to support
+            financial planning and investment assessment.
           </p>
+        </div>
 
         <div class="project-info-section">
           <h3>Skills Demonstrated</h3>
+
           <div class="sql-skills-grid">
             <span>Financial Modelling</span>
             <span>3-Statement Modelling</span>
             <span>Financial Forecasting</span>
             <span>Revenue Forecasting</span>
             <span>Free Cash Flow</span>
-             <span>DCF Valuation</span>
-             <span>WACC</span>
+            <span>DCF Valuation</span>
+            <span>WACC</span>
             <span>Terminal Value</span>
             <span>Enterprise Value</span>
             <span>Sensitivity Analysis</span>
@@ -549,31 +600,36 @@ function showPortfolioProject(project) {
 
         <div class="project-info-section">
           <h3>Download Financial Model</h3>
+
           <p>
-            The complete Excel workbook includes historical
-            financial data, forecast assumptions, revenue build,
-            integrated financial statements, supporting schedules,
-            DCF valuation, sensitivity analysis and financial
-            dashboard.
+            The workbook includes historical data, forecast
+            assumptions, integrated financial statements,
+            supporting schedules, DCF valuation, sensitivity
+            analysis and a financial dashboard.
           </p>
+
           <p>
-            All financial data used in this project is fictional
-            and has been created for portfolio and learning purposes.
+            All financial data is fictional and has been
+            created for portfolio demonstration purposes.
           </p>
+
           <div class="dashboard-action-buttons">
             <a
-              href="./financial-model/Integrated 3 Statement & DCF Valuation.xlsx"
+              href="./financial-model/Integrated%203%20Statement%20%26%20DCF%20Valuation.xlsx"
               download
               class="portfolio-download-btn">
-              ↓ Download 3 Statement &amp; DCF Model
+              ↓ Download 3-Statement &amp; DCF Model
             </a>
           </div>
         </div>
+
       </div>
     `;
   }
 
-  /* UNKNOWN PROJECT */
+  /* =====================================================
+     UNKNOWN PROJECT
+     ===================================================== */
 
   else {
     content.innerHTML = `
@@ -630,6 +686,8 @@ function toggleSQLFile() {
         "Unable to load SQL file.\n\n" +
         "Please check that the file exists at:\n" +
         "projects/SQL for Portfolio.sql\n\n" +
+        "Open the portfolio through your website or a local server " +
+        "to use the SQL viewer.\n\n" +
         "Error: " + error.message;
 
       console.error("SQL loading error:", error);
@@ -763,6 +821,7 @@ document.addEventListener("click", function (event) {
     link.textContent = url
       .replace(/^https?:\/\//, "")
       .replace(/\/$/, "");
+
     link.target = "_blank";
     link.rel = "noopener noreferrer";
   }
