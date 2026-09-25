@@ -611,7 +611,38 @@ function showPortfolioProject(project) {
             financial planning and investment assessment.
           </p>
         </div>
+<!-- DCF valuation screenshot -->
+<div class="project-info-section">
+  <h3>Valuation Summary &amp; Key Findings</h3>
 
+  <p>
+    Forecast revenue CAGR of 10.6%, EBITDA margin expansion
+    of 9.2 percentage points, and a DCF valuation with 77.7%
+    of enterprise value attributable to terminal value.
+  </p>
+
+  <a
+    href="financial-model/dcf-valuation-preview.png"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="dcf-preview-link"
+    aria-label="Open DCF valuation screenshot in a new tab"
+  >
+    <img
+      src="financial-model/dcf-valuation-preview.png"
+      alt="DCF valuation summary showing enterprise value of
+           $1,096.92 million, implied value per share of $43.32,
+           key findings and WACC sensitivity analysis."
+      class="dcf-preview-image"
+      loading="lazy"
+    >
+  </a>
+
+  <p class="dcf-preview-caption">
+    Click the image to view full size.
+    Illustrative model using fictional data.
+  </p>
+</div>
         <div class="project-info-section">
           <h3>Skills Demonstrated</h3>
 
