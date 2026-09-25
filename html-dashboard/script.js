@@ -1,18 +1,453 @@
 'use strict';
-const $=id=>document.getElementById(id), months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
-let rows=[], currency='INR';
-const num=v=>Number(String(v||'0').replace(/,/g,''));
-const sum=(data,key)=>data.reduce((a,r)=>a+num(r[key]),0);
-const money=v=>`${currency} ${(v/1e6).toLocaleString('en',{minimumFractionDigits:2,maximumFractionDigits:2})}m`;
-const pct=v=>v===null?'—':v.toFixed(1)+'%';
-const delta=(a,b)=>b?(a-b)/Math.abs(b)*100:null;
-const signed=v=>v===null?'—':`${v>0?'+':''}${v.toFixed(1)}`;
-function parseCSV(text){const out=[];let row=[],value='',quoted=false;for(let i=0;i<text.length;i++){const c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){value+='"';i++;}else quoted=!quoted;}else if(!quoted&&(c===','||c==='\n')){row.push(value.trim());value='';if(c==='\n'){if(row.some(Boolean))out.push(row);row=[];}}else if(c!=='\r')value+=c;}if(value||row.length){row.push(value.trim());out.push(row);}const heads=out.shift();return out.map(r=>Object.fromEntries(heads.map((h,i)=>[h,r[i]||''])));}
-function totals(data,scenario='Actual'){const r=sum(data,'Revenue '+scenario),c=sum(data,'Total Cost '+scenario);return {r,c,p:r-c,m:r?(r-c)/r*100:null};}
-function options(id,values,all){$(id).replaceChildren(...(all?['All',...values]:values).map(v=>new Option(v==='All'?'All '+all:v,v)));}
-function filtered(){return rows.filter(r=>r.Country===$('country').value&&($('unit').value==='All'||r['Business Unit']===$('unit').value)&&($('client').value==='All'||r.Client===$('client').value)&&($('month').value==='All'||r.Month===$('month').value));}
-function chart(key,title,unit,data){const selected=months.filter(m=>$('month').value==='All'||m===$('month').value);const series=['Actual','Budget','Forecast'].map(s=>selected.map(m=>{const a=data.filter(r=>r.Month===m);return a.length?totals(a,s)[key]:null;}));const vals=series.flat().filter(v=>v!==null);let lo=key==='m'?Math.floor(Math.min(...vals)/5)*5:0,hi=key==='m'?Math.ceil(Math.max(...vals)/5)*5:Math.max(...vals)*1.1;if(!vals.length){lo=0;hi=1;}if(hi===lo)hi=lo+1;const w=650,h=120,l=49,right=18,top=10,bottom=22;const x=i=>selected.length===1?(w+l-right)/2:l+i*(w-l-right)/(selected.length-1);const y=v=>top+(hi-v)/(hi-lo)*(h-top-bottom);let svg='';for(let i=0;i<3;i++){const v=lo+(hi-lo)*i/2,yy=y(v);svg+=`<line x1="${l}" x2="${w-right}" y1="${yy}" y2="${yy}" stroke="#29404a"/><text x="${l-7}" y="${yy+3}" text-anchor="end">${key==='m'?v.toFixed(0)+'%':(v/1e6).toFixed(1)}</text>`;}selected.forEach((m,i)=>svg+=`<text x="${x(i)}" y="${h-4}" text-anchor="middle">${m}</text>`);series.forEach((s,j)=>{let d='',active=false;s.forEach((v,i)=>{if(v===null){active=false;return;}d+=`${active?'L':'M'}${x(i)},${y(v)} `;active=true;});const color=['#d6b875','#9aaebc','#69c5cd'][j];svg+=`<path d="${d}" fill="none" stroke="${color}" stroke-width="2" ${j===1?'stroke-dasharray="5 4"':''}/>`;s.forEach((v,i)=>{if(v!==null)svg+=`<circle cx="${x(i)}" cy="${y(v)}" r="3" fill="${color}"><title>${selected[i]} · ${['Actual','Budget','Forecast'][j]}: ${key==='m'?pct(v):money(v)}</title></circle>`;});});return `<div class="chart-row"><div class="chart-label">${title}<small>${unit}</small></div><svg viewBox="0 0 ${w} ${h}" preserveAspectRatio="none" role="img" aria-label="${title}: actual, budget and forecast by month">${svg}</svg></div>`;}
-function update(){const data=filtered();currency=rows.find(r=>r.Country===$('country').value).Currency;const a=totals(data),b=totals(data,'Budget');const cards=[['Actual revenue',money(a.r),delta(a.r,b.r),false],['Actual cost',money(a.c),delta(a.c,b.c),true],['Gross profit',money(a.p),delta(a.p,b.p),false],['Gross margin',pct(a.m),a.m===null||b.m===null?null:a.m-b.m,false]];$('kpis').innerHTML=cards.map(([label,v,d,inverse],i)=>`<article class="kpi"><p>${label}</p><strong>${data.length?v:'—'}</strong><small class="${d===null?'':(inverse?d<=0:d>=0)?'good':'bad'}">${signed(d)}${d===null?'':i===3?' pp':'%'} vs budget</small></article>`).join('');$('charts').innerHTML=chart('r','Revenue',currency+' million',data)+chart('c','Cost',currency+' million',data)+chart('m','Gross margin','% of revenue',data);const units=[...new Set(data.map(r=>r['Business Unit']))].map(name=>{const d=data.filter(r=>r['Business Unit']===name);return {name,a:totals(d),b:totals(d,'Budget')};}).sort((x,y)=>y.a.r-x.a.r);const max=Math.max(...units.map(u=>u.a.r),1);$('units').innerHTML=units.map(u=>{const d=delta(u.a.r,u.b.r);return `<div><div class="unit-head">${u.name}<span>${money(u.a.r)}</span></div><div class="track"><i style="width:${u.a.r/max*100}%"></i></div><div class="unit-bottom"><span>GM ${pct(u.a.m)}</span><span class="${d>=0?'good':'bad'}">Rev ${signed(d)}% vs budget</span></div></div>`;}).join('')||'<p>No records match these filters.</p>';const d=delta(a.r,b.r);$('insight').textContent=data.length?`Revenue is ${d===null?'not comparable to budget':Math.abs(d).toFixed(1)+'% '+(d>=0?'above':'below')+' budget'}. ${units[0].name} leads revenue at ${(units[0].a.r/a.r*100).toFixed(1)}% of this selection. Gross margin is ${pct(a.m)}.`:'Choose another filter combination to view performance.';$('scope').textContent=`${$('country').value} · ${currency} only · ${$('month').value==='All'?'Jan–Dec':$('month').value} 2026 · ${data.length.toLocaleString()} records`;}
-async function init(){try{const response=await fetch('data/financial_data.csv');if(!response.ok)throw Error('Data unavailable');rows=parseCSV(await response.text());if(!rows.length||!rows[0]['Revenue Actual'])throw Error('Invalid data');options('country',[...new Set(rows.map(r=>r.Country))].sort());options('unit',[...new Set(rows.map(r=>r['Business Unit']))].sort(),'business units');options('client',[...new Set(rows.map(r=>r.Client))].sort(),'clients');options('month',months,'months');$('country').value='India';['country','unit','client','month'].forEach(id=>$(id).addEventListener('change',update));$('reset').onclick=()=>{$('country').value='India';['unit','client','month'].forEach(id=>$(id).value='All');update();};update();}catch(e){$('error').hidden=false;$('error').textContent='Unable to load data. Keep financial_data.csv inside the data folder and open this dashboard through GitHub Pages or a local web server.';}}
-$('present').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.documentElement.requestFullscreen();}catch(e){$('present').textContent='Use browser full screen (F11)';}};
+
+const $ = id => document.getElementById(id);
+
+const months = [
+  'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+  'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+];
+
+let rows = [];
+
+// All source amounts are treated as USD.
+// The Currency column is ignored; no FX conversion is applied.
+const currency = 'USD';
+
+const num = value =>
+  Number(String(value || '0').replace(/,/g, ''));
+
+const sum = (data, key) =>
+  data.reduce((total, row) => total + num(row[key]), 0);
+
+const money = value =>
+  `${currency} ${(value / 1e6).toLocaleString('en', {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2
+  })}m`;
+
+const pct = value =>
+  value === null ? '—' : value.toFixed(1) + '%';
+
+const delta = (actual, budget) =>
+  budget ? ((actual - budget) / Math.abs(budget)) * 100 : null;
+
+const signed = value =>
+  value === null
+    ? '—'
+    : `${value > 0 ? '+' : ''}${value.toFixed(1)}`;
+
+// Read CSV, including quoted numbers containing commas.
+function parseCSV(text) {
+  const output = [];
+  let row = [];
+  let value = '';
+  let quoted = false;
+
+  for (let i = 0; i < text.length; i++) {
+    const character = text[i];
+
+    if (character === '"') {
+      if (quoted && text[i + 1] === '"') {
+        value += '"';
+        i++;
+      } else {
+        quoted = !quoted;
+      }
+    } else if (
+      !quoted &&
+      (character === ',' || character === '\n')
+    ) {
+      row.push(value.trim());
+      value = '';
+
+      if (character === '\n') {
+        if (row.some(Boolean)) output.push(row);
+        row = [];
+      }
+    } else if (character !== '\r') {
+      value += character;
+    }
+  }
+
+  if (value || row.length) {
+    row.push(value.trim());
+    output.push(row);
+  }
+
+  const headers = output.shift();
+
+  return output.map(values =>
+    Object.fromEntries(
+      headers.map((header, index) => [
+        header,
+        values[index] || ''
+      ])
+    )
+  );
+}
+
+// Gross margin uses total profit divided by total revenue.
+function totals(data, scenario = 'Actual') {
+  const revenue = sum(data, 'Revenue ' + scenario);
+  const cost = sum(data, 'Total Cost ' + scenario);
+
+  return {
+    r: revenue,
+    c: cost,
+    p: revenue - cost,
+    m: revenue ? ((revenue - cost) / revenue) * 100 : null
+  };
+}
+
+function options(id, values, all) {
+  const items = all ? ['All', ...values] : values;
+
+  $(id).replaceChildren(
+    ...items.map(value =>
+      new Option(
+        value === 'All' ? 'All ' + all : value,
+        value
+      )
+    )
+  );
+}
+
+// Country is the only dashboard filter.
+function filtered() {
+  return rows.filter(row =>
+    $('country').value === 'All' ||
+    row.Country === $('country').value
+  );
+}
+
+function chart(key, title, unit, data) {
+  const selected = months;
+  const scenarios = ['Actual', 'Budget', 'Forecast'];
+
+  const series = scenarios.map(scenario =>
+    selected.map(month => {
+      const monthData = data.filter(row => row.Month === month);
+
+      return monthData.length
+        ? totals(monthData, scenario)[key]
+        : null;
+    })
+  );
+
+  const values = series.flat().filter(value => value !== null);
+
+  let low = key === 'm'
+    ? Math.floor(Math.min(...values) / 5) * 5
+    : 0;
+
+  let high = key === 'm'
+    ? Math.ceil(Math.max(...values) / 5) * 5
+    : Math.max(...values) * 1.1;
+
+  if (!values.length) {
+    low = 0;
+    high = 1;
+  }
+
+  if (high === low) high = low + 1;
+
+  const width = 650;
+  const height = 120;
+  const left = 49;
+  const right = 18;
+  const top = 10;
+  const bottom = 22;
+
+  const x = index =>
+    selected.length === 1
+      ? (width + left - right) / 2
+      : left +
+        index * (width - left - right) / (selected.length - 1);
+
+  const y = value =>
+    top +
+    ((high - value) / (high - low)) * (height - top - bottom);
+
+  let svg = '';
+
+  for (let i = 0; i < 3; i++) {
+    const value = low + ((high - low) * i) / 2;
+    const position = y(value);
+
+    const label = key === 'm'
+      ? value.toFixed(0) + '%'
+      : (value / 1e6).toFixed(1);
+
+    svg += `
+      <line
+        x1="${left}"
+        x2="${width - right}"
+        y1="${position}"
+        y2="${position}"
+        stroke="#29404a"
+      />
+      <text
+        x="${left - 7}"
+        y="${position + 3}"
+        text-anchor="end"
+      >${label}</text>
+    `;
+  }
+
+  selected.forEach((month, index) => {
+    svg += `
+      <text
+        x="${x(index)}"
+        y="${height - 4}"
+        text-anchor="middle"
+      >${month}</text>
+    `;
+  });
+
+  series.forEach((values, scenarioIndex) => {
+    let path = '';
+    let active = false;
+
+    values.forEach((value, index) => {
+      if (value === null) {
+        active = false;
+        return;
+      }
+
+      path += `${active ? 'L' : 'M'}${x(index)},${y(value)} `;
+      active = true;
+    });
+
+    const color = [
+      '#d6b875',
+      '#9aaebc',
+      '#69c5cd'
+    ][scenarioIndex];
+
+    svg += `
+      <path
+        d="${path}"
+        fill="none"
+        stroke="${color}"
+        stroke-width="2"
+        ${scenarioIndex === 1 ? 'stroke-dasharray="5 4"' : ''}
+      />
+    `;
+
+    values.forEach((value, index) => {
+      if (value === null) return;
+
+      const formattedValue = key === 'm'
+        ? pct(value)
+        : money(value);
+
+      svg += `
+        <circle
+          cx="${x(index)}"
+          cy="${y(value)}"
+          r="3"
+          fill="${color}"
+        >
+          <title>${selected[index]} · ${scenarios[scenarioIndex]}: ${formattedValue}</title>
+        </circle>
+      `;
+    });
+  });
+
+  return `
+    <div class="chart-row">
+      <div class="chart-label">
+        ${title}
+        <small>${unit}</small>
+      </div>
+
+      <svg
+        viewBox="0 0 ${width} ${height}"
+        preserveAspectRatio="none"
+        role="img"
+        aria-label="${title}: actual, budget and forecast by month"
+      >
+        ${svg}
+      </svg>
+    </div>
+  `;
+}
+
+function update() {
+  const data = filtered();
+  const actual = totals(data);
+  const budget = totals(data, 'Budget');
+
+  const cards = [
+    [
+      'Actual revenue',
+      money(actual.r),
+      delta(actual.r, budget.r),
+      false
+    ],
+    [
+      'Actual cost',
+      money(actual.c),
+      delta(actual.c, budget.c),
+      true
+    ],
+    [
+      'Gross profit',
+      money(actual.p),
+      delta(actual.p, budget.p),
+      false
+    ],
+    [
+      'Gross margin',
+      pct(actual.m),
+      actual.m === null || budget.m === null
+        ? null
+        : actual.m - budget.m,
+      false
+    ]
+  ];
+
+  $('kpis').innerHTML = cards.map(
+    ([label, value, variance, inverse], index) => {
+      const status = variance === null
+        ? ''
+        : (inverse ? variance <= 0 : variance >= 0)
+          ? 'good'
+          : 'bad';
+
+      const suffix = variance === null
+        ? ''
+        : index === 3
+          ? ' pp'
+          : '%';
+
+      return `
+        <article class="kpi">
+          <p>${label}</p>
+          <strong>${data.length ? value : '—'}</strong>
+          <small class="${status}">
+            ${signed(variance)}${suffix} vs budget
+          </small>
+        </article>
+      `;
+    }
+  ).join('');
+
+  $('charts').innerHTML =
+    chart('r', 'Revenue', currency + ' million', data) +
+    chart('c', 'Cost', currency + ' million', data) +
+    chart('m', 'Gross margin', '% of revenue', data);
+
+  const units = [...new Set(
+    data.map(row => row['Business Unit'])
+  )].map(name => {
+    const unitData = data.filter(
+      row => row['Business Unit'] === name
+    );
+
+    return {
+      name,
+      a: totals(unitData),
+      b: totals(unitData, 'Budget')
+    };
+  }).sort((first, second) => second.a.r - first.a.r);
+
+  const maximumRevenue = Math.max(
+    ...units.map(unit => unit.a.r),
+    1
+  );
+
+  $('units').innerHTML = units.map(unit => {
+    const variance = delta(unit.a.r, unit.b.r);
+
+    return `
+      <div>
+        <div class="unit-head">
+          ${unit.name}
+          <span>${money(unit.a.r)}</span>
+        </div>
+
+        <div class="track">
+          <i style="width:${unit.a.r / maximumRevenue * 100}%"></i>
+        </div>
+
+        <div class="unit-bottom">
+          <span>GM ${pct(unit.a.m)}</span>
+          <span class="${variance >= 0 ? 'good' : 'bad'}">
+            Rev ${signed(variance)}% vs budget
+          </span>
+        </div>
+      </div>
+    `;
+  }).join('') || '<p>No records match these filters.</p>';
+
+  const revenueVariance = delta(actual.r, budget.r);
+
+  const budgetComparison = revenueVariance === null
+    ? 'not comparable to budget'
+    : Math.abs(revenueVariance).toFixed(1) +
+      '% ' +
+      (revenueVariance >= 0 ? 'above' : 'below') +
+      ' budget';
+
+  $('insight').textContent = data.length
+    ? `Revenue is ${budgetComparison}. ${units[0].name} leads revenue at ${(units[0].a.r / actual.r * 100).toFixed(1)}% of this selection. Gross margin is ${pct(actual.m)}.`
+    : 'Choose another filter combination to view performance.';
+
+  const countryLabel = $('country').value === 'All'
+    ? 'All countries'
+    : $('country').value;
+
+  $('scope').textContent =
+    `${countryLabel} · ${currency} · Jan–Dec 2026 · ${data.length.toLocaleString()} records`;
+}
+
+async function init() {
+  try {
+    const response = await fetch('data/financial_data.csv');
+
+    if (!response.ok) {
+      throw Error('Data unavailable');
+    }
+
+    rows = parseCSV(await response.text());
+
+    if (!rows.length || !rows[0]['Revenue Actual']) {
+      throw Error('Invalid data');
+    }
+
+    options(
+      'country',
+      [...new Set(rows.map(row => row.Country))].sort(),
+      'countries'
+    );
+
+    $('country').value = 'All';
+    $('country').addEventListener('change', update);
+
+    $('reset').onclick = () => {
+      $('country').value = 'All';
+      update();
+    };
+
+    update();
+  } catch (error) {
+    $('error').hidden = false;
+    $('error').textContent =
+      'Unable to load data. Keep financial_data.csv inside the data folder and open this dashboard through GitHub Pages or a local web server.';
+  }
+}
+
+$('present').onclick = async () => {
+  try {
+    if (document.fullscreenElement) {
+      await document.exitFullscreen();
+    } else {
+      await document.documentElement.requestFullscreen();
+    }
+  } catch (error) {
+    $('present').textContent = 'Use browser full screen (F11)';
+  }
+};
+
 init();
