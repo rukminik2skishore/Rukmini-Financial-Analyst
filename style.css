@@ -3469,4 +3469,52 @@ body > header nav {
   .footer-card p {
     font-size: 13px;
   }
+
+
+/* Consistent portfolio proportions, typography and card alignment. */
+body main > :is(#home,#about,#experience,#projects,#education,#skills,#resume,#contact).section { width: 88%; max-width: 1240px; margin: 36px auto; padding: clamp(24px,4vw,48px); border: 1px solid rgba(226,201,149,.2); border-radius: 24px; background: linear-gradient(135deg,#17283d,#263d57); box-shadow: none; text-align: left; }
+body main > #home.rk-home.section { padding: 0; }
+body > header { padding: 22px max(6vw,calc((100vw - 1240px)/2)); }
+#home .rk-hero { padding: clamp(24px,4vw,48px); }
+#home .rk-work { margin: 0 clamp(24px,4vw,48px); padding-bottom: clamp(24px,4vw,48px); }
+#home .rk-name { font-size: clamp(36px,4.1vw,58px); line-height: 1.12; }
+#home .rk-tagline { font-size: clamp(20px,2.1vw,28px); }
+#home .rk-photo { padding: 16px; }
+#home .profile-links, .footer-links { display:flex; flex-wrap:wrap; justify-content:center; gap:8px 18px; }
+#home .profile-links a, .footer-links a { color:#e2c995; text-decoration:none; overflow-wrap:anywhere; }
+#home .profile-links a:first-child { flex-basis:100%; }
+a:hover { text-underline-offset:4px; }
+#home .profile-links a:hover, .footer-links a:hover { text-decoration:underline; }
+body main > :is(#home,#about,#experience,#projects,#education,#skills,#resume,#contact).section p, body main > :is(#home,#about,#experience,#projects,#education,#skills,#resume,#contact).section li { text-align:left; }
+#about .rka-title, #education .edu-title, #projects .portfolio-project-title, #experience .experience-hero h2, #contact #rc-title, #resume #rr-title { font-size:clamp(30px,3.3vw,44px); line-height:1.2; letter-spacing:-.6px; color:#fff; margin:0 0 20px; }
+#projects .portfolio-project-title span { color:#e2c995; }
+#projects .portfolio-project-title::after { content:none; }
+#projects .portfolio-project-intro { font-size:16px; color:#d4dfea; max-width:850px; }
+#projects .portfolio-project-card, #education .edu-card { background:rgba(255,255,255,.055); border:1px solid rgba(226,201,149,.22); border-radius:18px; box-shadow:none; text-align:left; }
+#projects .portfolio-project-card { padding:26px; height:auto; }
+#projects .portfolio-project-card h3 { min-height:3em; margin:0 0 14px; color:#fff; }
+#projects .portfolio-project-card > p { min-height:7.4em; }
+#projects .project-highlights { padding-left:19px; margin:0 0 20px; }
+#projects .project-highlights li { padding-left:0; line-height:1.7; color:#d4dfea; }
+#projects .project-tags { margin-top:auto; min-height:72px; align-content:start; }
+#projects .portfolio-view-btn { align-self:flex-start; margin-top:20px; }
+#projects .portfolio-disclaimer { margin:0 0 28px; background:rgba(226,201,149,.06); border:1px solid rgba(226,201,149,.22); }
+#projects .portfolio-disclaimer p { margin:8px 0 0; color:#d4dfea; }
+#education .edu-timeline { padding-left:0; }
+#education .edu-timeline::before, #education .edu-entry::before { content:none; }
+#education .edu-card h3 { color:#fff; }
+#education .edu-college, #education .edu-university, #education .edu-achievements li { color:#d4dfea; }
+#education .edu-achievements { background:transparent; border-top:1px solid rgba(226,201,149,.2); }
+#education .edu-achievements h4 { color:#e2c995; }
+#education .edu-score { background:rgba(226,201,149,.1); color:#e2c995; }
+.section article, .section .rka-card, .section .rc-card { min-width:0; }
+.portfolio-footer { width:88%; max-width:1240px; margin:32px auto 0; }
+.portfolio-footer .footer-tagline { color:#d4dfea; }
+.footer-links { font-size:13px; margin-top:12px; }
+@media(max-width:800px) {
+ body main > :is(#home,#about,#experience,#projects,#education,#skills,#resume,#contact).section { width:92%; margin:24px auto; }
+ #projects .portfolio-project-grid { grid-template-columns:1fr; }
+ #projects .portfolio-project-card h3, #projects .portfolio-project-card > p, #projects .project-tags { min-height:0; }
+ #education .edu-card-top { flex-wrap:wrap; gap:20px; }
+ body > header nav { margin-left:0; justify-content:center; }
 }
