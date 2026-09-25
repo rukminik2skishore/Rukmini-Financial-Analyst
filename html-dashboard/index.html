@@ -1,1 +1,23 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rukmini KS | Financial Performance</title><link rel="stylesheet" href="style.css"></head><body><main class="dashboard"><header><div><p class="eyebrow">RUKMINI KS / FP&amp;A ANALYST</p><h1>Financial performance<span>.</span></h1><p class="subtitle">2026 management overview · Revenue, cost & profitability · USD</p></div><button id="present">⛶ Present</button></header><section class="filters" aria-label="Dashboard filters"><label>Country<select id="country"></select></label><button id="reset">All countries ↺</button></section><section class="kpis" id="kpis" aria-label="Key performance indicators"></section><div class="body-grid"><section class="panel trends"><div class="panel-title"><h2>Performance trends</h2><div class="legend"><span>━ Actual</span><span>┄ Budget</span><span>━ Forecast</span></div></div><div id="charts" class="charts"></div></section><aside class="panel drivers"><div class="panel-title"><h2>Business unit scorecard</h2></div><p class="muted">Actual revenue · gross margin · budget variance</p><div id="units"></div><div class="insight"><p class="eyebrow">MANAGEMENT SNAPSHOT</p><p id="insight" aria-live="polite"></p></div></aside></div><footer><span>PORTFOLIO PROJECT · FICTIONAL DATA</span><span id="scope">Loading data…</span></footer><p id="error" role="alert" hidden></p></main><script src="script.js"></script></body></html>
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rukmini KS | Financial Performance</title><link rel="stylesheet" href="style.css"></head><body><main class="dashboard"><header><div><p class="eyebrow">RUKMINI KS / FP&amp;A ANALYST</p><h1>Financial performance<span>.</span></h1><p class="subtitle">2026 management overview · Revenue, cost & profitability · USD</p></div><button id="present">⛶ Present</button></header><section class="filters" aria-label="Dashboard filters">
+  <label>
+    Country
+    <select id="country"></select>
+  </label>
+
+  <label>
+    Business unit
+    <select id="unit"></select>
+  </label>
+
+  <label>
+    Client
+    <select id="client"></select>
+  </label>
+
+  <label>
+    Period
+    <select id="month"></select>
+  </label>
+
+  <button id="reset">Reset filters ↺</button>
+</section><section class="kpis" id="kpis" aria-label="Key performance indicators"></section><div class="body-grid"><section class="panel trends"><div class="panel-title"><h2>Performance trends</h2><div class="legend"><span>━ Actual</span><span>┄ Budget</span><span>━ Forecast</span></div></div><div id="charts" class="charts"></div></section><aside class="panel drivers"><div class="panel-title"><h2>Business unit scorecard</h2></div><p class="muted">Actual revenue · gross margin · budget variance</p><div id="units"></div><div class="insight"><p class="eyebrow">MANAGEMENT SNAPSHOT</p><p id="insight" aria-live="polite"></p></div></aside></div><footer><span>PORTFOLIO PROJECT · FICTIONAL DATA</span><span id="scope">Loading data…</span></footer><p id="error" role="alert" hidden></p></main><script src="script.js"></script></body></html>
