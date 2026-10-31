@@ -356,7 +356,7 @@ function showPortfolioProject(project) {
     content.innerHTML = `
       <div class="portfolio-detail-card">
 
-        <h2>FP&amp;A Forecasting and Budget Analysis Model</h2>
+        <h2>FP&amp;A Forecasting and Budget Analysis</h2>
 
         <p class="project-subtitle">
           FP&amp;A Portfolio Project |
