@@ -348,7 +348,6 @@ function showPortfolioProject(project) {
     `;
   }
 
-  /
 /* ============================================
    FP&A FORECASTING & BUDGETING PROJECT
    ============================================ */
