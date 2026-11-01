@@ -352,8 +352,7 @@ function showPortfolioProject(project) {
    FP&A FORECASTING & BUDGETING PROJECT
    ============================================ */
 
-if (project === "model") {
-
+if (project === "forecast-budget") {
   content.innerHTML = `
 
     <div class="portfolio-detail-card fpa-model">
