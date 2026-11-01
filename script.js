@@ -348,11 +348,13 @@ function showPortfolioProject(project) {
     `;
   }
 
-/* ============================================
+
+/* =====================================================
    FP&A FORECASTING & BUDGETING PROJECT
-   ============================================ */
+   ===================================================== */
 
 else if (project === "forecast-budget") {
+
   content.innerHTML = `
 
     <div class="portfolio-detail-card fpa-model">
@@ -360,9 +362,10 @@ else if (project === "forecast-budget") {
       <h2>Driver-Based FP&A | 2027 Forecast vs Budget</h2>
 
       <p class="project-subtitle">
-        Excel Financial Model | Forecasting, Budgeting &
-        Scenario Analysis
+        Excel Financial Model |
+        Forecasting, Budgeting &amp; Scenario Analysis
       </p>
+
 
       <!-- PROJECT OVERVIEW -->
 
@@ -371,7 +374,7 @@ else if (project === "forecast-budget") {
         <h3>Project Overview</h3>
 
         <p>
-          Developed an integrated FP&A model for an
+          Developed an integrated FP&amp;A model for an
           illustrative IT services business, using
           historical financial data from 2025–2026
           to forecast 2027 performance across five
@@ -379,47 +382,199 @@ else if (project === "forecast-budget") {
         </p>
 
         <p>
-          Revenue, headcount and operating expenses
-          are consolidated into a projected P&L.
-          An independent 2027 budget enables variance
-          analysis, while scenario modelling evaluates
-          financial risks and opportunities.
+          The model combines revenue, headcount and
+          operating expense forecasts into a projected
+          Profit &amp; Loss statement. An independent
+          2027 budget serves as the benchmark for
+          variance analysis, while scenario modelling
+          evaluates potential financial outcomes.
+        </p>
+
+        <p class="model-disclaimer">
+          This portfolio project uses fictional business
+          data and is intended for demonstration purposes.
         </p>
 
       </div>
 
-      <!-- KPI CARDS -->
+
+      <!-- MODEL STRUCTURE -->
+
+      <div class="project-info-section">
+
+        <h3>Model Structure &amp; Methodology</h3>
+
+        <p>
+          The workbook connects historical actuals,
+          operational assumptions and forecast drivers
+          to develop an integrated financial outlook.
+        </p>
+
+        <ul class="project-feature-list">
+
+          <li>
+            <strong>Historical Actuals:</strong>
+            Financial performance for 2025–2026.
+          </li>
+
+          <li>
+            <strong>Revenue Forecast:</strong>
+            Revenue projections based on workforce,
+            utilisation and billing-rate assumptions.
+          </li>
+
+          <li>
+            <strong>Headcount &amp; Operating Costs:</strong>
+            Workforce planning, personnel expenses
+            and operating expense projections.
+          </li>
+
+          <li>
+            <strong>Projected P&amp;L:</strong>
+            Consolidated revenue, operating costs
+            and EBITDA forecasts.
+          </li>
+
+          <li>
+            <strong>Forecast vs Budget:</strong>
+            Comparison of the 2027 forecast against
+            an independently developed annual budget.
+          </li>
+
+          <li>
+            <strong>Scenario Analysis &amp; Checks:</strong>
+            Evaluation of alternative assumptions
+            and model validation.
+          </li>
+
+        </ul>
+
+      </div>
+
+
+      <!-- PLANNING ASSUMPTIONS -->
+
+      <div class="project-info-section">
+
+        <h3>Key Planning Assumptions</h3>
+
+        <p>
+          The budget and forecast cover the same financial
+          year but use different planning assumptions.
+          The budget represents the planning benchmark,
+          while the forecast estimates expected performance.
+        </p>
+
+        <div class="model-table-wrap">
+
+          <table class="model-scenario-table">
+
+            <thead>
+              <tr>
+                <th>Planning Driver</th>
+                <th>2027 Budget</th>
+                <th>Base Forecast</th>
+              </tr>
+            </thead>
+
+            <tbody>
+
+              <tr>
+                <td>Billing Rate Growth</td>
+                <td>3%</td>
+                <td>5%</td>
+              </tr>
+
+              <tr>
+                <td>Headcount Growth</td>
+                <td>2%</td>
+                <td>4%</td>
+              </tr>
+
+              <tr>
+                <td>Salary Inflation</td>
+                <td>5%</td>
+                <td>6%</td>
+              </tr>
+
+            </tbody>
+
+          </table>
+
+        </div>
+
+        <p>
+          <strong>Scenario Control:</strong>
+          Base, Upside and Downside assumptions can
+          be selected using cell
+          <strong>Assumptions!C3</strong>
+          in the Excel workbook.
+        </p>
+
+      </div>
+
+
+      <!-- FINANCIAL PERFORMANCE -->
 
       <div class="project-info-section">
 
         <h3>FY2027 Financial Performance – Base Case</h3>
 
+        <p>
+          The Base forecast projects stronger revenue
+          and profitability than the 2027 budget.
+        </p>
+
         <div class="model-kpi-grid">
 
           <div class="model-kpi">
+
             <span>Forecast Revenue</span>
+
             <strong>₹2,033.63m</strong>
+
             <small>Budget: ₹1,949.62m</small>
-            <p class="model-positive">+4.3% vs Budget</p>
+
+            <p class="model-positive">
+              +4.3% vs Budget
+            </p>
+
           </div>
 
+
           <div class="model-kpi">
+
             <span>Forecast EBITDA</span>
+
             <strong>₹625.54m</strong>
+
             <small>Budget: ₹575.09m</small>
-            <p class="model-positive">+8.8% vs Budget</p>
+
+            <p class="model-positive">
+              +8.8% vs Budget
+            </p>
+
           </div>
 
+
           <div class="model-kpi">
+
             <span>EBITDA Margin</span>
+
             <strong>30.8%</strong>
+
             <small>Budget: 29.5%</small>
-            <p class="model-positive">+1.3 pp vs Budget</p>
+
+            <p class="model-positive">
+              +1.3 pp vs Budget
+            </p>
+
           </div>
 
         </div>
 
       </div>
+
 
       <!-- KEY FINANCIAL FINDINGS -->
 
@@ -427,43 +582,51 @@ else if (project === "forecast-budget") {
 
         <h3>Key Financial Findings</h3>
 
-        <ul>
+        <ul class="project-feature-list">
+
           <li>
-            <strong>Revenue:</strong>
-            Forecast exceeds budget by ₹84.01m,
-            supported by stronger headcount growth,
-            utilisation and billing rate assumptions.
+            <strong>Revenue Variance:</strong>
+            Forecast revenue exceeds budget by
+            ₹84.01m (+4.3%), reflecting stronger
+            operating and pricing assumptions.
           </li>
 
           <li>
-            <strong>Operating Costs:</strong>
-            Additional costs of approximately ₹33.56m
-            partially offset revenue gains.
+            <strong>Operating Cost Variance:</strong>
+            Forecast operating costs are approximately
+            ₹33.56m higher than budget, partially
+            offsetting the revenue improvement.
+          </li>
+
+          <li>
+            <strong>EBITDA Variance:</strong>
+            Forecast EBITDA exceeds budget by
+            ₹50.45m (+8.8%).
           </li>
 
           <li>
             <strong>Profitability:</strong>
-            EBITDA exceeds budget by ₹50.45m,
-            improving EBITDA margin by approximately
-            1.3 percentage points.
+            EBITDA margin increases from approximately
+            29.5% in the budget to 30.8% in the
+            Base forecast.
           </li>
 
-          <li>
-            <strong>Planning Assumptions:</strong>
-            The Base forecast assumes 5% billing
-            rate growth versus 3% in the budget,
-            highlighting the importance of pricing
-            realisation.
-          </li>
         </ul>
 
       </div>
+
 
       <!-- SCENARIO ANALYSIS -->
 
       <div class="project-info-section">
 
         <h3>Scenario Analysis</h3>
+
+        <p>
+          Three scenarios evaluate how changes in
+          operating assumptions may affect revenue
+          and profitability.
+        </p>
 
         <div class="model-table-wrap">
 
@@ -479,6 +642,7 @@ else if (project === "forecast-budget") {
             </thead>
 
             <tbody>
+
               <tr>
                 <td>Base</td>
                 <td>₹2,033.63m</td>
@@ -499,6 +663,7 @@ else if (project === "forecast-budget") {
                 <td>₹412.21m</td>
                 <td>23.3%</td>
               </tr>
+
             </tbody>
 
           </table>
@@ -506,104 +671,111 @@ else if (project === "forecast-budget") {
         </div>
 
         <p>
-          <strong>Upside:</strong>
-          Higher utilisation, billing rates and
-          headcount growth support stronger
-          revenue and profitability.
+          <strong>Base Case:</strong>
+          Expected performance based on the
+          central planning assumptions.
         </p>
 
         <p>
-          <strong>Downside:</strong>
+          <strong>Upside Case:</strong>
+          Higher utilisation, stronger billing-rate
+          growth and workforce expansion support
+          improved revenue and EBITDA.
+        </p>
+
+        <p>
+          <strong>Downside Case:</strong>
           Lower utilisation, slower pricing growth
-          and higher cost inflation reduce EBITDA
-          margin to 23.3%.
+          and cost pressures reduce profitability.
+        </p>
+
+        <p>
+          The scenarios illustrate sensitivity to
+          business assumptions rather than three
+          separately approved budgets.
         </p>
 
       </div>
 
-      <!-- MANAGEMENT RECOMMENDATIONS -->
+
+      <!-- MANAGEMENT IMPLICATIONS -->
 
       <div class="project-info-section">
 
-        <h3>Management Recommendations</h3>
+        <h3>Management Implications</h3>
 
-        <ul>
+        <ul class="project-feature-list">
+
           <li>
-            Validate billing rate growth assumptions
-            against contracts and market conditions.
+            <strong>Protect Pricing Realisation:</strong>
+            Monitor achieved billing rates against
+            forecast assumptions to assess revenue risk.
           </li>
 
           <li>
-            Align workforce expansion with confirmed
-            project demand and billable requirements.
+            <strong>Align Workforce with Demand:</strong>
+            Link hiring decisions to expected utilisation,
+            project demand and personnel cost forecasts.
           </li>
 
           <li>
-            Improve utilisation and resource allocation
-            to maximise existing workforce capacity.
+            <strong>Monitor Profitability Drivers:</strong>
+            Review revenue and cost variances regularly
+            to identify risks to EBITDA margin.
           </li>
 
-          <li>
-            Monitor personnel and operating expenses
-            to protect profitability.
-          </li>
-
-          <li>
-            Review forecast-to-budget variances
-            regularly to identify financial risks.
-          </li>
         </ul>
 
+        <p>
+          <strong>Key Takeaway:</strong>
+          The model demonstrates how driver-based
+          forecasting, budget comparisons and scenario
+          analysis can support more informed financial
+          planning and resource allocation decisions.
+        </p>
+
       </div>
 
-      <!-- CONCLUSION -->
+
+      <!-- FORECAST MODEL PREVIEW -->
 
       <div class="project-info-section">
 
-        <h3>Conclusion & Business Impact</h3>
+        <h3>Forecast Model Preview</h3>
 
         <p>
-          The Base forecast projects revenue and EBITDA
-          above the 2027 budget, driven by stronger
-          pricing, utilisation and workforce assumptions.
+          A snapshot of the Excel forecasting and
+          budget analysis model with the Base scenario
+          selected. Click the image to view it in full size.
         </p>
 
-        <p>
-          <strong>Management Takeaway:</strong>
-          Sustainable profitability depends on
-          achieving expected billing rates and
-          utilisation while maintaining disciplined
-          workforce planning and cost control.
-        </p>
+        <a
+          href="./financial-model/forecast-model-preview.png"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Open forecasting model preview in a new tab"
+        >
 
-        <p>
-          The model supports proactive financial
-          planning, risk assessment and data-driven
-          management decisions.
-        </p>
+          <img
+            src="./financial-model/forecast-model-preview.png"
+            alt="Excel forecasting and budget analysis model"
+            loading="lazy"
+            class="forecast-model-preview"
+            style="
+              display: block;
+              width: 100%;
+              height: auto;
+              margin-top: 18px;
+              border: 1px solid rgba(201, 169, 97, 0.35);
+              border-radius: 12px;
+              cursor: zoom-in;
+            "
+          >
+
+        </a>
 
       </div>
 
-      <!-- MODEL STRUCTURE -->
-
-      <div class="project-info-section">
-
-        <h3>Model Structure</h3>
-
-        <p>
-          Assumptions | Actuals | Revenue Forecast |
-          Headcount Plan | Opex Forecast | P&L |
-          Detailed P&L | Forecast vs Budget |
-          Scenarios | Budget 2027 | Checks
-        </p>
-
-        <p>
-          <strong>Scenario Control:</strong>
-          Select Base, Upside or Downside in
-          Assumptions!C3.
-        </p>
-
-      </div>
 
       <!-- SKILLS -->
 
@@ -611,80 +783,57 @@ else if (project === "forecast-budget") {
 
         <h3>Skills Demonstrated</h3>
 
+        <div class="sql-skills-grid">
+
+          <span>FP&amp;A</span>
+          <span>Financial Modelling</span>
+          <span>Budgeting</span>
+          <span>Forecasting</span>
+          <span>Variance Analysis</span>
+          <span>Scenario Planning</span>
+          <span>P&amp;L Analysis</span>
+          <span>Headcount Planning</span>
+          <span>Advanced Excel</span>
+
+        </div>
+
+      </div>
+
+
+      <!-- DOWNLOAD MODEL -->
+
+      <div class="project-info-section">
+
+        <h3>Download Forecasting &amp; Budget Model</h3>
+
         <p>
-          FP&A · Financial Modelling · Budgeting &
-          Forecasting · Variance Analysis ·
-          Scenario Planning · P&L Analysis ·
-          Headcount Planning · Advanced Excel
+          Explore the assumptions, historical actuals,
+          supporting forecasts, projected P&amp;L,
+          forecast-to-budget comparisons and scenario
+          analysis in the complete Excel workbook.
         </p>
 
-        <p class="model-disclaimer">
-          Illustrative financial model developed
-          using fictional business data.
-        </p>
+        <div class="dashboard-action-buttons">
+
+          <a
+            href="./financial-model/Integrated_Financial_Model.xlsx"
+            download
+            class="portfolio-download-btn"
+          >
+            ↓ Download Excel Model
+          </a>
+
+        </div>
 
       </div>
 
     </div>
 
+  `;
+
 }
 
-        
-<!-- FORECAST MODEL SCREENSHOT -->
-<div class="project-info-section">
-  <h3>Forecast Model Preview</h3>
 
-  <p>
-    A snapshot of the Excel forecasting and budget analysis model - Scenario selected- Base.
-    Click the image to view it in full size.
-  </p>
-
-  <a
-    href="financial-model/forecast-model-preview.png"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Open forecast model screenshot in a new tab"
-  >
-    <img
-      src="financial-model/forecast-model-preview.png"
-      alt="Excel forecasting and budget analysis model preview"
-      loading="lazy"
-      style="
-        display: block;
-        width: 100%;
-        height: auto;
-        margin-top: 18px;
-        border: 1px solid rgba(201, 169, 97, 0.35);
-        border-radius: 12px;
-        cursor: zoom-in;
-      "
-    >
-  </a>
-</div>
-
-        <div class="project-info-section">
-          <h3>Download Forecasting &amp; Budget Model</h3>
-
-          <p>
-            Explore the assumptions, historical actuals,
-            supporting forecasts, projected P&amp;L, budget
-            comparisons and scenario analysis in the
-            complete Excel workbook.
-          </p>
-
-          <div class="dashboard-action-buttons">
-            <a
-              href="./financial-model/Integrated_Financial_Model.xlsx"
-              download
-              class="portfolio-download-btn">
-              ↓ Download Excel Model
-            </a>
-          </div>
-        </div>
-
-      </div>
-    `;
-  }
 
   /* =====================================================
      3-STATEMENT MODEL & DCF VALUATION
