@@ -3834,25 +3834,77 @@ body main > :is(#home,#about,#experience,#projects,#education,#skills,#resume,#c
   opacity: 0.75;
 }
 
-<!-- DOWNLOAD EXCEL MODEL -->
+/* FP&A FORECASTING & BUDGETING */
 
-<div class="project-info-section">
+#projects .fpa-model .model-kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin: 22px 0;
+}
 
-  <h3>Explore the Financial Model</h3>
+#projects .fpa-model .model-kpi {
+  background: #123443;
+  border: 1px solid #285366;
+  border-radius: 12px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
 
-  <p>
-    Download the Excel workbook to explore the
-    forecasting assumptions, budget variances,
-    scenario analysis and financial projections.
-  </p>
+#projects .fpa-model .model-kpi span {
+  color: #b8d3de;
+  font-size: 13px;
+}
 
-  <a
-    href="assets/Integrated_Financial_Model.xlsx"
-    download="Integrated_Financial_Model.xlsx"
-    class="portfolio-view-btn model-download-btn">
+#projects .fpa-model .model-kpi strong {
+  color: #ffffff;
+  font-size: 25px;
+}
 
-    Download Excel Model ↓
+#projects .fpa-model .model-kpi small {
+  color: #a7c0cb;
+  font-size: 12px;
+}
 
-  </a>
+#projects .fpa-model .model-positive {
+  color: #5ee0b5;
+  font-weight: 600;
+}
 
-</div>
+#projects .fpa-model .model-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin: 20px 0;
+}
+
+#projects .fpa-model .model-scenario-table {
+  width: 100%;
+  min-width: 450px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+#projects .fpa-model .model-scenario-table th {
+  background: #164354;
+  color: #ffffff;
+  padding: 13px;
+  text-align: left;
+}
+
+#projects .fpa-model .model-scenario-table td {
+  padding: 13px;
+  border-bottom: 1px solid #285366;
+  color: #e4f1f5;
+}
+
+#projects .fpa-model .model-scenario-table tbody tr:nth-child(even) {
+  background: #123443;
+}
+
+@media (max-width: 700px) {
+  #projects .fpa-model .model-kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
