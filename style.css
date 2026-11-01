@@ -3833,3 +3833,26 @@ body main > :is(#home,#about,#experience,#projects,#education,#skills,#resume,#c
   color: inherit;
   opacity: 0.75;
 }
+
+<!-- DOWNLOAD EXCEL MODEL -->
+
+<div class="project-info-section">
+
+  <h3>Explore the Financial Model</h3>
+
+  <p>
+    Download the Excel workbook to explore the
+    forecasting assumptions, budget variances,
+    scenario analysis and financial projections.
+  </p>
+
+  <a
+    href="assets/Integrated_Financial_Model.xlsx"
+    download="Integrated_Financial_Model.xlsx"
+    class="portfolio-view-btn model-download-btn">
+
+    Download Excel Model ↓
+
+  </a>
+
+</div>
