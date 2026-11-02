@@ -835,158 +835,311 @@ else if (project === "forecast-budget") {
 
 
 
-  /* =====================================================
-     3-STATEMENT MODEL & DCF VALUATION
-     ===================================================== */
+  
+/* =====================================================
+   INTEGRATED 3-STATEMENT & DCF VALUATION
+   ===================================================== */
 
-  else if (project === "model") {
-    content.innerHTML = `
-      <div class="portfolio-detail-card">
+else if (project === "model") {
 
-        <h2>3-Statement Model &amp; DCF Valuation</h2>
+  const financialData = {
+    years: [2026, 2027, 2028, 2029, 2030],
+    revenue: [285, 319.30, 351.33, 382.92, 413.34],
+    ebitdaMargin: [29.0, 31.0, 33.0, 34.5, 36.0],
+    enterpriseValue: 1169.01,
+    equityValue: 1189.60,
+    shareValue: 47.58,
+    wacc: 9.96,
+    terminalGrowth: 3.0,
+    terminalContribution: 80.2,
+    scenarios: {
+      downside: 43.07,
+      base: 47.58,
+      upside: 52.34
+    }
+  };
 
-        <p class="project-subtitle">
-          Financial Modelling Portfolio Project |
-          Integrated Financial Statements, DCF &amp; Sensitivity Analysis
+  const revenueCAGR =
+    (Math.pow(
+      financialData.revenue[4] / financialData.revenue[0],
+      1 / 4
+    ) - 1) * 100;
+
+  const currency = value =>
+    "$" + Number(value).toLocaleString("en-US", {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+
+  content.innerHTML = `
+    <div class="portfolio-detail-card dcf-project">
+
+      <h2>3-Statement Financial Model & DCF Valuation</h2>
+
+      <p class="project-subtitle">
+        FP&A | Driver-Based Forecasting | Financial Modelling |
+        Business Valuation
+      </p>
+
+      <div class="project-info-section">
+        <h3>Project Overview</h3>
+        <p>
+          Developed an integrated financial model for an illustrative
+          IT services company, using 2023–2026 historical financials
+          to forecast 2027–2030 performance and estimate enterprise
+          and equity valuation.
+        </p>
+      </div>
+
+      <div class="project-info-section">
+        <h3>Model Structure & Methodology</h3>
+
+        <div class="dcf-method-grid">
+          <div><strong>Revenue Forecasting</strong><p>Billable headcount × utilisation × annual hours × billing rate.</p></div>
+          <div><strong>Financial Planning</strong><p>Operating costs, working capital, CapEx, depreciation and debt.</p></div>
+          <div><strong>3-Statement Integration</strong><p>Linked Income Statement, Balance Sheet and Cash Flow with reconciliation checks.</p></div>
+          <div><strong>DCF Valuation</strong><p>FCFF, WACC, terminal growth and enterprise-to-equity bridge.</p></div>
+          <div><strong>Scenario Analysis</strong><p>Downside, base and upside valuations with sensitivity testing.</p></div>
+        </div>
+      </div>
+
+      <div class="project-info-section">
+        <h3>Key Planning Assumptions</h3>
+
+        <div class="dcf-table-wrap">
+          <table class="dcf-table">
+            <thead>
+              <tr><th>Planning Driver</th><th>Assumption</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Forecast Period</td><td>2027–2030</td></tr>
+              <tr><td>Revenue</td><td>Headcount × Utilisation × Hours × Rate</td></tr>
+              <tr><td>Operating Costs</td><td>Revenue-linked cost ratios</td></tr>
+              <tr><td>Working Capital</td><td>Receivable, inventory and payable days</td></tr>
+              <tr><td>Capital Structure</td><td>15% Debt / 85% Equity</td></tr>
+              <tr><td>WACC</td><td>${financialData.wacc.toFixed(2)}%</td></tr>
+              <tr><td>Terminal Growth</td><td>${financialData.terminalGrowth.toFixed(1)}%</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <div class="project-info-section">
+        <h3>Financial Performance & Valuation Dashboard</h3>
+
+        <div class="dcf-kpi-grid">
+          <div class="dcf-kpi">
+            <span>2030 Revenue</span>
+            <strong>${currency(financialData.revenue[4])}M</strong>
+          </div>
+          <div class="dcf-kpi">
+            <span>Revenue CAGR</span>
+            <strong>${revenueCAGR.toFixed(1)}%</strong>
+          </div>
+          <div class="dcf-kpi">
+            <span>Enterprise Value</span>
+            <strong>${currency(financialData.enterpriseValue)}M</strong>
+          </div>
+          <div class="dcf-kpi dcf-kpi-primary">
+            <span>Implied Value / Share</span>
+            <strong>${currency(financialData.shareValue)}</strong>
+          </div>
+        </div>
+
+        <div class="dcf-chart-grid">
+          <div class="dcf-chart-card">
+            <h4>Revenue Forecast ($M)</h4>
+            <canvas id="dcfRevenueChart" height="220"></canvas>
+          </div>
+
+          <div class="dcf-chart-card">
+            <h4>EBITDA Margin Trend (%)</h4>
+            <canvas id="dcfMarginChart" height="220"></canvas>
+          </div>
+        </div>
+
+        <div class="dcf-chart-grid">
+          <div class="dcf-chart-card">
+            <h4>Scenario Valuation ($/Share)</h4>
+            <canvas id="dcfScenarioChart" height="220"></canvas>
+          </div>
+
+          <div class="dcf-chart-card">
+            <h4>Enterprise Value Composition</h4>
+            <canvas id="dcfTerminalChart" height="220"></canvas>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-info-section">
+        <h3>Key Financial Findings</h3>
+
+        <ul class="dcf-findings">
+          <li>
+            <strong>Revenue Growth:</strong>
+            Revenue increases from $285.0M to $413.3M,
+            representing approximately ${revenueCAGR.toFixed(1)}% CAGR.
+          </li>
+          <li>
+            <strong>Margin Expansion:</strong>
+            EBITDA margin increases from 29.0% to 36.0%,
+            reflecting projected operating leverage.
+          </li>
+          <li>
+            <strong>Valuation:</strong>
+            DCF implies ${currency(financialData.shareValue)} per share,
+            with an enterprise value of
+            ${currency(financialData.enterpriseValue)}M.
+          </li>
+          <li>
+            <strong>Valuation Risk:</strong>
+            Approximately ${financialData.terminalContribution.toFixed(1)}%
+            of enterprise value is attributable to terminal value.
+          </li>
+        </ul>
+      </div>
+
+      <div class="project-info-section">
+        <h3>Skills Demonstrated</h3>
+        <div class="dcf-skills">
+          <span>FP&A</span>
+          <span>Driver-Based Forecasting</span>
+          <span>3-Statement Modelling</span>
+          <span>Financial Planning</span>
+          <span>Profitability Analysis</span>
+          <span>Cash Flow Forecasting</span>
+          <span>DCF Valuation</span>
+          <span>WACC</span>
+          <span>Scenario Analysis</span>
+          <span>Sensitivity Analysis</span>
+        </div>
+      </div>
+
+      <div class="project-info-section dcf-download-section">
+        <h3>Download Financial Model</h3>
+        <p>
+          Explore the complete Excel model, including historical
+          financials, forecast schedules, valuation and dashboard.
         </p>
 
-        <div class="project-info-section">
-          <h3>Project Overview</h3>
-
-          <p>
-            An integrated Excel financial model for an
-            illustrative IT services company, using
-            2023–2025 historical performance to forecast
-            financial results for 2026–2030.
-          </p>
-
-          <p>
-            Linked financial statements and supporting
-            schedules connect operating assumptions with
-            profitability and cash generation. A DCF valuation
-            estimates enterprise value and implied value per
-            share, supported by sensitivity analysis.
-          </p>
-        </div>
-
-        <div class="project-info-section">
-          <h3>Key Features</h3>
-
-          <ul class="project-feature-list">
-            <li>
-              <strong>Integrated Statements:</strong>
-              Links the Income Statement, Balance Sheet and
-              Cash Flow Statement through revenue, working
-              capital, CapEx, depreciation and debt schedules.
-            </li>
-
-            <li>
-              <strong>DCF Valuation:</strong>
-              Discounts forecast Free Cash Flow to Firm
-              to estimate enterprise value, equity value
-              and implied value per share.
-            </li>
-
-            <li>
-              <strong>Sensitivity Analysis:</strong>
-              Assesses the impact of WACC and terminal
-              growth assumptions on valuation.
-            </li>
-
-            <li>
-              <strong>Management Dashboard:</strong>
-              Summarises forecast performance and
-              key valuation outputs.
-            </li>
-          </ul>
-        </div>
-
-        <div class="project-info-section">
-          <h3>Business Value</h3>
-
-          <p>
-            Connects operating assumptions with profitability,
-            cash generation and valuation to support
-            financial planning and investment assessment.
-          </p>
-        </div>
-<!-- DCF valuation screenshot -->
-<div class="project-info-section">
-  <h3>Valuation Summary &amp; Key Findings</h3>
-
-  <p>
-    Forecast revenue CAGR of 10.6%, EBITDA margin expansion
-    of 9.2 percentage points, and a DCF valuation with 77.7%
-    of enterprise value attributable to terminal value.
-  </p>
-
-  <a
-    href="financial-model/dcf-valuation-preview.png"
-    target="_blank"
-    rel="noopener noreferrer"
-    class="dcf-preview-link"
-    aria-label="Open DCF valuation screenshot in a new tab"
-  >
-    <img
-      src="financial-model/dcf-valuation-preview.png"
-      alt="DCF valuation summary showing enterprise value of
-           $1,096.92 million, implied value per share of $43.32,
-           key findings and WACC sensitivity analysis."
-      class="dcf-preview-image"
-      loading="lazy"
-    >
-  </a>
-
-  <p class="dcf-preview-caption">
-    Click the image to view full size.
-    Illustrative model using fictional data.
-  </p>
-</div>
-        <div class="project-info-section">
-          <h3>Skills Demonstrated</h3>
-
-          <div class="sql-skills-grid">
-            <span>Financial Modelling</span>
-            <span>3-Statement Modelling</span>
-            <span>Financial Forecasting</span>
-            <span>Revenue Forecasting</span>
-            <span>Free Cash Flow</span>
-            <span>DCF Valuation</span>
-            <span>WACC</span>
-            <span>Terminal Value</span>
-            <span>Enterprise Value</span>
-            <span>Sensitivity Analysis</span>
-          </div>
-        </div>
-
-        <div class="project-info-section">
-          <h3>Download Financial Model</h3>
-
-          <p>
-            The workbook includes historical data, forecast
-            assumptions, integrated financial statements,
-            supporting schedules, DCF valuation, sensitivity
-            analysis and a financial dashboard.
-          </p>
-
-          <p>
-            All financial data is fictional and has been
-            created for portfolio demonstration purposes.
-          </p>
-
-          <div class="dashboard-action-buttons">
-            <a
-              href="./financial-model/Integrated%203%20Statement%20%26%20DCF%20Valuation.xlsx"
-              download
-              class="portfolio-download-btn">
-              ↓ Download 3-Statement &amp; DCF Model
-            </a>
-          </div>
-        </div>
-
+        <a
+          class="portfolio-view-btn dcf-download-btn"
+          href="financial-model/Integrated_3_Statement_DCF_v2_Formatted.xlsx"
+          download
+        >
+          Download Excel Model ↓
+        </a>
       </div>
-    `;
+
+      <p class="dcf-disclaimer">
+        Illustrative company and fictional financial data.
+        Figures are model-derived and not investment advice.
+      </p>
+
+    </div>
+  `;
+
+  /* Load Chart.js if it is not already available */
+  function renderDCFCharts() {
+
+    if (typeof Chart === "undefined") {
+      console.error("Chart.js is unavailable.");
+      return;
+    }
+
+    const chartDefaults = {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: { display: false }
+      }
+    };
+
+    new Chart(document.getElementById("dcfRevenueChart"), {
+      type: "bar",
+      data: {
+        labels: financialData.years,
+        datasets: [{
+          data: financialData.revenue,
+          backgroundColor: "#168b8a",
+          borderRadius: 5
+        }]
+      },
+      options: chartDefaults
+    });
+
+    new Chart(document.getElementById("dcfMarginChart"), {
+      type: "line",
+      data: {
+        labels: financialData.years,
+        datasets: [{
+          data: financialData.ebitdaMargin,
+          borderColor: "#168b8a",
+          backgroundColor: "rgba(22,139,138,.12)",
+          fill: true,
+          tension: 0.3,
+          pointRadius: 4
+        }]
+      },
+      options: chartDefaults
+    });
+
+    new Chart(document.getElementById("dcfScenarioChart"), {
+      type: "bar",
+      data: {
+        labels: ["Downside", "Base", "Upside"],
+        datasets: [{
+          data: [
+            financialData.scenarios.downside,
+            financialData.scenarios.base,
+            financialData.scenarios.upside
+          ],
+          backgroundColor: [
+            "#d99a55", "#168b8a", "#4879b5"
+          ],
+          borderRadius: 5
+        }]
+      },
+      options: {
+        ...chartDefaults,
+        scales: { y: { beginAtZero: true } }
+      }
+    });
+
+    new Chart(document.getElementById("dcfTerminalChart"), {
+      type: "doughnut",
+      data: {
+        labels: ["Terminal Value", "Forecast FCFF"],
+        datasets: [{
+          data: [
+            financialData.terminalContribution,
+            100 - financialData.terminalContribution
+          ],
+          backgroundColor: ["#168b8a", "#d8e6e8"]
+        }]
+      },
+      options: {
+        ...chartDefaults,
+        plugins: {
+          legend: { display: true, position: "bottom" }
+        }
+      }
+    });
   }
+
+  if (typeof Chart !== "undefined") {
+    renderDCFCharts();
+  } else {
+    const chartScript = document.createElement("script");
+    chartScript.src =
+      "https://cdn.jsdelivr.net/npm/chart.js@4.4.8/dist/chart.umd.min.js";
+    chartScript.onload = renderDCFCharts;
+    document.head.appendChild(chartScript);
+  }
+
+  return;
+}
+
 
   /* =====================================================
      UNKNOWN PROJECT
