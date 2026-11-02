@@ -1137,9 +1137,6 @@ else if (project === "model") {
     document.head.appendChild(chartScript);
   }
 
-  return;
-}
-
 
   /* =====================================================
      UNKNOWN PROJECT
