@@ -4137,3 +4137,31 @@ body main > :is(#home,#about,#experience,#projects,#education,#skills,#resume,#c
   }
 }
 
+
+/* Back to top: fixed to the far right, separate from page content. */
+.portfolio-back-to-top {
+  position: fixed;
+  right: max(12px, env(safe-area-inset-right));
+  bottom: max(24px, env(safe-area-inset-bottom));
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 1px solid rgba(226,201,149,.65);
+  border-radius: 50%;
+  background: #17283d;
+  color: #e2c995;
+  font-family: inherit;
+  line-height: 1;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0,0,0,.25);
+}
+.portfolio-back-to-top[hidden] { display: none; }
+.portfolio-back-to-top:hover { background: #263d57; }
+.portfolio-back-to-top:focus-visible {
+  outline: 3px solid #e2c995;
+  outline-offset: 4px;
+}
