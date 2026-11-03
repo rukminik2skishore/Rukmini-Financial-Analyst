@@ -881,6 +881,11 @@ else if (project === "model") {
         Business Valuation
       </p>
 
+      <p class="dcf-disclaimer">
+        Illustrative company and fictional financial data.
+        Figures are model-driven and not investment advice.
+      </p>
+
       <div class="project-info-section">
         <h3>Project Overview</h3>
         <p>
@@ -966,6 +971,7 @@ else if (project === "model") {
 
           <div class="dcf-chart-card">
             <h4>Enterprise Value Composition</h4>
+            <p class="dcf-chart-summary">Terminal value: ${currency(financialData.enterpriseValue * financialData.terminalContribution / 100)}M (${financialData.terminalContribution.toFixed(1)}%)<br>Forecast FCFF: ${currency(financialData.enterpriseValue * (100 - financialData.terminalContribution) / 100)}M (${(100 - financialData.terminalContribution).toFixed(1)}%)</p>
             <canvas id="dcfTerminalChart" height="220"></canvas>
           </div>
         </div>
@@ -1001,7 +1007,7 @@ else if (project === "model") {
 
       <div class="project-info-section">
         <h3>Skills Demonstrated</h3>
-        <div class="dcf-skills">
+        <div class="sql-skills-grid">
           <span>FP&A</span>
           <span>Driver-Based Forecasting</span>
           <span>3-Statement Modelling</span>
@@ -1015,7 +1021,7 @@ else if (project === "model") {
         </div>
       </div>
 
-      <div class="project-info-section dcf-download-section">
+      <div class="project-info-section">
         <h3>Download Financial Model</h3>
         <p>
           Explore the complete Excel model, including historical
@@ -1023,18 +1029,15 @@ else if (project === "model") {
         </p>
 
         <a
-          class="portfolio-view-btn dcf-download-btn"
-          href="financial-model/Integrated_3_Statement_DCF_v2_Formatted.xlsx"
+          class="portfolio-download-btn"
+          href="./financial-model/Integrated%203%20Statement%20%26%20DCF%20Valuation.xlsx"
           download
         >
-          Download Excel Model ↓
+          ↓ Download Excel Model
         </a>
       </div>
 
-      <p class="dcf-disclaimer">
-        Illustrative company and fictional financial data.
-        Figures are model-derived and not investment advice.
-      </p>
+
 
     </div>
   `;
@@ -1047,21 +1050,51 @@ else if (project === "model") {
       return;
     }
 
+    if (!document.getElementById("dcfRevenueChart")) return;
+    const fontFamily = getComputedStyle(content).fontFamily;
+    // Local plugin: values remain visible without hover or another CDN dependency.
+    const valueLabels = {
+      id: "dcfValueLabels",
+      afterDatasetsDraw(chart) {
+        const ctx = chart.ctx;
+        const isRing = chart.config.type === "doughnut";
+        ctx.save();
+        ctx.font = "600 12px " + fontFamily;
+        ctx.textAlign = "center";
+        ctx.textBaseline = isRing ? "middle" : "bottom";
+        chart.getDatasetMeta(0).data.forEach((element, index) => {
+          const value = Number(chart.data.datasets[0].data[index]);
+          const point = element.tooltipPosition();
+          const label = isRing || chart.canvas.id === "dcfMarginChart"
+            ? value.toFixed(1) + "%"
+            : "$" + value.toFixed(2);
+          ctx.fillStyle = isRing ? "#17283d" : "#e2c995";
+          const half = ctx.measureText(label).width / 2 + 4;
+          const x = Math.max(half, Math.min(chart.width - half, point.x));
+          ctx.fillText(label, x, isRing ? point.y : point.y - 9);
+        });
+        ctx.restore();
+      }
+    };
     const chartDefaults = {
       responsive: true,
       maintainAspectRatio: false,
-      plugins: {
-        legend: { display: false }
+      layout: { padding: { top: 28, left: 16, right: 16 } },
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { ticks: { color: "#d4dfea", font: { family: fontFamily } }, grid: { display: false } },
+        y: { beginAtZero: true, grace: "20%", ticks: { color: "#d4dfea", font: { family: fontFamily } }, grid: { color: "rgba(226,201,149,.12)" } }
       }
     };
 
     new Chart(document.getElementById("dcfRevenueChart"), {
+      plugins: [valueLabels],
       type: "bar",
       data: {
         labels: financialData.years,
         datasets: [{
           data: financialData.revenue,
-          backgroundColor: "#168b8a",
+          backgroundColor: "#e2c995",
           borderRadius: 5
         }]
       },
@@ -1069,13 +1102,14 @@ else if (project === "model") {
     });
 
     new Chart(document.getElementById("dcfMarginChart"), {
+      plugins: [valueLabels],
       type: "line",
       data: {
         labels: financialData.years,
         datasets: [{
           data: financialData.ebitdaMargin,
-          borderColor: "#168b8a",
-          backgroundColor: "rgba(22,139,138,.12)",
+          borderColor: "#e2c995",
+          backgroundColor: "rgba(226,201,149,.12)",
           fill: true,
           tension: 0.3,
           pointRadius: 4
@@ -1085,6 +1119,7 @@ else if (project === "model") {
     });
 
     new Chart(document.getElementById("dcfScenarioChart"), {
+      plugins: [valueLabels],
       type: "bar",
       data: {
         labels: ["Downside", "Base", "Upside"],
@@ -1095,18 +1130,19 @@ else if (project === "model") {
             financialData.scenarios.upside
           ],
           backgroundColor: [
-            "#d99a55", "#168b8a", "#4879b5"
+            "#aebed0", "#e2c995", "#c4a66c"
           ],
           borderRadius: 5
         }]
       },
       options: {
         ...chartDefaults,
-        scales: { y: { beginAtZero: true } }
+        scales: chartDefaults.scales
       }
     });
 
     new Chart(document.getElementById("dcfTerminalChart"), {
+      plugins: [valueLabels],
       type: "doughnut",
       data: {
         labels: ["Terminal Value", "Forecast FCFF"],
@@ -1115,13 +1151,14 @@ else if (project === "model") {
             financialData.terminalContribution,
             100 - financialData.terminalContribution
           ],
-          backgroundColor: ["#168b8a", "#d8e6e8"]
+          backgroundColor: ["#e2c995", "#aebed0"]
         }]
       },
       options: {
         ...chartDefaults,
+        scales: {},
         plugins: {
-          legend: { display: true, position: "bottom" }
+          legend: { display: true, position: "bottom", labels: { color: "#d4dfea", font: { family: fontFamily }, padding: 16 } }
         }
       }
     });
