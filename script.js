@@ -1136,7 +1136,7 @@ else if (project === "model") {
     chartScript.onload = renderDCFCharts;
     document.head.appendChild(chartScript);
   }
-
+}
 
   /* =====================================================
      UNKNOWN PROJECT
