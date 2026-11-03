@@ -1094,7 +1094,7 @@ else if (project === "model") {
         labels: financialData.years,
         datasets: [{
           data: financialData.revenue,
-          backgroundColor: "#e2c995",
+          backgroundColor: "#168b8a",
           borderRadius: 5
         }]
       },
@@ -1108,8 +1108,8 @@ else if (project === "model") {
         labels: financialData.years,
         datasets: [{
           data: financialData.ebitdaMargin,
-          borderColor: "#e2c995",
-          backgroundColor: "rgba(226,201,149,.12)",
+          borderColor: "#168b8a",
+          backgroundColor: "rgba(22,139,138,.12)",
           fill: true,
           tension: 0.3,
           pointRadius: 4
@@ -1130,7 +1130,7 @@ else if (project === "model") {
             financialData.scenarios.upside
           ],
           backgroundColor: [
-            "#aebed0", "#e2c995", "#c4a66c"
+            "#d99a55", "#168b8a", "#4879b5"
           ],
           borderRadius: 5
         }]
@@ -1151,7 +1151,7 @@ else if (project === "model") {
             financialData.terminalContribution,
             100 - financialData.terminalContribution
           ],
-          backgroundColor: ["#e2c995", "#aebed0"]
+          backgroundColor: ["#168b8a", "#d8e6e8"]
         }]
       },
       options: {
@@ -1373,4 +1373,28 @@ document.addEventListener("click", function (event) {
     link.target = "_blank";
     link.rel = "noopener noreferrer";
   }
+})();
+
+/* Floating back-to-top control. */
+(function () {
+  const button = document.createElement("button");
+  button.type = "button";
+  button.className = "portfolio-back-to-top";
+  button.setAttribute("aria-label", "Back to top");
+  button.title = "Back to top";
+  button.textContent = "↑";
+  button.hidden = true;
+  document.body.appendChild(button);
+  function updateVisibility() {
+    button.hidden = window.scrollY < 300;
+  }
+  window.addEventListener("scroll", updateVisibility, { passive: true });
+  button.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches
+        ? "instant" : "smooth"
+    });
+  });
+  updateVisibility();
 })();
