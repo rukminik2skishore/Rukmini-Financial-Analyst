@@ -1030,7 +1030,7 @@ else if (project === "model") {
 
         <a
           class="portfolio-download-btn"
-          href="./financial-model/Integrated%203%20Statement%20%26%20DCF%20Valuation.xlsx"
+          href="./financial-model/financial-model/Integrated%203%20Statement%20%26%20DCF%20Valuation.xlsx"
           download
         >
           ↓ Download Excel Model
