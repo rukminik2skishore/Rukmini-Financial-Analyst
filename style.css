@@ -4165,3 +4165,23 @@ body main > :is(#home,#about,#experience,#projects,#education,#skills,#resume,#c
   outline: 3px solid #e2c995;
   outline-offset: 4px;
 }
+
+#education .credential-link,
+#education .credential-link:visited {
+  color: #e8c978;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+#education .credential-link:hover,
+#education .credential-link:focus-visible {
+  color: #fff;
+}
+
+#education .credential-link:focus-visible {
+  outline: 2px solid #e8c978;
+  outline-offset: 4px;
+}
