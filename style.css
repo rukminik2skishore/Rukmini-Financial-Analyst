@@ -4192,3 +4192,131 @@ a[href*="credly.com/badges/"]:any-link {
   text-decoration: underline;
   text-underline-offset: 0.2em;
 }
+
+/* =====================================================
+   NAVY BLUE AND GOLD PORTFOLIO DESIGN
+   ===================================================== */
+
+/* Website background */
+
+body {
+  background: #0b1220 !important;
+}
+
+/* Header */
+
+body > header {
+  background: #0b1220 !important;
+  border-bottom: 1px solid #293b53;
+}
+
+/* Homepage outer container */
+
+body main > #home.section {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Introduction box */
+
+#home .rk-hero {
+  background: #152338 !important;
+  border: 1px solid #2b405c !important;
+  border-radius: 20px;
+  padding: clamp(24px, 4vw, 45px);
+}
+
+/* Space before featured projects */
+
+#home .rk-work {
+  margin-top: 60px !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  padding: 0 !important;
+}
+
+/* Two projects per row */
+
+#home .rk-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+/* Individual homepage project cards */
+
+#home .rk-project {
+  background: #152338 !important;
+  border: 1px solid #2b405c !important;
+  border-radius: 16px;
+  min-width: 0;
+}
+
+/* Project card hover */
+
+#home .rk-project:hover {
+  border-color: #d9b565 !important;
+}
+
+/* Main projects section */
+
+body main > #projects.section {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Separate project cards */
+
+#projects .portfolio-project-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+#projects .portfolio-project-card {
+  background: #152338 !important;
+  border: 1px solid #2b405c !important;
+  border-radius: 16px;
+}
+
+/* Other portfolio sections */
+
+body main > #about.section,
+body main > #experience.section,
+body main > #education.section,
+body main > #skills.section,
+body main > #resume.section,
+body main > #contact.section {
+  background: #152338 !important;
+  border-color: #2b405c !important;
+}
+
+/* Footer */
+
+body > footer.portfolio-footer {
+  background: #0b1220 !important;
+  border-top: 1px solid #293b53;
+}
+
+/* Mobile responsiveness */
+
+@media (max-width: 800px) {
+
+  #home .rk-projects,
+  #projects .portfolio-project-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  #home .rk-work {
+    margin-top: 36px !important;
+  }
+
+  #home .rk-hero {
+    padding: 24px;
+  }
+
+}
