@@ -4185,3 +4185,10 @@ body main > :is(#home,#about,#experience,#projects,#education,#skills,#resume,#c
   outline: 2px solid #e8c978;
   outline-offset: 4px;
 }
+
+
+a[href*="credly.com/badges/"]:any-link {
+  color: #fff;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
