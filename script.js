@@ -158,12 +158,7 @@ function showPortfolioProject(project) {
           </div>
 
           <div class="sql-download-area">
-            <a
-              href="./projects/SQL%20for%20Portfolio.sql"
-              download="Financial_Data_Analysis_SQL.sql"
-              class="portfolio-download-btn">
-              ↓ Download SQL File
-            </a>
+            <button type="button" class="portfolio-download-btn" data-file-request="sql">Request file</button>
           </div>
         </div>
 
@@ -249,12 +244,7 @@ function showPortfolioProject(project) {
           </p>
 
           <div class="dashboard-action-buttons">
-            <a
-              href="./html-dashboard/data/financial_data.csv"
-              download="FPA_Dashboard_Data.csv"
-              class="portfolio-download-btn">
-              ↓ Download Dashboard Data
-            </a>
+            <button type="button" class="portfolio-download-btn" data-file-request="dataset">Request file</button>
           </div>
         </div>
 
@@ -1399,10 +1389,10 @@ document.addEventListener("click", event => {
   const trigger = event.target.closest("[data-file-request]");
   if (!trigger) return;
   const dialog = document.createElement("dialog");
-  dialog.style.cssText = "width:min(26rem,85vw);padding:1.5rem;border-radius:12px;border:1px solid #aaa";
+  dialog.className = "portfolio-request-dialog";
   dialog.setAttribute("aria-label", "Request portfolio file");
   dialog.innerHTML = `<form>
-    <h2>Request file</h2>
+    <h2>Request file</h2><p class="request-project"></p>
     <label>Your name<br><input name="name" autocomplete="name" required maxlength="100"></label><br>
     <label>Email address<br><input type="email" name="email" autocomplete="email" required maxlength="254"></label>
     <p role="status"></p><button type="submit">Send</button>
@@ -1410,13 +1400,22 @@ document.addEventListener("click", event => {
   const form = dialog.querySelector("form");
   const status = form.querySelector('[role="status"]');
   const send = form.querySelector('[type="submit"]');
-  if (!portfolioRequestEndpoint) {
-    send.disabled = true;
-    status.textContent = "Email requests are awaiting activation.";
-  }
+  const titles = { fpa: "FP&A workbook", dcf: "DCF valuation workbook", sql: "SQL analysis file", dataset: "Dashboard dataset" };
+  const title = titles[trigger.dataset.fileRequest];
+  dialog.querySelector(".request-project").textContent = title;
+  if (!portfolioRequestEndpoint) status.textContent = "Send opens your email app with the request ready to send.";
   form.addEventListener("submit", e => {
     e.preventDefault();
-    if (!portfolioRequestEndpoint || send.disabled) return;
+    if (!portfolioRequestEndpoint) {
+      const contact = document.querySelector('a[href^="mailto:"]');
+      if (!contact) { status.textContent = "The portfolio contact link is unavailable."; return; }
+      const mail = new URL(contact.href);
+      mail.searchParams.set("subject", "Portfolio file request: " + title);
+      mail.searchParams.set("body", "Hi Rukmini,\\n\\nPlease send me the " + title + ".\\nName: " + form.elements.name.value.trim() + "\\nEmail: " + form.elements.email.value.trim());
+      window.location.href = mail.href.replace(/\+/g, "%20");
+      status.textContent = "Thank you for your interest! Finish sending the request in your email app.";
+      return;
+    }
     // A top-level POST lets Apps Script display its confirmed delivery result.
     // It also avoids cross-origin reads and addresses blocked popup settings.
     const result = window.open("", "portfolioRequestResult", "popup,width=480,height=480");
