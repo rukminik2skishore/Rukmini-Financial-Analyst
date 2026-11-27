@@ -4193,19 +4193,28 @@ a[href*="credly.com/badges/"]:any-link {
   text-underline-offset: 0.2em;
 }
 
-.portfolio-request-dialog {
-  box-sizing:border-box; width:min(27rem, 92vw); padding:clamp(20px,4vw,32px);
-  border:1px solid rgba(226,201,149,.42); border-radius:18px;
-  background:linear-gradient(145deg,#17283d,#101b2b); color:#f3f4f6;
-  font-family:inherit; box-shadow:0 20px 65px rgba(0,0,0,.4);
+/* The request window sits within Projects so its actions share project button styles. */
+#projects .portfolio-request-dialog {
+  width: min(27rem, calc(100vw - 32px));
+  max-height: calc(100dvh - 32px);
+  margin: auto;
+  padding: clamp(22px, 4vw, 32px);
+  overflow: auto;
+  color-scheme: dark;
+  color: #d4dfea;
+  background: radial-gradient(circle at 95% 0, rgba(226,201,149,.12), transparent 42%), linear-gradient(135deg,#17283d,#263d57);
+  border: 1px solid rgba(226,201,149,.24);
+  border-radius: 18px;
+  font: inherit;
+  text-align: left;
 }
-.portfolio-request-dialog::backdrop { background:rgba(8,15,27,.75); }
-.portfolio-request-dialog h2 { margin:0; color:#e2c995; }
-.portfolio-request-dialog .request-project { margin:6px 0 20px; }
-.portfolio-request-dialog label { display:block; font-weight:600; }
-.portfolio-request-dialog label + br { display:none; }
-.portfolio-request-dialog input { width:100%; box-sizing:border-box; padding:10px 12px; margin:6px 0 14px; border-radius:8px; background:#101b2b; color:#fff; border:1px solid #738396; font:inherit; }
-.portfolio-request-dialog [role=status] { color:#d4dfea; font-size:.92rem; line-height:1.5; }
-.portfolio-request-dialog button { padding:9px 18px; border:1px solid #dfc38c; border-radius:24px; font:inherit; font-weight:600; cursor:pointer; background:#dfc38c; color:#152338; }
-.portfolio-request-dialog [data-close] { background:transparent; color:#dfc38c; }
-.portfolio-request-dialog :focus-visible { outline:2px solid #e2c995; outline-offset:3px; }
+.portfolio-request-dialog::backdrop { background: rgba(8,15,27,.72); }
+#projects .portfolio-request-dialog form { display: grid; gap: 16px; margin: 0; }
+#projects .portfolio-request-dialog h3 { color: #fff; font-family: inherit; font-size: 20px; font-weight: 700; line-height: 1.4; margin: 0; }
+#projects .portfolio-request-dialog label { display: grid; gap: 6px; color: #fff; font: inherit; font-size: 14px; font-weight: 600; }
+#projects .portfolio-request-dialog input { width: 100%; min-width: 0; padding: 10px 14px; border: 1px solid #8391a2; border-radius: 10px; background: #17283d; color: #fff; font: inherit; font-weight: 400; font-size: 16px; }
+#projects .portfolio-request-dialog [role=status] { color: #d4dfea; font: inherit; font-size: 14px; line-height: 1.6; margin: 0; }
+#projects .portfolio-request-dialog [role=status]:empty { display: none; }
+#projects .request-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+#projects .request-actions button { font-family: inherit; cursor: pointer; }
+#projects .portfolio-request-dialog input:focus-visible { outline: 2px solid #e2c995; outline-offset: 2px; }

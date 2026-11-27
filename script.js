@@ -1390,19 +1390,20 @@ document.addEventListener("click", event => {
   if (!trigger) return;
   const dialog = document.createElement("dialog");
   dialog.className = "portfolio-request-dialog";
-  dialog.setAttribute("aria-label", "Request portfolio file");
+  dialog.setAttribute("aria-labelledby", "request-file-title");
   dialog.innerHTML = `<form>
-    <h2>Request file</h2><p class="request-project"></p>
-    <label>Your name<br><input name="name" autocomplete="name" required maxlength="100"></label><br>
-    <label>Email address<br><input type="email" name="email" autocomplete="email" required maxlength="254"></label>
-    <p role="status"></p><button type="submit">Send</button>
-    <button type="button" data-close>Close</button></form>`;
+    <h3 id="request-file-title"></h3>
+    <label>Your name<input name="name" autocomplete="name" required maxlength="100"></label>
+    <label>Email address<input type="email" name="email" autocomplete="email" required maxlength="254"></label>
+    <p role="status"></p><div class="request-actions">
+    <button class="portfolio-download-btn" type="submit">Send</button>
+    <button class="portfolio-download-btn" type="button" data-close>Close</button></div></form>`;
   const form = dialog.querySelector("form");
   const status = form.querySelector('[role="status"]');
   const send = form.querySelector('[type="submit"]');
   const titles = { fpa: "FP&A workbook", dcf: "DCF valuation workbook", sql: "SQL analysis file", dataset: "Dashboard dataset" };
   const title = titles[trigger.dataset.fileRequest];
-  dialog.querySelector(".request-project").textContent = title;
+  dialog.querySelector("h3").textContent = "Request " + title;
   if (!portfolioRequestEndpoint) status.textContent = "Send opens your email app with the request ready to send.";
   form.addEventListener("submit", e => {
     e.preventDefault();
@@ -1436,5 +1437,5 @@ document.addEventListener("click", event => {
   });
   dialog.querySelector("[data-close]").onclick = () => dialog.close();
   dialog.addEventListener("close", () => { dialog.remove(); trigger.focus(); }, {once:true});
-  document.body.append(dialog); dialog.showModal();
+  document.getElementById("projects").append(dialog); dialog.showModal();
 });
