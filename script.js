@@ -1389,9 +1389,53 @@ document.addEventListener("click", function (event) {
 
 function excelAccess(project) {
   const previewUrls = { fpa: "", dcf: "" };
-  const approvalApp = "";
   const preview = previewUrls[project] ? '<details><summary>View Excel preview</summary><iframe title="Worksheet preview" loading="lazy" style="width:100%;height:65vh;border:0" src="' + previewUrls[project] + '"></iframe></details>' : '';
-  if (approvalApp) return preview + '<a class="portfolio-download-btn" href="' + approvalApp + '?project=' + project + '">Request Excel download</a>';
-  const title = project === "fpa" ? "FP&amp;A workbook" : "DCF valuation workbook";
-  return preview + '<details><summary class="portfolio-download-btn">Request Excel download</summary><p>Use the Contact section to request the ' + title + '. Include your name and the email address where you would like to receive the approved file.</p></details>';
+  return preview + '<button type="button" class="portfolio-download-btn" data-file-request="' + project + '">Request Excel download</button>';
 }
+
+// Set this to the deployed Portfolio Download Requests web app URL.
+const portfolioRequestEndpoint = "";
+document.addEventListener("click", event => {
+  const trigger = event.target.closest("[data-file-request]");
+  if (!trigger) return;
+  const dialog = document.createElement("dialog");
+  dialog.style.cssText = "width:min(26rem,85vw);padding:1.5rem;border-radius:12px;border:1px solid #aaa";
+  dialog.setAttribute("aria-label", "Request portfolio file");
+  dialog.innerHTML = `<form>
+    <h2>Request file</h2>
+    <label>Your name<br><input name="name" autocomplete="name" required maxlength="100"></label><br>
+    <label>Email address<br><input type="email" name="email" autocomplete="email" required maxlength="254"></label>
+    <p role="status"></p><button type="submit">Send</button>
+    <button type="button" data-close>Close</button></form>`;
+  const form = dialog.querySelector("form");
+  const status = form.querySelector('[role="status"]');
+  const send = form.querySelector('[type="submit"]');
+  if (!portfolioRequestEndpoint) {
+    send.disabled = true;
+    status.textContent = "Email requests are awaiting activation.";
+  }
+  form.addEventListener("submit", e => {
+    e.preventDefault();
+    if (!portfolioRequestEndpoint || send.disabled) return;
+    // A top-level POST lets Apps Script display its confirmed delivery result.
+    // It also avoids cross-origin reads and addresses blocked popup settings.
+    const result = window.open("", "portfolioRequestResult", "popup,width=480,height=480");
+    if (!result) {
+      status.textContent = "Allow the request window to open, then select Send again.";
+      return;
+    }
+    const post = document.createElement("form");
+    post.method = "post";
+    post.action = portfolioRequestEndpoint;
+    post.target = "portfolioRequestResult";
+    for (const [name,value] of [...new FormData(form), ["project", trigger.dataset.fileRequest]]) {
+      const field = document.createElement("input");
+      field.type = "hidden"; field.name = name; field.value = value; post.append(field);
+    }
+    document.body.append(post);
+    post.submit(); post.remove(); dialog.close();
+  });
+  dialog.querySelector("[data-close]").onclick = () => dialog.close();
+  dialog.addEventListener("close", () => { dialog.remove(); trigger.focus(); }, {once:true});
+  document.body.append(dialog); dialog.showModal();
+});
