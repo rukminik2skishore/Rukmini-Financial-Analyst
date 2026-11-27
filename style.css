@@ -4218,3 +4218,24 @@ a[href*="credly.com/badges/"]:any-link {
 #projects .request-actions { display: flex; flex-wrap: wrap; gap: 10px; }
 #projects .request-actions button { font-family: inherit; cursor: pointer; }
 #projects .portfolio-request-dialog input:focus-visible { outline: 2px solid #e2c995; outline-offset: 2px; }
+
+#projects .portfolio-request-dialog {
+  width: min(32rem, calc(100vw - 24px));
+  background: #17283d;
+  border-top: 3px solid #dbb367;
+  border-radius: 9px;
+}
+#projects .portfolio-request-dialog h3 { padding-right: 2rem; font-size: 22px; }
+#projects .portfolio-request-dialog .request-project {
+  margin: -8px 0 0; color: #e2c995; font: inherit; font-size: 15px;
+}
+#projects .portfolio-request-dialog .request-close {
+  position: absolute; top: 10px; right: 10px; width: 40px; height: 40px;
+  background: transparent; color: #bac3d1; border: 0; font: inherit; font-size: 26px; cursor: pointer;
+}
+#projects .portfolio-request-dialog input { background: #101e31; border-radius: 6px; padding: 13px; }
+#projects .portfolio-request-dialog .request-send {
+  border: 0; border-radius: 6px; background: #e2bd71; color: #152338;
+  padding: 12px 22px; font: inherit; font-weight: 700; cursor: pointer;
+}
+#projects .portfolio-request-dialog button:focus-visible { outline: 2px solid #e2c995; outline-offset: 3px; }

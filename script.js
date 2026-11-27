@@ -1392,18 +1392,17 @@ document.addEventListener("click", event => {
   dialog.className = "portfolio-request-dialog";
   dialog.setAttribute("aria-labelledby", "request-file-title");
   dialog.innerHTML = `<form>
-    <h3 id="request-file-title"></h3>
-    <label>Your name<input name="name" autocomplete="name" required maxlength="100"></label>
-    <label>Email address<input type="email" name="email" autocomplete="email" required maxlength="254"></label>
+    <button type="button" class="request-close" data-close aria-label="Close request form">×</button><h3 id="request-file-title">Request file access</h3><p class="request-project"></p>
+    <label>Your email *<input type="email" name="email" placeholder="you@company.com" autocomplete="email" required maxlength="254"></label>
+    <label>Full name *<input name="name" placeholder="Your full name" autocomplete="name" required maxlength="100"></label>
     <p role="status"></p><div class="request-actions">
-    <button class="portfolio-download-btn" type="submit">Send</button>
-    <button class="portfolio-download-btn" type="button" data-close>Close</button></div></form>`;
+    <button class="request-send" type="submit">Send request</button></div></form>`;
   const form = dialog.querySelector("form");
   const status = form.querySelector('[role="status"]');
   const send = form.querySelector('[type="submit"]');
   const titles = { fpa: "FP&A workbook", dcf: "DCF valuation workbook", sql: "SQL analysis file", dataset: "Dashboard dataset" };
   const title = titles[trigger.dataset.fileRequest];
-  dialog.querySelector("h3").textContent = "Request " + title;
+  dialog.querySelector(".request-project").textContent = title;
   if (!portfolioRequestEndpoint) status.textContent = "Send opens your email app with the request ready to send.";
   form.addEventListener("submit", e => {
     e.preventDefault();
