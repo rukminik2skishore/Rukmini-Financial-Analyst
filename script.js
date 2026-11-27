@@ -804,7 +804,7 @@ else if (project === "forecast-budget") {
 
       <div class="project-info-section">
 
-        <h3>Download Forecasting &amp; Budget Model</h3>
+        <h3>View Forecasting &amp; Budget Model</h3>
 
         <p>
           Explore the assumptions, historical actuals,
@@ -815,13 +815,7 @@ else if (project === "forecast-budget") {
 
         <div class="dashboard-action-buttons">
 
-          <a
-            href="./financial-model/Integrated_Financial_Model.xlsx"
-            download
-            class="portfolio-download-btn"
-          >
-            ↓ Download Excel Model
-          </a>
+          ${excelAccess("fpa")}
 
         </div>
 
@@ -1022,19 +1016,13 @@ else if (project === "model") {
       </div>
 
       <div class="project-info-section">
-        <h3>Download Financial Model</h3>
+        <h3>View Financial Model</h3>
         <p>
           Explore the complete Excel model, including historical
           financials, forecast schedules, valuation and dashboard.
         </p>
 
-        <a
-          class="portfolio-download-btn"
-          href="./financial-model/financial-model/Integrated%203%20Statement%20%26%20DCF%20Valuation.xlsx"
-          download
-        >
-          ↓ Download Excel Model
-        </a>
+        ${excelAccess("dcf")}
       </div>
 
 
@@ -1398,3 +1386,12 @@ document.addEventListener("click", function (event) {
   });
   updateVisibility();
 })();
+
+function excelAccess(project) {
+  const previewUrls = { fpa: "", dcf: "" };
+  const approvalApp = "";
+  const preview = previewUrls[project] ? '<details><summary>View Excel preview</summary><iframe title="Worksheet preview" loading="lazy" style="width:100%;height:65vh;border:0" src="' + previewUrls[project] + '"></iframe></details>' : '';
+  if (approvalApp) return preview + '<a class="portfolio-download-btn" href="' + approvalApp + '?project=' + project + '">Request Excel download</a>';
+  const title = project === "fpa" ? "FP&amp;A workbook" : "DCF valuation workbook";
+  return preview + '<details><summary class="portfolio-download-btn">Request Excel download</summary><p>Use the Contact section to request the ' + title + '. Include your name and the email address where you would like to receive the approved file.</p></details>';
+}
